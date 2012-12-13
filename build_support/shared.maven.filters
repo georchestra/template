@@ -86,8 +86,8 @@ shared.privileged.geoserver.pass=gerlsSnFd6SmM
 # --------------------------------------------------
 
 # the mapfishapp viewer expires wmc and sld every x minutes
-#
-shared.mapfishapp.maxDocAgeInMinutes=1440
+# (44640 minutes means "1 month permalink validity")
+shared.mapfishapp.maxDocAgeInMinutes=44640
 
 
 
