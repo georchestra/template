@@ -196,7 +196,31 @@ GEOR.custom = {
             owsurl: "http://bmo.openstreetmap.fr/ows"
         }
     ],
-        
+
+    /**
+     * Constant: SPLASH_SCREEN
+     * {String} The message to display on extractorapp startup
+     * Defaults to null, which means no message will be displayed
+     *
+    SPLASH_SCREEN: [
+        "Afin d'utiliser au mieux la fonctionnalité d'extraction en ligne, nous vous ",
+        "invitons à respecter les conseils suivants : ",
+        "<br/><br/>",
+        "Pour les données <b>image</b> : ",
+        "La taille maximale pour une extraction de l'orthophotographie est d'environ 50 Km². ",
+        "Au-delà, l'extraction risque de ne pas aboutir. ",
+        "<br/>",
+        "Le format ECW est limité à des fichiers de 500 Mo maximum. ",
+        "Privilégiez plutôt les formats JPEG 2000 ou TIF. ",
+        "<br/><br/>",
+        "Pour les données <b>vecteur</b> : ",
+        "Les couches comportant un trop grand nombre d'objets (~ million) ",
+        "ne pourront pas être extraites. ",
+        "<br/><br/>",
+        "Si vous ne parvenez pas à extraire une couche à l'aide de l'extracteur en ",
+        "ligne, <a href=\"mailto:psc@georchestra.org\">prenez contact</a> avec l'administrateur."].join(""),
+    */
+
     /**
      * Constant: HELP_URL
      * {String} URL of the help ressource.
