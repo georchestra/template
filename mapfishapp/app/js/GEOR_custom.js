@@ -10,11 +10,28 @@ Ext.namespace("GEOR");
 
 GEOR.custom = {
     /**
-     * Constant: DEFAULT_WMC.
-     * The path to the application's default WMC.
-     * Defaults to "default.wmc"
-     */
-    //DEFAULT_WMC: "default.wmc",
+     * Constant: CONTEXTS
+     * {Array} the array of arrays describing the available contexts
+     *
+     * Each "context array" consists of 4 mandatory fields:
+     *   * the first field is the label which appears in the UI
+     *   * the second one is the path to the thumbnail
+     *   * the third one is the path to the context (WMC) file
+     *   * the last one is a comment which will be shown on thumbnail hovering
+     *
+     * Example config : 
+     *   [
+     *      ["OpenStreetMap", "app/img/contexts/osm.png", "default.wmc", "A unique OSM layer"],
+     *      ["Orthophoto", "app/img/contexts/ortho.png", "contexts/ortho.wmc", "Orthophoto 2009"],
+     *      ["Forêts", "app/img/contexts/forets.png", "contexts/forets.wmc", "Les 3 couches forêts sur fond OSM"]
+     *   ]
+     *
+     * Defaults to ["OpenStreetMap", "app/img/contexts/osm.png", "default.wmc", "A unique OSM layer"]
+     * Should *not* be empty !
+     *
+    CONTEXTS: [
+        ["OpenStreetMap", "app/img/contexts/osm.png", "default.wmc", "A unique OSM layer"]
+    ],*/
     
     /**
      * Constant: DEFAULT_PRINT_FORMAT
@@ -37,7 +54,7 @@ GEOR.custom = {
      * or if the "referentials" module is activated.
      * Defaults to /geoserver/wfs
      */
-    //GEOSERVER_WFS_URL: "/geoserver/wfs",
+    GEOSERVER_WFS_URL: "http://ids.pigma.org/geoserver/wfs",
 
     /**
      * Constant: GEOSERVER_WMS_URL
@@ -52,7 +69,7 @@ GEOR.custom = {
      * The URL to the GeoNetwork server.
      * Defaults to "/geonetwork/srv/fr"
      */
-    //GEONETWORK_URL: "/geonetwork/srv/fr",
+    GEONETWORK_URL: "http://ids.pigma.org/geonetwork/srv/fr",
 
     /**
      * Constant: CSW_GETDOMAIN_SORTING
@@ -141,13 +158,13 @@ GEOR.custom = {
      * to be warned that this layer will not be printed:
      *
      * "wmsc_url": undefined,
-     */
+     *
     WMSC2WMS: {
         "http://osm.geobretagne.fr/service/wms": 
             "http://geobretagne.fr/osm-google", 
         "http://geobretagne.fr/geoserver/gwc/service/wms": 
             undefined // no trailing comma
-    },
+    },*/
 
 
     /**
@@ -162,7 +179,7 @@ GEOR.custom = {
      * {Boolean} whether to display the recenter on addresses tab.
      * Defaults to false
      */
-    RECENTER_ON_ADDRESSES: false,
+    //RECENTER_ON_ADDRESSES: false,
     
     /**
      * Constant: ADDRESS_URL
@@ -177,7 +194,7 @@ GEOR.custom = {
      *    the GeoServer configuration.
      * Defaults to "geor_loc"
      */
-    NS_LOC: "geor_loc",
+    //NS_LOC: "geor_loc",
     
     /**
      * Constant: NS_EDIT
@@ -185,8 +202,7 @@ GEOR.custom = {
      *    the GeoServer configuration.
      * Defaults to "geor_edit"
      */
-    NS_EDIT: "geor_edit",
-
+    //NS_EDIT: "geor_edit",
 
     /**
      * Constant: CSW_GETDOMAIN_PROPERTY
@@ -194,7 +210,6 @@ GEOR.custom = {
      * Defaults to "subject"
      */
     //CSW_GETDOMAIN_PROPERTY: "subject",
-
 
     /**
      * Constant: MAP_SCALES
@@ -230,55 +245,54 @@ GEOR.custom = {
     /**
      * Constant: MAP_XMIN aka "left"
      * {Float} The max extent xmin in MAP_SRS coordinates.
-     * Defaults to -357823 (France metropolitaine left)
+     * Defaults to -357823.2365 (EPSG:2154 left)
      */
-    //MAP_XMIN: -357823,
+    //MAP_XMIN: -357823.2365,
 
     /**
      * Constant: MAP_YMIN aka "bottom"
      * {Float} The max extent ymin in MAP_SRS coordinates.
-     * Defaults to 6037008 (France metropolitaine bottom)
+     * Defaults to 6037008.6939 (EPSG:2154 bottom)
      */
-    //MAP_YMIN: 6037008,
+    //MAP_YMIN: 6037008.6939,
 
     /**
      * Constant: MAP_XMAX aka "right"
      * {Float} The max extent xmax in MAP_SRS coordinates.
-     * Defaults to 1313632 (France metropolitaine right)
+     * Defaults to 1313632.3628 (EPSG:2154 right)
      */
-    //MAP_XMAX: 1313632,
+    //MAP_XMAX: 1313632.3628,
 
     /**
      * Constant: MAP_YSMAX aka "top"
      * {Float} The max extent ymax in MAP_SRS coordinates
-     * Defaults to 7230727 (France metropolitaine top)
+     * Defaults to 7230727.3772 (EPSG:2154 top)
      */
-    //MAP_YMAX: 7230727,
-    
+    //MAP_YMAX: 7230727.3772,
+
     /**
      * Constant: POINTER_POSITION_SRS_LIST
      * {Array} The cursor position will be displayed using these SRS.
-     * Defaults to [["EPSG:2154", "Lambert 93"],["EPSG:4326", "WGS 84"]]
+     * Defaults to [["EPSG:4326", "WGS 84"],["EPSG:2154", "Lambert 93"]]
      * Note: be sure to have all these projections defined in PROJ4JS_STRINGS
      *
     POINTER_POSITION_SRS_LIST: [
-        ["EPSG:2154", "Lambert 93"],
-        ["EPSG:4326", "WGS 84"]
+        ["EPSG:4326", "WGS 84"],
+        ["EPSG:2154", "Lambert 93"]
     ],*/
-    
+
     /**
      * Constant: PROJ4JS_STRINGS
      * {Object} The list of supported SRS with their definitions.
      * Defaults to "EPSG:4326", "EPSG:2154" & "EPSG:900913" being defined
      * Note that "EPSG:900913" is required if OSM_AS_OVMAP is set to true
-     * The other required SRSes are the one used by mouse position
-     */
+     *
     PROJ4JS_STRINGS: {
+        "EPSG:4326": "+title=WGS 84, +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
         "EPSG:2154": "+title=RGF-93/Lambert 93, +proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
-        "EPSG:900913": "+title=Web Spherical Mercator, +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs",
-        "EPSG:4326": "+title=WGS 84, +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
-    },
-    
+        "EPSG:900913": "+title=Web Spherical Mercator, +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs"
+    },*/
+
     /**
      * Constant: TILE_SINGLE
      * {Boolean} When false, activates WMS tiled requests.
@@ -302,17 +316,24 @@ GEOR.custom = {
 
     /**
      * Constant: GEONAMES_FILTERS
-     * {Object} Describes the geonames options.
-     * Defaults to France/Bretagne/populated places
-     */
+     * {Object} Describes the geonames search options for the searchJSON web service.
+     * (documentation here: http://www.geonames.org/export/geonames-search.html)
+     *
+     * Defaults to France/populated places
+     *
+     * Note that it is possible to restrict search to an admin area
+     * by specifying either an adminCode1 or adminCode2 or adminCode3
+     * See http://download.geonames.org/export/dump/admin1CodesASCII.txt for adminCode1
+     * Aquitaine matches '97' while Bretagne (Brittany) matches 'A2'
+     *
     GEONAMES_FILTERS: {
         country: 'FR',         // France
-        //adminCode1: '97',      // Aquitaine
+        //adminCode1: '97',
         style: 'short',        // verbosity of results
         lang: 'fr',
         featureClass: 'P',     // class category: populated places
         maxRows: 20            // maximal number of results
-    },
+    },*/
 
     /**
      * Constant: GEONAMES_ZOOMLEVEL
@@ -335,7 +356,7 @@ GEOR.custom = {
      * {Array} roles required for the styler to show up
      * Empty array means the module is available for everyone
      * ROLE_SV_USER means the user needs to be connected.
-     * Defaults to ['ROLE_SV_USER']
+     * Defaults to ['ROLE_SV_USER', 'ROLE_SV_REVIEWER', 'ROLE_SV_EDITOR', 'ROLE_SV_ADMIN']
      */
     ROLES_FOR_STYLER: [],
     
@@ -353,9 +374,9 @@ GEOR.custom = {
      * {Array} roles required to be able to print
      * Empty array means printing is available for everyone
      * ROLE_SV_USER means the user needs to be connected.
-     * Defaults to ['ROLE_SV_USER']
+     * Defaults to []
      */
-    ROLES_FOR_PRINTER: [],
+    //ROLES_FOR_PRINTER: [],
     
     /**
      * Constant: HELP_URL
@@ -404,6 +425,5 @@ GEOR.custom = {
         {"name": "GeoBretagne", "url": "http://geobretagne.fr/geoserver/wfs"},
         {"name": "Corine Land Cover", "url": "http://sd1878-2.sivit.org/geoserver/wfs"}
     ]
-    
     // No trailing comma for the last line (or IE will complain)
 }
