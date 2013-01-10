@@ -158,13 +158,8 @@ GEOR.custom = {
      * to be warned that this layer will not be printed:
      *
      * "wmsc_url": undefined,
-     *
-    WMSC2WMS: {
-        "http://osm.geobretagne.fr/service/wms": 
-            "http://geobretagne.fr/osm-google", 
-        "http://geobretagne.fr/geoserver/gwc/service/wms": 
-            undefined // no trailing comma
-    },*/
+     */
+    //WMSC2WMS: {},
 
 
     /**
