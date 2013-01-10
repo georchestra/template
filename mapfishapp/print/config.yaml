@@ -58,6 +58,17 @@ scales:
   #~ - 559082263.928571464
 
 #===========================================================================
+# printing protected layers
+#===========================================================================
+security:
+  - !basicAuth
+    matcher: !dnsMatch
+      host: @shared.server.name@
+    username: @shared.privileged.geoserver.user@
+    password: @shared.privileged.geoserver.pass@
+    preemptive: true
+
+#===========================================================================
 # the list of allowed hosts
 #===========================================================================
 hosts:
