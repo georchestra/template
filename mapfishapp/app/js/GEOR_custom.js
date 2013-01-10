@@ -54,7 +54,7 @@ GEOR.custom = {
      * or if the "referentials" module is activated.
      * Defaults to /geoserver/wfs
      */
-    GEOSERVER_WFS_URL: "http://ids.pigma.org/geoserver/wfs",
+    GEOSERVER_WFS_URL: "http://geobretagne.fr/geoserver/wfs",
 
     /**
      * Constant: GEOSERVER_WMS_URL
@@ -69,7 +69,7 @@ GEOR.custom = {
      * The URL to the GeoNetwork server.
      * Defaults to "/geonetwork/srv/fr"
      */
-    GEONETWORK_URL: "http://ids.pigma.org/geonetwork/srv/fr",
+    GEONETWORK_URL: "http://geobretagne.fr/geonetwork/srv/fr",
 
     /**
      * Constant: CSW_GETDOMAIN_SORTING
