@@ -377,7 +377,21 @@ GEOR.custom = {
      * Defaults to []
      */
     //ROLES_FOR_PRINTER: [],
-    
+
+    /**
+     * Constant: PRINT_LAYOUTS_ACL
+     * {Object} roles required for each print layout
+     * Empty array means "layout is available for everyone"
+     *
+    PRINT_LAYOUTS_ACL: {
+        // A4 allowed for everyone:
+        'A4 paysage': [],
+        'A4 portrait': [],
+        // A3 not allowed for unconnected users (guests):
+        'A3 paysage': ['ROLE_SV_USER', 'ROLE_SV_REVIEWER', 'ROLE_SV_EDITOR', 'ROLE_SV_ADMIN'],
+        'A3 portrait': ['ROLE_SV_USER', 'ROLE_SV_REVIEWER', 'ROLE_SV_EDITOR', 'ROLE_SV_ADMIN']
+    },*/
+
     /**
      * Constant: HELP_URL
      * {String} URL of the help ressource.
