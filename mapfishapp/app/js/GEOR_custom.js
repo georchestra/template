@@ -32,7 +32,39 @@ GEOR.custom = {
     CONTEXTS: [
         ["OpenStreetMap", "app/img/contexts/osm.png", "default.wmc", "A unique OSM layer"]
     ],*/
-    
+
+    /**
+     * Constant: ADDONS
+     * An array of addons config objects.
+     * Defaults to []
+     * 
+     * An "addon config object" is an object with the following properties:
+     *  id - {String} required identifier, which *MUST* :
+     *        * be stable across deployments in order to let your users recover their tools
+     *        * be unique in the ADDONS array
+     *  name - {String} required addon name, which, once lowercased, gives the addon folder name
+     *  title - {Object} a required hash storing addon titles by lang key
+     *  description - {Object} a required hash storing addon descriptions by lang key
+     *  group - {String} an optional group for mutual exclusion between activated tools - default group is "tools"
+     *  options - {Object} an optional config object which overrides the package default_options (in manifest.json)
+     *  thumbnail - {String} an optional thumbnail path, relative to app/addons/{addon_name.toLowerCase()}/ (defaults to img/icon.png)
+     *  
+     */
+    ADDONS: [{
+        "id": "magnifier_zoom", // unique & stable string identifier for this addon instance
+        "name": "Magnifier",
+        "title": {
+            "en": "Aerial imagery magnifier",
+            "es": "Lupa ortofoto",
+            "fr": "Loupe orthophoto"
+        },
+        "description": {
+            "en": "A tool which allows to zoom in an aerial image on a map portion",
+            "es": "Una herramienta que te permite hacer un zoom sobre una parte del mapa ortofoto",
+            "fr": "Un outil qui permet de zoomer dans une orthophoto sur une portion de la carte"
+        }
+    }],
+
     /**
      * Constant: DEFAULT_PRINT_LAYOUT
      * {String} The default (ie selected) print layout.
