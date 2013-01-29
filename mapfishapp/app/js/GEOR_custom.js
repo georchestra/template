@@ -127,14 +127,14 @@ GEOR.custom = {
      * Defaults to 'mots clés'
      */
     //THESAURUS_NAME: 'mots clés',
-    
+
     /**
      * Constant: DEFAULT_THESAURUS_KEY
      * Key (as the one in the response from /geonetwork/srv/fr/xml.thesaurus.getList) 
      * of the thesaurus to use as the default (selected) one.
      */
-    DEFAULT_THESAURUS_KEY: 'external.place.DepartementFR',
-        
+    DEFAULT_THESAURUS_KEY: 'external.theme.inspire-theme',
+
     /**
      * Constant: MAX_FEATURES
      * The maximum number of vector features displayed.
