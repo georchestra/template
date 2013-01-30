@@ -39,6 +39,7 @@
         <ol:opacity xmlns:ol="http://openlayers.org/context">1</ol:opacity>
         <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
         <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context">resize</ol:transitionEffect>
       </Extension>
     </Layer>
     
