@@ -114,15 +114,7 @@ GEOR.custom = {
      * Defaults to false
      */
     //CSW_GETDOMAIN_SORTING: false,
-    
-    /**
-     * Constant: CATALOG_NAME
-     * The name to display in the catalog tab under "add layer"
-     * (was: GeoCatalogue for the GeoBretagne project).
-     * Defaults to 'Catalogue geOrchestra'
-     */
-    //CATALOG_NAME: 'Catalogue geOrchestra',
-    
+
     /**
      * Constant: THESAURUS_NAME
      * Thesaurus name to display for the CSW GetDomain request.
@@ -131,18 +123,52 @@ GEOR.custom = {
     //THESAURUS_NAME: 'mots clés',
 
     /**
+     * Constant: CATALOGS
+     * List of catalogs for freetext search
+     *
+    CATALOGS: [
+        ['http://geobretagne.fr/geonetwork/srv/fr/csw', 'le catalogue GeoBretagne'],
+        ['http://ids.pigma.org/geonetwork/srv/fr/csw', 'le catalogue PIGMA'],
+        ['http://sandre.eaufrance.fr/geonetwork_CSW/srv/fr/csw', 'le catalogue du Sandre']
+    ],*/
+
+    /**
+     * Constant: DEFAULT_CSW_URL
+     * CSW URL which should be used by default for freetext search
+     * Note: must be one of the URLs in the above CATALOGS config option
+     */
+    //DEFAULT_CSW_URL: 'http://geobretagne.fr/geonetwork/srv/fr/csw',
+
+    /**
+     * Constant: MAX_CSW_RECORDS
+     * The maximum number of CSW records queried for catalog search
+     * Note: if you set this to a low value, you run the risk of not having
+     * enough results (even 0). On the contrary, setting a very high value
+     * might result in browser hanging (too much XML data to parse).
+     * Defaults to 20.
+     */
+    //MAX_CSW_RECORDS: 20,
+
+    /**
+     * Constant: NO_THUMBNAIL_IMAGE_URL
+     * URL to a thumbnail image shown when none is provided by the CSW service
+     * Defaults to the provided one ('app/img/nopreview.png')
+     */
+    //NO_THUMBNAIL_IMAGE_URL: 'app/img/nopreview.png',
+
+    /**
      * Constant: DEFAULT_THESAURUS_KEY
      * Key (as the one in the response from /geonetwork/srv/fr/xml.thesaurus.getList) 
      * of the thesaurus to use as the default (selected) one.
      */
-    DEFAULT_THESAURUS_KEY: 'external.theme.inspire-theme',
+    //DEFAULT_THESAURUS_KEY: 'external.theme.inspire-theme',
 
     /**
      * Constant: MAX_FEATURES
      * The maximum number of vector features displayed.
      * Defaults to a value estimated by an empirical formula
      */
-    //MAX_FEATURES: 500,
+    MAX_FEATURES: 500,
     
     /**
      * Constant: MAX_LENGTH
@@ -150,15 +176,7 @@ GEOR.custom = {
      * before triggering an alert.
      * Defaults to a value estimated by an empirical formula
      */
-    //MAX_LENGTH: 500000,
-
-    
-    /**
-     * Constant: DEFAULT_ATTRIBUTION
-     * Default attribution for layers which don't have one.
-     * Defaults to ''
-     */
-    //DEFAULT_ATTRIBUTION: '',
+    MAX_LENGTH: 500000,
 
     /**
      * Constant: OSM_AS_OVMAP
@@ -194,7 +212,6 @@ GEOR.custom = {
      * "wmsc_url": undefined,
      */
     //WMSC2WMS: {},
-
 
     /**
      * Constant: MAP_DOTS_PER_INCH
@@ -379,7 +396,14 @@ GEOR.custom = {
      * Defaults to true
      */
     //ANIMATE_WINDOWS: true,
-    
+
+    /**
+     * Constant: DISPLAY_VISIBILITY_RANGE
+     * {Boolean} Display the layer visibility range in layer tree
+     * Defaults to true
+     */
+    //DISPLAY_VISIBILITY_RANGE: true,
+
     /**
      * Constant: ROLES_FOR_STYLER
      * {Array} roles required for the styler to show up
@@ -422,12 +446,43 @@ GEOR.custom = {
     },*/
 
     /**
+     * Constant: DEFAULT_PRINT_LAYOUT
+     * {String} The default (ie selected) print layout.
+     * Defaults to "A4 paysage".
+     * Note: be sure to choose a layout available for everyone
+     */
+    //DEFAULT_PRINT_LAYOUT: "A4 paysage",
+
+    /**
+     * Constant: DEFAULT_PRINT_RESOLUTION
+     * {String} The default (ie selected) print resolution.
+     * Defaults to "127"
+     */
+    //DEFAULT_PRINT_RESOLUTION: "127",
+
+    /**
+     * Constant: PDF_FILENAME
+     * {String} The PDF filename prefix.
+     * Defaults to "georchestra_${yyyy-MM-dd_hhmmss}"
+     */
+    //PDF_FILENAME: "georchestra_${yyyy-MM-dd_hhmmss}",
+
+    /**
      * Constant: HELP_URL
      * {String} URL of the help ressource.
      * Defaults to "http://www.geobretagne.fr/web/guest/assistance"
      */
     //HELP_URL: "http://www.geobretagne.fr/web/guest/assistance",
-    
+
+    /**
+     * Constant: DISPLAY_SELECTED_OWS_URL
+     * {Boolean} - If set to false, do not display the selected WMS/WFS server URL
+     * in the second field from the "Add layers" popup window.
+     * (pretty much useless, I know...)
+     * Defaults to true.
+     */
+    //DISPLAY_SELECTED_OWS_URL: true,
+
     /**
      * Constant: CONFIRM_LAYER_REMOVAL
      * {Boolean} Do we want a popup dialog to appear on layer removal ?
