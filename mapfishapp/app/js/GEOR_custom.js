@@ -236,6 +236,13 @@ GEOR.custom = {
     //ADDRESS_URL: "/addrapp/addresses",
 
     /**
+     * Constant: DEACCENTUATE_REFERENTIALS_QUERYSTRING
+     * {Boolean} Whether to deaccentuate the referentials widget query string
+     * Defaults to true
+     */
+    //DEACCENTUATE_REFERENTIALS_QUERYSTRING: true,
+
+    /**
      * Constant: NS_LOC
      * {String} The referentials layers' namespace alias as defined in
      *    the GeoServer configuration.
