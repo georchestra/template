@@ -66,20 +66,6 @@ GEOR.custom = {
             "fr": "Un outil qui permet de zoomer dans une orthophoto sur une portion de la carte"
         }
     }],
-
-    /**
-     * Constant: DEFAULT_PRINT_LAYOUT
-     * {String} The default (ie selected) print layout.
-     * Defaults to "A4 paysage"
-     */
-    //DEFAULT_PRINT_LAYOUT: "A4 paysage",
-    
-    /**
-     * Constant: DEFAULT_PRINT_RESOLUTION
-     * {String} The default (ie selected) print resolution.
-     * Defaults to "127"
-     */
-    //DEFAULT_PRINT_RESOLUTION: "127",
     
     /**
      * Constant: GEOSERVER_WFS_URL
