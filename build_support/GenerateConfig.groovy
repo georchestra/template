@@ -28,6 +28,17 @@ class GenerateConfig {
   def generate(def project, def log, def ant, def basedirFile,
       def target, def subTarget, def targetDir,
       def buildSupportDir, def outputDir) {
-    // nothing needs to be done for this project
+    def gsVersion = System.getProperty('geoserver.version', '2.2.5')
+    def gtVersion = System.getProperty("geotools.version", '8.7')
+
+    new MavenDownloader(
+      to: 'geoserver-webapp/WEB-INF/lib',
+      artifacts: [
+        ['org.geoserver.extension','control-flow', gsVersion],
+        ['org.geoserver.community','inspire', gsVersion],
+        ['org.geotools.jdbc','gt-jdbc-spatialite', gtVersion],
+        ['org.xerial', 'sqlite-jdbc-spatialite', '3.7.2-2.4'],
+        ['org.geotools','gt-imagepyramid',gtVersion]
+      ]).download()
   }
 }
