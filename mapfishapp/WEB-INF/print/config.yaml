@@ -75,7 +75,7 @@ hosts:
   - !localMatch
     dummy: true
   - !ipMatch
-    host:0.0.0.0
+    ip:0.0.0.0
     mask:0.0.0.0
 
 
