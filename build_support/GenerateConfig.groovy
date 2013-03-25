@@ -28,8 +28,8 @@ class GenerateConfig {
   def generate(def project, def log, def ant, def basedirFile,
       def target, def subTarget, def targetDir,
       def buildSupportDir, def outputDir) {
-    def gsVersion = System.getProperty('geoserver.version', '2.2.5')
-    def gtVersion = System.getProperty("geotools.version", '8.7')
+    def gsVersion = System.getProperty('geoserver.version', '2.3.0')
+    def gtVersion = System.getProperty("geotools.version", '9.0')
 
     new MavenDownloader(
       to: 'geoserver-webapp/WEB-INF/lib',
