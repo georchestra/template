@@ -29,6 +29,14 @@ shared.server.port=80
 shared.language=fr
 
 # --------------------------------------------------
+# GEONETWORK
+# --------------------------------------------------
+geonetwork.language=fre
+shared.psql.geonetwork.db=geonetwork
+shared.geonetwork.dir=/var/lib/tomcat6/work/gn_data
+
+
+# --------------------------------------------------
 # LDAP
 # --------------------------------------------------
 
@@ -66,7 +74,6 @@ shared.ldap.admin.dn=cn=admin,@shared.ldap.baseDn@
 shared.ldap.admin.password=secret
 
 
-
 # --------------------------------------------------
 # GEOSERVER
 # --------------------------------------------------
@@ -93,7 +100,6 @@ shared.mapfishapp.maxDocAgeInMinutes=44640
 shared.mapfishapp.docTempDir=/tmp/mapfishapp
 
 
-
 # --------------------------------------------------
 # SMTP
 # --------------------------------------------------
@@ -111,7 +117,6 @@ shared.smtp.host=localhost
 shared.smtp.port=25
 shared.smtp.replyTo=psc\@georchestra.org
 shared.smtp.from=psc\@georchestra.org
-
 
 
 # --------------------------------------------------
@@ -148,7 +153,6 @@ shared.psql.host=localhost
 shared.psql.port=5432
 shared.psql.user=www-data
 shared.psql.pass=www-data
-shared.psql.url=psql://www-data:www-data@localhost/geonetwork
 
 
 # --------------------------------------------------
@@ -162,30 +166,32 @@ shared.psql.url=psql://www-data:www-data@localhost/geonetwork
 # see downloadform/sample/sample.sql
 # + example +
 # shared.download_form.activated=true
-# shared.download_form.jdbcurl=jdbc:postgresql://@shared.psql.host@:@shared.psql.port@/downloadform
+# shared.psql.download_form.db=downloadform
 # shared.download_form.pdfurl=/static/usage.pdf
 #
 shared.download_form.activated=true
-shared.download_form.jdbcurl=jdbc:postgresql://@shared.psql.host@:@shared.psql.port@/downloadform
+shared.psql.download_form.db=downloadform
 shared.download_form.pdfurl=/static/usage.pdf
 
 # --------------------------------------------------
 # OGC statistics
 # --------------------------------------------------
 
+# If the OGC statistics feature is activated,
+# all queries to the OGC web services will be logged in a db.
+# see ogc-server-statistics/ogc_statistics_table.sql
+
 shared.ogc.statistics.activated=true
+shared.psql.ogc.statistics.db=ogcstatistics
 
 # --------------------------------------------------
-# health check properties
+# HEALTH CHECK properties
 # --------------------------------------------------
 
-shared.psql.geonetwork.db=geonetwork
+# If the HEALTH CHECK feature is activated, the security proxy 
+# monitors db connections and reports when a limit is reached.
 
-# --------------------------------------------------
-# TO BE DOCUMENTED
-# --------------------------------------------------
-
-shared.tomcat.dir=/var/lib/tomcat6
-shared.apache.conf.dir=/dev/null
-
+shared.checkhealth.activated=false
+shared.psql.checkhealth.db=shared.psql.geonetwork.db
+shared.checkhealth.max_db_connections=170
 
