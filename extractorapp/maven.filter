@@ -25,6 +25,6 @@ priveleged_admin_pass=@shared.privileged.geoserver.pass@
 dlformjdbcurl=@shared.download_form.jdbcurl@?user=@shared.psql.user@&password=@shared.psql.pass@
 dlformactivated=@shared.download_form.activated@
 
-emailfactory=extractorapp.ws.EmailFactoryDefault
+emailfactory=org.georchestra.extractorapp.ws.EmailFactoryDefault
 emailsubject="Your extraction request on vm-georchestra"
 
