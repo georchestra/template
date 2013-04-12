@@ -14,7 +14,6 @@ cas.private.host=localhost
 defaultTarget.port=8080
 public.ssl=443
 private.ssl=8443
-geoserver.server=http://@shared.server.name@:8080
 
 proxy.defaultTarget=http://localhost:8080
 proxy.mapping=\
@@ -27,22 +26,13 @@ proxy.mapping=\
     <entry key="analytics" value="${proxy.defaultTarget}/analytics-private/" />\
     <entry key="static" value="${proxy.defaultTarget}/static-private/" />
 
-camptocamp.security.loglevel=ALL
-jasig.loglevel=ALL
-springframework.loglevel=ALL
-log.dir=@shared.log.dir@
-log.filename=security-proxy.log
-# options are StandardOut, FileAppender or HTMLAppender
-# (zero or more and comma separated)
-log.appender=FileAppender
-
 # header mapping
 header.mapping=\
-        <entry key="sec-email"     value="mail"/>\
-        <entry key="sec-firstname" value="givenName"/>\
-        <entry key="sec-lastname"  value="sn"/>\
-        <entry key="sec-org"       value="o"/>\
-        <entry key="sec-tel"       value="telephoneNumber"/>
+    <entry key="sec-email"     value="mail"/>\
+    <entry key="sec-firstname" value="givenName"/>\
+    <entry key="sec-lastname"  value="sn"/>\
+    <entry key="sec-org"       value="o"/>\
+    <entry key="sec-tel"       value="telephoneNumber"/>
 
 # database health check parameters
 checkHealth=@shared.checkhealth.activated@
@@ -53,6 +43,3 @@ psql.user=@shared.psql.user@
 psql.pass=@shared.psql.pass@
 psql.url=@shared.psql.url@
 max.database.connections=@shared.checkhealth.max_db_connections@
-
-# dev should not need a test url
-test.url=
