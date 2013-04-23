@@ -192,6 +192,6 @@ shared.psql.ogc.statistics.db=ogcstatistics
 # monitors db connections and reports when a limit is reached.
 
 shared.checkhealth.activated=false
-shared.psql.checkhealth.db=shared.psql.geonetwork.db
+shared.psql.checkhealth.db=@shared.psql.geonetwork.db@
 shared.checkhealth.max_db_connections=170
 
