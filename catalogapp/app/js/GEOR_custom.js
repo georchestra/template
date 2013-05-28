@@ -13,9 +13,9 @@ GEOR.custom = {
     /**
      * Constant: GEONETWORK_URL
      * The URL to the GeoNetwork server.
-     * Defaults to "/geonetwork/srv/fr"
+     * Defaults to "/geonetwork/srv/fre"
      */
-    GEONETWORK_URL: "http://@shared.server.name@:@shared.server.port@/geonetwork/srv/fr",
+    GEONETWORK_URL: "http://@shared.server.name@:@shared.server.port@/geonetwork/srv/fre",
 
     /**
      * Constant: VIEWER_URL

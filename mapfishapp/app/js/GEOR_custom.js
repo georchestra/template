@@ -87,9 +87,9 @@ GEOR.custom = {
     /**
      * Constant: GEONETWORK_URL
      * The URL to the GeoNetwork server.
-     * Defaults to "/geonetwork/srv/fr"
+     * Defaults to "/geonetwork/srv/fre"
      */
-    GEONETWORK_URL: "http://geobretagne.fr/geonetwork/srv/fr",
+    GEONETWORK_URL: "http://geobretagne.fr/geonetwork/srv/fre",
 
     /**
      * Constant: CSW_GETDOMAIN_SORTING
@@ -113,9 +113,9 @@ GEOR.custom = {
      * List of catalogs for freetext search
      *
     CATALOGS: [
-        ['http://geobretagne.fr/geonetwork/srv/fr/csw', 'le catalogue GeoBretagne'],
-        ['http://ids.pigma.org/geonetwork/srv/fr/csw', 'le catalogue PIGMA'],
-        ['http://sandre.eaufrance.fr/geonetwork_CSW/srv/fr/csw', 'le catalogue du Sandre'],
+        ['http://geobretagne.fr/geonetwork/srv/fre/csw', 'le catalogue GeoBretagne'],
+        ['http://ids.pigma.org/geonetwork/srv/fre/csw', 'le catalogue PIGMA'],
+        ['http://sandre.eaufrance.fr/geonetwork_CSW/srv/fre/csw', 'le catalogue du Sandre'],
         ['http://geocatalog.webservice-energy.org/geonetwork/srv/fre/csw', 'le catalogue de webservice-energy']
     ],
 
@@ -124,7 +124,7 @@ GEOR.custom = {
      * CSW URL which should be used by default for freetext search
      * Note: must be one of the URLs in the above CATALOGS config option
      */
-    //DEFAULT_CSW_URL: 'http://geobretagne.fr/geonetwork/srv/fr/csw',
+    //DEFAULT_CSW_URL: 'http://geobretagne.fr/geonetwork/srv/fre/csw',
 
     /**
      * Constant: MAX_CSW_RECORDS
@@ -145,7 +145,7 @@ GEOR.custom = {
 
     /**
      * Constant: DEFAULT_THESAURUS_KEY
-     * Key (as the one in the response from /geonetwork/srv/fr/xml.thesaurus.getList) 
+     * Key (as the one in the response from /geonetwork/srv/fre/xml.thesaurus.getList) 
      * of the thesaurus to use as the default (selected) one.
      */
     //DEFAULT_THESAURUS_KEY: 'external.theme.inspire-theme',
