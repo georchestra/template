@@ -26,6 +26,26 @@ GEOR.custom = {
     PDF_URL: "@shared.download_form.pdf_url@",
     
     /***** Beginning of config options which can be set in this file *****/
+
+    /**
+     * Constant: SUPPORTED_RASTER_FORMATS
+     * List of supported raster formats.
+     * Defaults to GeoTiff
+     *
+    SUPPORTED_RASTER_FORMATS: [
+        ["geotiff", "GeoTiff"]
+    ],*/
+
+    /**
+     * Constant: SUPPORTED_VECTOR_FORMATS
+     * List of supported vector formats.
+     * Defaults to SHP, MIF/MID, TAB
+     *
+    SUPPORTED_VECTOR_FORMATS: [
+        ["shp", "Shapefile"],
+        ["mif", "Mif/Mid"],
+        ["tab", "TAB"]
+    ],*/
     
     /**
      * Constant: GEOSERVER_WMS_URL
