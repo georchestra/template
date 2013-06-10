@@ -13,7 +13,7 @@
 
           <c:if test="${empty sessionScope.openIdLocalId}">
           <spring:message code="screen.welcome.label.netid.accesskey" var="userNameAccessKey" />
-          <form:input cssClass="required" cssErrorClass="error" id="username" size="25" tabindex="1" accesskey="${userNameAccessKey}" path="username" autocomplete="false" htmlEscape="true" />
+          <form:input cssClass="required" cssErrorClass="error" id="username" size="17" tabindex="1" accesskey="${userNameAccessKey}" path="username" autocomplete="false" htmlEscape="true" />
           </c:if>
         </fieldset>
         </div>
@@ -21,7 +21,7 @@
           <fieldset>
             <label for="password"><spring:message code="screen.welcome.label.password" /></label>
             <spring:message code="screen.welcome.label.password.accesskey" var="passwordAccessKey" />
-            <form:password cssClass="required" cssErrorClass="error" id="password" size="25" tabindex="2" path="password"  accesskey="${passwordAccessKey}" htmlEscape="true" autocomplete="off" />
+            <form:password cssClass="required" cssErrorClass="error" id="password" size="17" tabindex="2" path="password"  accesskey="${passwordAccessKey}" htmlEscape="true" autocomplete="off" />
           </fieldset>
         </div>
         <div class="row btn-row">
