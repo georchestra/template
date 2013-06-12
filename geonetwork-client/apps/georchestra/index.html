@@ -1,0 +1,47 @@
+<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>GeoNetwork - geOrchestra</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <link rel="icon" type="image/gif" href="../../images/logos/favicon.gif" />
+      <link href="../../srv/en/rss.search?sortBy=changeDate" rel="alternate" type="application/rss+xml" title="GeoNetwork opensource GeoRSS | Recent Changes"/>
+      <link href="../../srv/eng/portal.opensearch" rel="search" type="application/opensearchdescription+xml" title="GeoNetwork"/>
+      <link rel="stylesheet" type="text/css" href="../js/ext/resources/css/ext-all.css"/>
+      <link rel="stylesheet" type="text/css" href="../js/ext/resources/css/xtheme-gray.css"/>
+      <link rel="stylesheet" type="text/css" href="../js/ext-ux/css/ext-ux.css"/>
+      <link rel="stylesheet" type="text/css" href="../js/OpenLayers/theme/default/style.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/geonetwork.css"/>
+      <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  </head>
+  <body>
+    <div id="loading-mask"></div>
+    <div id="loading">
+      <div class="loading-indicator">Loading ...</div>
+    </div>
+
+    <iframe src="/static/?active=geonetwork" style="width:100%;height:90px;border:none;overflow:none;" scrolling="no" onload="_headerOnLoad(this)"></iframe>
+    <!-- see http://stackoverflow.com/questions/1037839/how-to-force-link-from-iframe-to-be-opened-in-the-parent-window -->
+    <script type="text/javascript">
+        var _headerOnLoad = function(iframe) {
+            var base = iframe.contentDocument.createElement('base');
+            base.setAttribute('target', '_parent');
+            iframe.contentDocument.getElementsByTagName('head')[0].appendChild(base);
+        };
+    </script>
+
+    <div id="go_head">
+      <div id="title" class="mn-main" style="display:none;"></div>
+      <div class="logged" id="lang-form"></div>
+      <div class="logged" id="login-form"></div>
+    </div>
+
+    <div id="infoContent"></div>
+    <div id="tag"></div>
+    <div id="shortcut" style="display:none;"></div>
+
+    <script type="text/javascript" src="../js/ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../js/ext/ext-all.js"></script>
+    <script type="text/javascript" src="js/App-mini.js"></script>
+  </body>
+</html>
