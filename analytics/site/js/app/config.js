@@ -1,5 +1,5 @@
 GEOR = {
     config: {
-        HEADER_HEIGHT: 90
+        HEADER_HEIGHT: @shared.header.height@
     }
 };
