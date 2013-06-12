@@ -5,18 +5,19 @@
 # Secondary configuration files refers to shared.maven.filters parameters using the syntax
 # @shared.[parameter.name]@
 
+
 # --------------------------------------------------
 # PUBLIC URL
 # --------------------------------------------------
 
 # sets the public address and port of your SDI.
+# shared.server.port defaults to 80
 # + example +
-# If your server is http://localhost/ on port 80 :
+# If your server is http://localhost:8080/ :
 # shared.server.name=localhost
-# shared.server.port=80
+# shared.server.port=8080
 #
 shared.server.name=vm-georchestra
-shared.server.port=80
 
 # --------------------------------------------------
 # LANGUAGE
@@ -26,7 +27,17 @@ shared.server.port=80
 # May be one of the following: fr, es, en
 # Default value: fr
 #
-shared.language=fr
+#shared.language=fr
+
+
+# --------------------------------------------------
+# HEADER
+# --------------------------------------------------
+
+# Sets the header height (in pixels) across all geOrchestra webapps
+# Defaults to 90
+#shared.header.height=90
+
 
 # --------------------------------------------------
 # GEONETWORK
@@ -87,6 +98,7 @@ shared.ldap.admin.password=secret
 #
 shared.privileged.geoserver.user=extractorapp_privileged_admin
 shared.privileged.geoserver.pass=gerlsSnFd6SmM
+
 
 # --------------------------------------------------
 # MAPFISHAPP VIEWER
@@ -173,6 +185,7 @@ shared.download_form.activated=true
 shared.psql.download_form.db=downloadform
 shared.download_form.pdfurl=/static/usage.pdf
 
+
 # --------------------------------------------------
 # OGC statistics
 # --------------------------------------------------
@@ -183,6 +196,7 @@ shared.download_form.pdfurl=/static/usage.pdf
 
 shared.ogc.statistics.activated=true
 shared.psql.ogc.statistics.db=ogcstatistics
+
 
 # --------------------------------------------------
 # HEALTH CHECK properties

@@ -9,6 +9,16 @@
 Ext.namespace("GEOR");
 
 GEOR.custom = {
+    
+    /**
+     * Constant: HEADER_HEIGHT
+     * Integer value representing the header height, as set in the shared maven filters
+     * Defaults to 90
+     */
+    HEADER_HEIGHT: @shared.header.height@,
+
+    /***** Beginning of config options which can be set in this file *****/
+
     /**
      * Constant: CONTEXTS
      * {Array} the array of arrays describing the available contexts

@@ -12,6 +12,13 @@ Ext.namespace("GEOR");
 GEOR.custom = {
     
     /**
+     * Constant: HEADER_HEIGHT
+     * Integer value representing the header height, as set in the shared maven filters
+     * Defaults to 90
+     */
+    HEADER_HEIGHT: @shared.header.height@,
+
+    /**
      * Constant: DOWNLOAD_FORM
      * Boolean: should the app display a form requesting user data and data usage ?
      * Defaults to false (see shared.download_form.activated var in shared.maven.filters file)
