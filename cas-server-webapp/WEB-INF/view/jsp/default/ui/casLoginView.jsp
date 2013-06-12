@@ -24,7 +24,7 @@
             <form:password cssClass="required" cssErrorClass="error" id="password" tabindex="2" path="password"  accesskey="${passwordAccessKey}" htmlEscape="true" autocomplete="off" />
           </fieldset>
         </div>
-        <div class="row btn-row">
+        <div class="row btn-row" style="text-align: center;">
             <input type="hidden" name="lt" value="${flowExecutionKey}" />
             <input type="hidden" name="_eventId" value="submit" />
 
