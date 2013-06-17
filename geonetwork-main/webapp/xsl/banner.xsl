@@ -7,7 +7,7 @@
 
     <xsl:template name="banner">
         <div id="go_head">
-            <iframe src="/static/?lang={/root/gui/language}&active=geonetwork" style="width:100%;height:@shared.header.height@px;border:none;overflow:none;" scrolling="no" onload="_headerOnLoad(this)"></iframe>
+            <iframe src="/static/?lang={/root/gui/language}&amp;active=geonetwork" style="width:100%;height:@shared.header.height@px;border:none;overflow:none;" scrolling="no" onload="_headerOnLoad(this)"></iframe>
         </div>
         <!-- see http://stackoverflow.com/questions/1037839/how-to-force-link-from-iframe-to-be-opened-in-the-parent-window -->
         <script type="text/javascript">
