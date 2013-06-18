@@ -92,5 +92,6 @@ Ext.BLANK_IMAGE_URL = '../js/ext/resources/images/default/s.gif';
 
 GeoNetwork.util.SearchTools.similarity='.8';
 
+GeoNetwork.Settings.DownloadFormActivated = @shared.download_form.activated@;
 GeoNetwork.Settings.DownloadFormPDF = "@shared.download_form.pdfurl@";
 GeoNetwork.Settings.HeaderHeight = "@shared.header.height@";
