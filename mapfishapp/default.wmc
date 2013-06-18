@@ -1,14 +1,13 @@
 <ViewContext xmlns="http://www.opengis.net/context" version="1.1.0" id="default.wmc" xsi:schemaLocation="http://www.opengis.net/context http://schemas.opengis.net/context/1.1.0/context.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <General>
-    <Window width="973" height="695"/>
-    <BoundingBox minx="-357823" miny="6037008" maxx="1313632" maxy="7230727" SRS="EPSG:2154"/>
+    <Window width="256" height="256"/>
+    <BoundingBox minx="-20037508.34" miny="-20037508.34" maxx="20037508.34" maxy="20037508.34" SRS="EPSG:3857"/>
     <Title/>
     <Extension>
-      <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823" miny="6037008" maxx="1313632" maxy="7230727"/>
+      <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-20037508.34" miny="-20037508.34" maxx="20037508.34" maxy="20037508.34"/>
     </Extension>
   </General>
   <LayerList>
-  
     <!--
         carte OpenStreetMap fournie par GeoBretagne
     -->
@@ -31,9 +30,9 @@
         </Style>
       </StyleList>
       <Extension>
-        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823" miny="6037008" maxx="1313632" maxy="7230727"/>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-20037508.34" miny="-20037508.34" maxx="20037508.34" maxy="20037508.34"/>
         <ol:tileSize width="256" height="256" xmlns:ol="http://openlayers.org/context"/>
-        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">13</ol:numZoomLevels>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">22</ol:numZoomLevels>
         <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
         <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">false</ol:isBaseLayer>
         <ol:opacity xmlns:ol="http://openlayers.org/context">1</ol:opacity>
