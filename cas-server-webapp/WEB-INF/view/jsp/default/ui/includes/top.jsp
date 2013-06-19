@@ -18,7 +18,7 @@
 
 	<body id="cas" onload="init();">
     
-        <iframe src="/static/?lang=<%= request.getParameter("lang") %>" style="width:100%;height:@shared.header.height@px;border:none;overflow:none;" scrolling="no" onload="_headerOnLoad(this)"></iframe>
+        <iframe src="/static/" style="width:100%;height:@shared.header.height@px;border:none;overflow:none;" scrolling="no" onload="_headerOnLoad(this)"></iframe>
         <!-- see http://stackoverflow.com/questions/1037839/how-to-force-link-from-iframe-to-be-opened-in-the-parent-window -->
         <script type="text/javascript">
             var _headerOnLoad = function(iframe) {
