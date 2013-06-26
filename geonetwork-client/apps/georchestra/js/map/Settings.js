@@ -44,10 +44,18 @@ GeoNetwork.map.printCapabilities = "../../pdf";
 //// Config for OSM based maps
 GeoNetwork.map.PROJECTION = "EPSG:900913";
 //GeoNetwork.map.EXTENT = new OpenLayers.Bounds(-550000, 5000000, 1200000, 7000000);
-GeoNetwork.map.EXTENT = new OpenLayers.Bounds(-20037508, -20037508, 20037508, 20037508.34);
+GeoNetwork.map.EXTENT = new OpenLayers.Bounds(-20037508.34, -20037508.34, 20037508.34, 20037508.34);
 GeoNetwork.map.BACKGROUND_LAYERS = [
-    new OpenLayers.Layer.OSM()
-    //new OpenLayers.Layer.Google("Google Streets");
+    new OpenLayers.Layer.XYZ(
+        'OSM', 
+        'http://tile.openstreetmap.org/${z}/${x}/${y}.png', 
+        {
+            attribution: "Data CC-By-SA by <a href='http://openstreetmap.org/'>OpenStreetMap</a>",
+            sphericalMercator: true,
+            wrapDateLine: true,
+            transitionEffect: 'resize'
+        }
+    )
 ];
 
 //GeoNetwork.map.RESOLUTIONS = [];
