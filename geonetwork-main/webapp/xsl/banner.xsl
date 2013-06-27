@@ -6,9 +6,6 @@
         select="count(/root/gui/config/search/use-modal-box-for-banner-functions)"/>
 
     <xsl:template name="banner">
-        <div id="go_head">
-            <iframe src="/static/?lang={/root/gui/language}&amp;active=geonetwork" style="width:100%;height:@shared.header.height@px;border:none;overflow:none;" scrolling="no" onload="_headerOnLoad(this)"></iframe>
-        </div>
         <!-- see http://stackoverflow.com/questions/1037839/how-to-force-link-from-iframe-to-be-opened-in-the-parent-window -->
         <script type="text/javascript">
             var _headerOnLoad = function(iframe) {
@@ -17,6 +14,9 @@
                 iframe.contentDocument.getElementsByTagName('head')[0].appendChild(base);
             };
         </script>
+        <div id="go_head">
+            <iframe src="/static/?lang={/root/gui/language}&amp;active=geonetwork" style="width:100%;height:@shared.header.height@px;border:none;overflow:none;" scrolling="no" onload="_headerOnLoad(this)"></iframe>
+        </div>
     </xsl:template>
 
     <!--
