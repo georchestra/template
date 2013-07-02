@@ -59,11 +59,11 @@ GEOR.custom = {
      *          eg: ["ROLE_SV_ADMIN"] will allow the current addon for admin users only
      *  group - {String} an optional group for mutual exclusion between activated tools - default group is "tools"
      *  options - {Object} an optional config object which overrides the package default_options (in manifest.json)
-     *  thumbnail - {String} an optional thumbnail path, relative to app/addons/{addon_name.toLowerCase()}/ (defaults to img/icon.png)
+     *  thumbnail - {String} an optional thumbnail path, relative to app/addons/{addon_name.toLowerCase()}/ (defaults to img/thumbnail.png)
      *  
      */
     ADDONS: [{
-        "id": "magnifier_zoom", // unique & stable string identifier for this addon instance
+        "id": "magnifier_0", // unique & stable string identifier for this addon instance
         "name": "Magnifier",
         "title": {
             "en": "Aerial imagery magnifier",
@@ -74,6 +74,19 @@ GEOR.custom = {
             "en": "A tool which allows to zoom in an aerial image on a map portion",
             "es": "Una herramienta que te permite hacer un zoom sobre una parte del mapa ortofoto",
             "fr": "Un outil qui permet de zoomer dans une orthophoto sur une portion de la carte"
+        }
+    }, {
+        "id": "annotation_0", // unique & stable string identifier for this addon instance
+        "name": "Annotation",
+        "title": {
+            "en": "Drawing tools",
+            "es": "Herramientas de dibujo",
+            "fr": "Outils de dessin"
+        },
+        "description": {
+            "en": "A bunch of tools to annotate the map by drawing different kind of shapes.",
+            "es": "Un montón de herramientas para realizar anotaciones en el mapa mediante la elaboración de diferentes tipos de formas.",
+            "fr": "Une série d'outils pour annoter la carte en dessinant différentes formes."
         }
     }],
     
