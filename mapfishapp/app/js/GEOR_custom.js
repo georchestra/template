@@ -72,7 +72,7 @@ GEOR.custom = {
         },
         "description": {
             "en": "A tool which allows to zoom in an aerial image on a map portion",
-            "es": "Una herramienta que te permite hacer un zoom sobre una parte del mapa ortofoto",
+            "es": "Una herramienta que permite hacer un zoom sobre una parte del mapa ortofoto",
             "fr": "Un outil qui permet de zoomer dans une orthophoto sur une portion de la carte"
         }
     }, {
@@ -85,7 +85,7 @@ GEOR.custom = {
         },
         "description": {
             "en": "A bunch of tools to annotate the map by drawing different kind of shapes.",
-            "es": "Un montón de herramientas para realizar anotaciones en el mapa mediante la elaboración de diferentes tipos de formas.",
+            "es": "Una serie de herramientas para anotar el mapa dibujando diferentes formas.",
             "fr": "Une série d'outils pour annoter la carte en dessinant différentes formes."
         }
     }],
