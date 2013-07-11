@@ -160,6 +160,49 @@ GEOR.custom = {
     ],*/
 
     /**
+     * Constant: METRIC_MAP_SCALES
+     * {Array} The map scales for the case where the SRS is metric.
+     * Defaults to null, which means scales will be automatically computed
+     *
+    METRIC_MAP_SCALES: [
+        500,
+        1000,
+        2000,
+        5000,
+        10000,
+        25000,
+        50000,
+        100000,
+        200000,
+        500000,
+        1000000,
+        1500000,
+        2000000,
+        4000000
+    ],*/
+
+    /**
+     * Constant: GEOGRAPHIC_MAP_SCALES
+     * {Array} The map scales for the case where the SRS is based on angles.
+     * Defaults to null, which means scales will be automatically computed
+     */
+    //GEOGRAPHIC_MAP_SCALES: null,
+        
+    /**
+     * Constant: MAP_POS_SRS1
+     * {String} The cursor position will be displayed using this SRS.
+     * Defaults to "EPSG:2154"
+     */
+    //MAP_POS_SRS1: "EPSG:2154",
+    
+    /**
+     * Constant: MAP_POS_SRS2
+     * {String} The cursor position will be displayed using this SRS.
+     * Defaults to ""
+     */
+    //MAP_POS_SRS2: "",
+
+    /**
      * Constant: EXTRACT_BTN_DISABLE_TIME
      * Duration in seconds for the extract button being disabled after an extraction
      * Defaults to 30
