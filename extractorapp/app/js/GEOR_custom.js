@@ -126,6 +126,14 @@ GEOR.custom = {
      * Defaults to "geor:countries"
      */
     BASE_LAYER_NAME: "base_layers",
+        
+    /**
+     * Constant: NS_LOC
+     * {String} The referentials layers' namespace alias as defined in
+     *    the GeoServer configuration.
+     * Defaults to "geor_loc"
+     */
+    //NS_LOC: "geor_loc",
 
     /**
      * Constant: DEFAULT_WCS_EXTRACTION_WIDTH
