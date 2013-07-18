@@ -189,47 +189,52 @@ layouts:
     mainPage:
       pageSize: A4
       landscape: true
-      backgroundPdf: 'file://${configDir}/gabarit_impression_paysage_A4.pdf'
+#      backgroundPdf: 'file://${configDir}/gabarit_impression_paysage_A4.pdf'
       items:
         - !columns
           # columns can have an absolute position. In that case, they need a width.
           absoluteX: 120
-          absoluteY: 560
-          width: 620
+          absoluteY: 583
+          width: 440
           items:
             - !text
               font: Helvetica
               fontSize: 21
               align: center
               text: '${mapTitle}'
-        - !map
-          absoluteX: 29
-          absoluteY: 481
-          width: 636
-          height: 368
+
+
         - !columns
-          absoluteX: 40
-          absoluteY: 139
-          width: 180
+          absoluteX: 13
+          absoluteY: 530
+          width: 654
+          config:
+              borderWidth: 1
+              cells:
+                - padding: 1
           items:
-            - !scalebar
-              align: left
-              maxSize: 180
-              type: 'bar sub'
-              intervals: 5
-              condition: showScalebar
+            - !map
+              width: 652
+              height: 465
         - !columns
-          absoluteX: 560
-          absoluteY: 112
-          width: 200
+          absoluteX: 585
+          absoluteY: 145
+          width: 82
+          config:
+              borderWidth: 1
+              cells:
+                - padding: 1
           items:
-            - !text
-              text: |
-                Echelle: 1:${format %,d scale}
-              condition: showScalebar
+            - !map
+              width: 80
+              height: 80
+              overviewMap: 10
+              condition: showOverview
+
+
         - !columns
           absoluteX: 640
-          absoluteY: 227
+          absoluteY: 179
           width: 30
           items:
             - !image
@@ -238,30 +243,81 @@ layouts:
               url: 'file://${configDir}/Arrow_North_CFCF.svg'
               condition: showNorth
         - !columns
-          absoluteX: 525
-          absoluteY: 193
+          absoluteX: 40
+          absoluteY: 91
+          width: 180
+          items:
+            - !scalebar
+              align: left
+              maxSize: 180
+              type: 'bar sub'
+              intervals: 5
+              condition: showScalebar
+
+        - !columns
+          absoluteX: 13
+          absoluteY: 52
           width: 200
           items:
-            - !map
-              width: 80
-              height: 80
-              overviewMap: 10
-              condition: showOverview
+            - !image
+              maxWidth: 200
+              maxHeight: 39
+              url: 'file://${configDir}/georchestra.svg'
+              condition: showNorth
+
+
         - !columns
-          absoluteX: 685
-          absoluteY: 480
+          absoluteX: 680
+          absoluteY: 842
           width: 200
+          config:
+              borderWidthLeft: 1
+          items:
+            - !image
+              maxWidth: 200
+              maxHeight: 842
+              url: 'file://${configDir}/null.svg'
+        - !columns
+          absoluteX: 686
+          absoluteY: 583
+          width: 144
           items:
             - !legends
               maxIconWidth: 0
               maxIconHeight: 0
               layerSpace: 3
-              layerFontSize: 12
+              layerFontSize: 10
               classIndentation: 0
               classFontSize: 8
               classSpace: 3
               condition: showLegend
-      footer: *commonFooter
+        - !columns
+          absoluteX: 686
+          absoluteY: 93
+          width: 144
+          items:
+            - !text
+              fontSize: 10
+              text: |
+                Echelle: 1:${format %,d scale}
+              condition: showScalebar
+        - !columns
+          absoluteX: 686
+          absoluteY: 78
+          width: 144
+          items:
+            - !text
+              fontSize: 10
+              text: 'Date: ${now dd/MM/yyyy}'
+              condition: showDate
+        - !columns
+          absoluteX: 686
+          absoluteY: 63
+          width: 144
+          items:
+            - !text
+              fontSize: 10
+              text: '${copyright}'
 
   #===========================================================================
   A3 portrait:
