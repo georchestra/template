@@ -476,10 +476,10 @@ GEOR.custom = {
     /**
      * Constant: DEFAULT_PRINT_LAYOUT
      * {String} The default (ie selected) print layout.
-     * Defaults to "A4 paysage".
+     * Defaults to "A4 landscape".
      * Note: be sure to choose a layout available for everyone
      */
-    //DEFAULT_PRINT_LAYOUT: "A4 paysage",
+    //DEFAULT_PRINT_LAYOUT: "A4 landscape",
 
     /**
      * Constant: DEFAULT_PRINT_RESOLUTION
