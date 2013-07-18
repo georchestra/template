@@ -293,6 +293,14 @@ layouts:
               condition: showLegend
         - !columns
           absoluteX: 686
+          absoluteY: 113
+          width: 144
+          items:
+            - !text
+              fontSize: 10
+              text: '${projection}'
+        - !columns
+          absoluteX: 686
           absoluteY: 93
           width: 144
           items:
