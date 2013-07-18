@@ -126,6 +126,14 @@ GEOR.custom = {
      * Defaults to "geor:countries"
      */
     BASE_LAYER_NAME: "base_layers",
+        
+    /**
+     * Constant: NS_LOC
+     * {String} The referentials layers' namespace alias as defined in
+     *    the GeoServer configuration.
+     * Defaults to "geor_loc"
+     */
+    //NS_LOC: "geor_loc",
 
     /**
      * Constant: DEFAULT_WCS_EXTRACTION_WIDTH
@@ -150,6 +158,49 @@ GEOR.custom = {
         ["EPSG:4171", "EPSG:4171 - RGF93"],
         ["EPSG:4326", "EPSG:4326 - WGS84"]
     ],*/
+
+    /**
+     * Constant: METRIC_MAP_SCALES
+     * {Array} The map scales for the case where the SRS is metric.
+     * Defaults to null, which means scales will be automatically computed
+     *
+    METRIC_MAP_SCALES: [
+        500,
+        1000,
+        2000,
+        5000,
+        10000,
+        25000,
+        50000,
+        100000,
+        200000,
+        500000,
+        1000000,
+        1500000,
+        2000000,
+        4000000
+    ],*/
+
+    /**
+     * Constant: GEOGRAPHIC_MAP_SCALES
+     * {Array} The map scales for the case where the SRS is based on angles.
+     * Defaults to null, which means scales will be automatically computed
+     */
+    //GEOGRAPHIC_MAP_SCALES: null,
+        
+    /**
+     * Constant: MAP_POS_SRS1
+     * {String} The cursor position will be displayed using this SRS.
+     * Defaults to "EPSG:2154"
+     */
+    //MAP_POS_SRS1: "EPSG:2154",
+    
+    /**
+     * Constant: MAP_POS_SRS2
+     * {String} The cursor position will be displayed using this SRS.
+     * Defaults to ""
+     */
+    //MAP_POS_SRS2: "",
 
     /**
      * Constant: EXTRACT_BTN_DISABLE_TIME
