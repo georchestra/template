@@ -264,6 +264,14 @@ layouts:
               maxHeight: 39
               url: 'file://${configDir}/georchestra.svg'
               condition: showNorth
+        - !columns
+          absoluteX: 226
+          absoluteY: 53
+          width: 440
+          items:
+            - !text
+              fontSize: 10
+              text: '${mapComments}'
 
 
         - !columns
