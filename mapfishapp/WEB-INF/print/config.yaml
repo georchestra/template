@@ -189,7 +189,7 @@ layouts:
     mainPage:
       pageSize: A4
       landscape: true
-#      backgroundPdf: 'file://${configDir}/gabarit_impression_paysage_A4.pdf'
+      backgroundPdf: 'file://${configDir}/background_A4_landscape.pdf'
       items:
         - !columns
           # columns can have an absolute position. In that case, they need a width.
@@ -254,16 +254,6 @@ layouts:
               intervals: 5
               condition: showScalebar
 
-        - !columns
-          absoluteX: 13
-          absoluteY: 52
-          width: 200
-          items:
-            - !image
-              maxWidth: 200
-              maxHeight: 39
-              url: 'file://${configDir}/georchestra.svg'
-              condition: showNorth
         - !columns
           absoluteX: 226
           absoluteY: 53
