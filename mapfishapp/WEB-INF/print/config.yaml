@@ -422,27 +422,64 @@ layouts:
     mainPage:
       pageSize: A3
       landscape: true
-      backgroundPdf: 'file://${configDir}/gabarit_impression_paysage_A3.pdf'
+      backgroundPdf: 'file://${configDir}/background_A3_landscape.pdf'
       items:
+        # Map Title
         - !columns
           # columns can have an absolute position. In that case, they need a width.
-          absoluteX: 180
-          absoluteY: 795
-          width: 855
+          absoluteX: 97
+          absoluteY: 830
+          width: 835
           items:
             - !text
               font: Helvetica
-              fontSize: 30
+              fontSize: 20
               align: center
               text: '${mapTitle}'
-        - !map
-          absoluteX: 29
-          absoluteY: 692
-          width: 920
-          height: 558
+
+        # Map
         - !columns
-          absoluteX: 46
-          absoluteY: 160
+          absoluteX: 12
+          absoluteY: 778
+          width: 1005
+          config:
+              borderWidth: 1
+              cells:
+                - padding: 1
+          items:
+            - !map
+              width: 1003
+              height: 712
+        # Map overview
+        - !columns
+          absoluteX: 917
+          absoluteY: 136
+          width: 100
+          config:
+              borderWidth: 1
+              cells:
+                - padding: 1
+          items:
+            - !map
+              width: 98
+              height: 70
+              overviewMap: 10
+              condition: showOverview
+        # North arrow
+        - !columns
+          absoluteX: 975
+          absoluteY: 178
+          width: 30
+          items:
+            - !image
+              maxWidth: 30
+              maxHeight: 30
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
+              condition: showNorth
+        # Scalebar
+        - !columns
+          absoluteX: 36
+          absoluteY: 100
           width: 180
           items:
             - !scalebar
@@ -451,50 +488,82 @@ layouts:
               type: 'bar sub'
               intervals: 5
               condition: showScalebar
+
+        # Map comments
         - !columns
-          absoluteX: 810
-          absoluteY: 125
-          width: 200
+          absoluteX: 210
+          absoluteY: 52
+          width: 807
           items:
             - !text
-              text: |
-                Echelle: 1:${format %,d scale}
-              condition: showScalebar
+              fontSize: 10
+              text: '${mapComments}'
+
+        # Vertical line (using a transparent image)
         - !columns
-          absoluteX: 925
-          absoluteY: 250
-          width: 30
+          absoluteX: 1029
+          absoluteY: 842
+          width: 200
+          config:
+              borderWidthLeft: 1
           items:
             - !image
-              maxWidth: 30
-              maxHeight: 30
-              url: 'file://${configDir}/Arrow_North_CFCF.svg'
-              condition: showNorth
+              maxWidth: 200
+              maxHeight: 842
+              url: 'file://${configDir}/null.svg'
+        # Legend
         - !columns
-          absoluteX: 809
-          absoluteY: 214
-          width: 200
-          items:
-            - !map
-              width: 80
-              height: 80
-              overviewMap: 10
-              condition: showOverview
-        - !columns
-          absoluteX: 980
-          absoluteY: 690
-          width: 200
+          absoluteX: 1035
+          absoluteY: 830
+          width: 150
           items:
             - !legends
               maxIconWidth: 0
               maxIconHeight: 0
-              layerSpace: 5
-              layerFontSize: 16
+              layerSpace: 3
+              layerFontSize: 10
               classIndentation: 0
-              classFontSize: 8
-              classSpace: 5
+              classFontSize: 10
+              classSpace: 3
               condition: showLegend
-      footer: *commonFooter
+        # Date
+        - !columns
+          absoluteX: 1035
+          absoluteY: 120
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${dateLbl}${now dd/MM/yyyy}'
+              condition: showDate
+        # Scale
+        - !columns
+          absoluteX: 1035
+          absoluteY: 104
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${scaleLbl}1:${format %,d scale}'
+              condition: showScalebar
+        # Projection
+        - !columns
+          absoluteX: 1035
+          absoluteY: 88
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${projection}'
+        # Sources
+        - !columns
+          absoluteX: 1035
+          absoluteY: 52
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${copyright}'
 
   #===========================================================================
   Letter landscape:
