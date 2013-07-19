@@ -245,7 +245,7 @@ layouts:
               condition: showNorth
         # Scalebar
         - !columns
-          absoluteX: 36
+          absoluteX: 24
           absoluteY: 100
           width: 180
           items:
@@ -258,9 +258,9 @@ layouts:
 
         # Map comments
         - !columns
-          absoluteX: 210
+          absoluteX: 216
           absoluteY: 52
-          width: 452
+          width: 446
           items:
             - !text
               fontSize: 10
@@ -478,7 +478,7 @@ layouts:
               condition: showNorth
         # Scalebar
         - !columns
-          absoluteX: 36
+          absoluteX: 24
           absoluteY: 100
           width: 180
           items:
@@ -491,9 +491,9 @@ layouts:
 
         # Map comments
         - !columns
-          absoluteX: 210
+          absoluteX: 216
           absoluteY: 52
-          width: 807
+          width: 801
           items:
             - !text
               fontSize: 10
@@ -627,7 +627,7 @@ layouts:
               condition: showNorth
         # Scalebar
         - !columns
-          absoluteX: 36
+          absoluteX: 24
           absoluteY: 100
           width: 180
           items:
@@ -640,9 +640,9 @@ layouts:
 
         # Map comments
         - !columns
-          absoluteX: 210
+          absoluteX: 216
           absoluteY: 52
-          width: 402
+          width: 396
           items:
             - !text
               fontSize: 10
