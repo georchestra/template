@@ -466,10 +466,10 @@ GEOR.custom = {
      *
     PRINT_LAYOUTS_ACL: {
         // A4 allowed for everyone:
-        'A4 paysage': [],
+        'A4 landscape': [],
         'A4 portrait': [],
         // A3 not allowed for unconnected users (guests):
-        'A3 paysage': ['ROLE_SV_USER', 'ROLE_SV_REVIEWER', 'ROLE_SV_EDITOR', 'ROLE_SV_ADMIN'],
+        'A3 landscape': ['ROLE_SV_USER', 'ROLE_SV_REVIEWER', 'ROLE_SV_EDITOR', 'ROLE_SV_ADMIN'],
         'A3 portrait': ['ROLE_SV_USER', 'ROLE_SV_REVIEWER', 'ROLE_SV_EDITOR', 'ROLE_SV_ADMIN']
     },*/
 
