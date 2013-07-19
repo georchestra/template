@@ -193,48 +193,48 @@ layouts:
       items:
         - !columns
           # columns can have an absolute position. In that case, they need a width.
-          absoluteX: 120
+          absoluteX: 97
           absoluteY: 583
-          width: 440
+          width: 480
           items:
             - !text
               font: Helvetica
-              fontSize: 21
+              fontSize: 20
               align: center
               text: '${mapTitle}'
 
 
         - !columns
-          absoluteX: 13
-          absoluteY: 530
-          width: 654
+          absoluteX: 12
+          absoluteY: 531
+          width: 650
           config:
               borderWidth: 1
               cells:
                 - padding: 1
           items:
             - !map
-              width: 652
+              width: 648
               height: 465
         - !columns
-          absoluteX: 585
-          absoluteY: 145
-          width: 82
+          absoluteX: 562
+          absoluteY: 136
+          width: 100
           config:
               borderWidth: 1
               cells:
                 - padding: 1
           items:
             - !map
-              width: 80
-              height: 80
+              width: 98
+              height: 70
               overviewMap: 10
               condition: showOverview
 
 
         - !columns
-          absoluteX: 640
-          absoluteY: 179
+          absoluteX: 620
+          absoluteY: 178
           width: 30
           items:
             - !image
@@ -243,8 +243,8 @@ layouts:
               url: 'file://${configDir}/Arrow_North_CFCF.svg'
               condition: showNorth
         - !columns
-          absoluteX: 40
-          absoluteY: 91
+          absoluteX: 36
+          absoluteY: 100
           width: 180
           items:
             - !scalebar
@@ -255,9 +255,9 @@ layouts:
               condition: showScalebar
 
         - !columns
-          absoluteX: 226
-          absoluteY: 53
-          width: 440
+          absoluteX: 210
+          absoluteY: 52
+          width: 452
           items:
             - !text
               fontSize: 10
@@ -265,20 +265,20 @@ layouts:
 
 
         - !columns
-          absoluteX: 680
-          absoluteY: 842
+          absoluteX: 674
+          absoluteY: 595
           width: 200
           config:
               borderWidthLeft: 1
           items:
             - !image
               maxWidth: 200
-              maxHeight: 842
+              maxHeight: 595
               url: 'file://${configDir}/null.svg'
         - !columns
-          absoluteX: 686
+          absoluteX: 680
           absoluteY: 583
-          width: 144
+          width: 150
           items:
             - !legends
               maxIconWidth: 0
@@ -286,39 +286,39 @@ layouts:
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
-              classFontSize: 8
+              classFontSize: 10
               classSpace: 3
               condition: showLegend
         - !columns
-          absoluteX: 686
-          absoluteY: 118
-          width: 144
+          absoluteX: 680
+          absoluteY: 120
+          width: 150
           items:
             - !text
               fontSize: 10
               text: '${dateLbl}${now dd/MM/yyyy}'
               condition: showDate
         - !columns
-          absoluteX: 686
-          absoluteY: 103
-          width: 144
+          absoluteX: 680
+          absoluteY: 104
+          width: 150
           items:
             - !text
               fontSize: 10
               text: '${scaleLbl}1:${format %,d scale}'
               condition: showScalebar
         - !columns
-          absoluteX: 686
+          absoluteX: 680
           absoluteY: 88
-          width: 144
+          width: 150
           items:
             - !text
               fontSize: 10
               text: '${projection}'
         - !columns
-          absoluteX: 686
-          absoluteY: 53
-          width: 144
+          absoluteX: 680
+          absoluteY: 52
+          width: 150
           items:
             - !text
               fontSize: 10
