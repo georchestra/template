@@ -191,6 +191,7 @@ layouts:
       landscape: true
       backgroundPdf: 'file://${configDir}/background_A4_landscape.pdf'
       items:
+        # Map Title
         - !columns
           # columns can have an absolute position. In that case, they need a width.
           absoluteX: 97
@@ -203,7 +204,7 @@ layouts:
               align: center
               text: '${mapTitle}'
 
-
+        # Map
         - !columns
           absoluteX: 12
           absoluteY: 531
@@ -216,6 +217,7 @@ layouts:
             - !map
               width: 648
               height: 465
+        # Map overview
         - !columns
           absoluteX: 562
           absoluteY: 136
@@ -230,8 +232,7 @@ layouts:
               height: 70
               overviewMap: 10
               condition: showOverview
-
-
+        # North arrow
         - !columns
           absoluteX: 620
           absoluteY: 178
@@ -242,6 +243,7 @@ layouts:
               maxHeight: 30
               url: 'file://${configDir}/Arrow_North_CFCF.svg'
               condition: showNorth
+        # Scalebar
         - !columns
           absoluteX: 36
           absoluteY: 100
@@ -254,6 +256,7 @@ layouts:
               intervals: 5
               condition: showScalebar
 
+        # Map comments
         - !columns
           absoluteX: 210
           absoluteY: 52
@@ -263,7 +266,7 @@ layouts:
               fontSize: 10
               text: '${mapComments}'
 
-
+        # Vertical line (using a transparent image)
         - !columns
           absoluteX: 674
           absoluteY: 595
@@ -275,6 +278,7 @@ layouts:
               maxWidth: 200
               maxHeight: 595
               url: 'file://${configDir}/null.svg'
+        # Legend
         - !columns
           absoluteX: 680
           absoluteY: 583
@@ -289,6 +293,7 @@ layouts:
               classFontSize: 10
               classSpace: 3
               condition: showLegend
+        # Date
         - !columns
           absoluteX: 680
           absoluteY: 120
@@ -298,6 +303,7 @@ layouts:
               fontSize: 10
               text: '${dateLbl}${now dd/MM/yyyy}'
               condition: showDate
+        # Scale
         - !columns
           absoluteX: 680
           absoluteY: 104
@@ -307,6 +313,7 @@ layouts:
               fontSize: 10
               text: '${scaleLbl}1:${format %,d scale}'
               condition: showScalebar
+        # Projection
         - !columns
           absoluteX: 680
           absoluteY: 88
@@ -315,6 +322,7 @@ layouts:
             - !text
               fontSize: 10
               text: '${projection}'
+        # Sources
         - !columns
           absoluteX: 680
           absoluteY: 52
