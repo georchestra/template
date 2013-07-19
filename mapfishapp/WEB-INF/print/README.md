@@ -16,6 +16,8 @@ The whole arrangement is done using the **pt** unit (see the "How to manage the 
 
 Note that in `config.yaml`, the origin (0pt, 0pt) is at bottom left.
 
+The only difference between A4, A3 and Letter is the size of the map. The other elements are placed exactly in the same manner among layouts.
+
 Background PDF
 ==============
 
