@@ -301,24 +301,7 @@ layouts:
               condition: showLegend
         - !columns
           absoluteX: 686
-          absoluteY: 113
-          width: 144
-          items:
-            - !text
-              fontSize: 10
-              text: '${projection}'
-        - !columns
-          absoluteX: 686
-          absoluteY: 93
-          width: 144
-          items:
-            - !text
-              fontSize: 10
-              text: '${scaleLbl}1:${format %,d scale}'
-              condition: showScalebar
-        - !columns
-          absoluteX: 686
-          absoluteY: 78
+          absoluteY: 118
           width: 144
           items:
             - !text
@@ -327,7 +310,24 @@ layouts:
               condition: showDate
         - !columns
           absoluteX: 686
-          absoluteY: 63
+          absoluteY: 103
+          width: 144
+          items:
+            - !text
+              fontSize: 10
+              text: '${scaleLbl}1:${format %,d scale}'
+              condition: showScalebar
+        - !columns
+          absoluteX: 686
+          absoluteY: 88
+          width: 144
+          items:
+            - !text
+              fontSize: 10
+              text: '${projection}'
+        - !columns
+          absoluteX: 686
+          absoluteY: 53
           width: 144
           items:
             - !text
