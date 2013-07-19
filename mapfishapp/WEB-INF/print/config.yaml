@@ -496,3 +496,151 @@ layouts:
               condition: showLegend
       footer: *commonFooter
 
+  #===========================================================================
+  Letter landscape:
+  #===========================================================================
+    mainPage:
+      pageSize: Letter
+      landscape: true
+      backgroundPdf: 'file://${configDir}/background_Letter_landscape.pdf'
+      items:
+        # Map Title
+        - !columns
+          # columns can have an absolute position. In that case, they need a width.
+          absoluteX: 97
+          absoluteY: 600
+          width: 430
+          items:
+            - !text
+              font: Helvetica
+              fontSize: 20
+              align: center
+              text: '${mapTitle}'
+
+        # Map
+        - !columns
+          absoluteX: 12
+          absoluteY: 548
+          width: 600
+          config:
+              borderWidth: 1
+              cells:
+                - padding: 1
+          items:
+            - !map
+              width: 598
+              height: 482
+        # Map overview
+        - !columns
+          absoluteX: 512
+          absoluteY: 136
+          width: 100
+          config:
+              borderWidth: 1
+              cells:
+                - padding: 1
+          items:
+            - !map
+              width: 98
+              height: 70
+              overviewMap: 10
+              condition: showOverview
+        # North arrow
+        - !columns
+          absoluteX: 570
+          absoluteY: 178
+          width: 30
+          items:
+            - !image
+              maxWidth: 30
+              maxHeight: 30
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
+              condition: showNorth
+        # Scalebar
+        - !columns
+          absoluteX: 36
+          absoluteY: 100
+          width: 180
+          items:
+            - !scalebar
+              align: left
+              maxSize: 180
+              type: 'bar sub'
+              intervals: 5
+              condition: showScalebar
+
+        # Map comments
+        - !columns
+          absoluteX: 210
+          absoluteY: 52
+          width: 402
+          items:
+            - !text
+              fontSize: 10
+              text: '${mapComments}'
+
+        # Vertical line (using a transparent image)
+        - !columns
+          absoluteX: 624
+          absoluteY: 612
+          width: 200
+          config:
+              borderWidthLeft: 1
+          items:
+            - !image
+              maxWidth: 200
+              maxHeight: 612
+              url: 'file://${configDir}/null.svg'
+        # Legend
+        - !columns
+          absoluteX: 630
+          absoluteY: 600
+          width: 150
+          items:
+            - !legends
+              maxIconWidth: 0
+              maxIconHeight: 0
+              layerSpace: 3
+              layerFontSize: 10
+              classIndentation: 0
+              classFontSize: 10
+              classSpace: 3
+              condition: showLegend
+        # Date
+        - !columns
+          absoluteX: 630
+          absoluteY: 120
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${dateLbl}${now dd/MM/yyyy}'
+              condition: showDate
+        # Scale
+        - !columns
+          absoluteX: 630
+          absoluteY: 104
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${scaleLbl}1:${format %,d scale}'
+              condition: showScalebar
+        # Projection
+        - !columns
+          absoluteX: 630
+          absoluteY: 88
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${projection}'
+        # Sources
+        - !columns
+          absoluteX: 630
+          absoluteY: 52
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${copyright}'
