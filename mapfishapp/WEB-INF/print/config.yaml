@@ -314,8 +314,7 @@ layouts:
           items:
             - !text
               fontSize: 10
-              text: |
-                Echelle: 1:${format %,d scale}
+              text: '${scaleLbl}1:${format %,d scale}'
               condition: showScalebar
         - !columns
           absoluteX: 686
@@ -324,7 +323,7 @@ layouts:
           items:
             - !text
               fontSize: 10
-              text: 'Date: ${now dd/MM/yyyy}'
+              text: '${dateLbl}${now dd/MM/yyyy}'
               condition: showDate
         - !columns
           absoluteX: 686
