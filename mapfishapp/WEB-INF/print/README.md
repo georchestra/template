@@ -18,10 +18,14 @@ Note that in `config.yaml`, the origin (0pt, 0pt) is at bottom left.
 
 The only difference between A4, A3 and Letter is the size of the map. The other elements are placed exactly in the same manner among layouts.
 
+Two files are provided to help understand the print pattern and fill the `config.yaml` file:
+- `pattern/pattern.odg` - diagram of the pattern used for print, as defined in `config.yaml` (open with LibreOffice Draw)
+- `pattern/pattern_dimensions.ods` - computation of the dimensions of the pattern (open with LibreOffice Calc) - modify the free parameters (green cells) and go to the « config.yaml » tab to see the values to include in the `config.yaml` file.
+
 Background PDF
 ==============
 
-The background PDF is intended for only ornamental content, such as logos. Source files in ODG format (editable with Libre Office) are available in the `sources` directory. Use them for generating the PDF files.
+The background PDF is intended for only ornamental content, such as logos. Source files in ODG format (open with Libre Office) are available in the `sources/` directory. Use them for generating the PDF files.
 
 How to manage the different units
 =================================
