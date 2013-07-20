@@ -194,9 +194,9 @@ layouts:
         # Map Title
         - !columns
           # columns can have an absolute position. In that case, they need a width.
-          absoluteX: 97
+          absoluteX: 96
           absoluteY: 583
-          width: 480
+          width: 482
           items:
             - !text
               font: Helvetica
@@ -234,8 +234,8 @@ layouts:
               condition: showOverview
         # North arrow
         - !columns
-          absoluteX: 620
-          absoluteY: 178
+          absoluteX: 626
+          absoluteY: 172
           width: 30
           items:
             - !image
@@ -292,11 +292,12 @@ layouts:
               classIndentation: 0
               classFontSize: 10
               classSpace: 3
+              maxHeight: 467
               condition: showLegend
         # Date
         - !columns
           absoluteX: 680
-          absoluteY: 120
+          absoluteY: 110
           width: 150
           items:
             - !text
@@ -306,7 +307,7 @@ layouts:
         # Scale
         - !columns
           absoluteX: 680
-          absoluteY: 104
+          absoluteY: 94
           width: 150
           items:
             - !text
@@ -316,7 +317,7 @@ layouts:
         # Projection
         - !columns
           absoluteX: 680
-          absoluteY: 88
+          absoluteY: 78
           width: 150
           items:
             - !text
@@ -427,9 +428,9 @@ layouts:
         # Map Title
         - !columns
           # columns can have an absolute position. In that case, they need a width.
-          absoluteX: 97
+          absoluteX: 96
           absoluteY: 830
-          width: 835
+          width: 831
           items:
             - !text
               font: Helvetica
@@ -441,18 +442,18 @@ layouts:
         - !columns
           absoluteX: 12
           absoluteY: 778
-          width: 1005
+          width: 999
           config:
               borderWidth: 1
               cells:
                 - padding: 1
           items:
             - !map
-              width: 1003
+              width: 997
               height: 712
         # Map overview
         - !columns
-          absoluteX: 917
+          absoluteX: 911
           absoluteY: 136
           width: 100
           config:
@@ -468,7 +469,7 @@ layouts:
         # North arrow
         - !columns
           absoluteX: 975
-          absoluteY: 178
+          absoluteY: 172
           width: 30
           items:
             - !image
@@ -493,7 +494,7 @@ layouts:
         - !columns
           absoluteX: 216
           absoluteY: 52
-          width: 801
+          width: 795
           items:
             - !text
               fontSize: 10
@@ -501,7 +502,7 @@ layouts:
 
         # Vertical line (using a transparent image)
         - !columns
-          absoluteX: 1029
+          absoluteX: 1023
           absoluteY: 842
           width: 200
           config:
@@ -513,7 +514,7 @@ layouts:
               url: 'file://${configDir}/null.svg'
         # Legend
         - !columns
-          absoluteX: 1035
+          absoluteX: 1029
           absoluteY: 830
           width: 150
           items:
@@ -525,11 +526,12 @@ layouts:
               classIndentation: 0
               classFontSize: 10
               classSpace: 3
+              maxHeight: 714
               condition: showLegend
         # Date
         - !columns
-          absoluteX: 1035
-          absoluteY: 120
+          absoluteX: 1029
+          absoluteY: 110
           width: 150
           items:
             - !text
@@ -538,8 +540,8 @@ layouts:
               condition: showDate
         # Scale
         - !columns
-          absoluteX: 1035
-          absoluteY: 104
+          absoluteX: 1029
+          absoluteY: 94
           width: 150
           items:
             - !text
@@ -548,8 +550,8 @@ layouts:
               condition: showScalebar
         # Projection
         - !columns
-          absoluteX: 1035
-          absoluteY: 88
+          absoluteX: 1029
+          absoluteY: 78
           width: 150
           items:
             - !text
@@ -557,7 +559,7 @@ layouts:
               text: '${projection}'
         # Sources
         - !columns
-          absoluteX: 1035
+          absoluteX: 1029
           absoluteY: 52
           width: 150
           items:
@@ -576,9 +578,9 @@ layouts:
         # Map Title
         - !columns
           # columns can have an absolute position. In that case, they need a width.
-          absoluteX: 97
+          absoluteX: 96
           absoluteY: 600
-          width: 430
+          width: 432
           items:
             - !text
               font: Helvetica
@@ -616,8 +618,8 @@ layouts:
               condition: showOverview
         # North arrow
         - !columns
-          absoluteX: 570
-          absoluteY: 178
+          absoluteX: 576
+          absoluteY: 172
           width: 30
           items:
             - !image
@@ -674,11 +676,12 @@ layouts:
               classIndentation: 0
               classFontSize: 10
               classSpace: 3
+              maxHeight: 484
               condition: showLegend
         # Date
         - !columns
           absoluteX: 630
-          absoluteY: 120
+          absoluteY: 110
           width: 150
           items:
             - !text
@@ -688,7 +691,7 @@ layouts:
         # Scale
         - !columns
           absoluteX: 630
-          absoluteY: 104
+          absoluteY: 94
           width: 150
           items:
             - !text
@@ -698,7 +701,7 @@ layouts:
         # Projection
         - !columns
           absoluteX: 630
-          absoluteY: 88
+          absoluteY: 78
           width: 150
           items:
             - !text
