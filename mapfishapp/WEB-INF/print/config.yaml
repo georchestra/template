@@ -97,47 +97,53 @@ layouts:
     mainPage:
       pageSize: A4
       landscape: false
-      backgroundPdf: 'file://${configDir}/gabarit_impression_portrait_A4.pdf'
+      backgroundPdf: 'file://${configDir}/background_A4_portrait.pdf'
       items:
+        # Map Title
         - !columns
           # columns can have an absolute position. In that case, they need a width.
-          absoluteX: 120
-          absoluteY: 805
-          width: 380
+          absoluteX: 96
+          absoluteY: 830
+          width: 235
           items:
             - !text
               font: Helvetica
-              fontSize: 21
+              fontSize: 20
               align: center
               text: '${mapTitle}'
-        - !map
-          absoluteX: 29
-          absoluteY: 728
-          width: 395
-          height: 622
+
+        # Map
         - !columns
-          absoluteX: 50
-          absoluteY: 123
-          width: 150
+          absoluteX: 12
+          absoluteY: 778
+          width: 403
+          config:
+              borderWidth: 1
+              cells:
+                - padding: 1
           items:
-            - !scalebar
-              align: left
-              maxSize: 150
-              type: 'bar sub'
-              intervals: 5
-              condition: showScalebar
+            - !map
+              width: 401
+              height: 712
+        # Map overview
         - !columns
-          absoluteX: 450
-          absoluteY: 102
-          width: 200
+          absoluteX: 315
+          absoluteY: 136
+          width: 100
+          config:
+              borderWidth: 1
+              cells:
+                - padding: 1
           items:
-            - !text
-              text: |
-                Echelle: 1:${format %,d scale}
-              condition: showScalebar
+            - !map
+              width: 98
+              height: 70
+              overviewMap: 10
+              condition: showOverview
+        # North arrow
         - !columns
-          absoluteX: 400
-          absoluteY: 220
+          absoluteX: 379
+          absoluteY: 172
           width: 30
           items:
             - !image
@@ -145,43 +151,95 @@ layouts:
               maxHeight: 30
               url: 'file://${configDir}/Arrow_North_CFCF.svg'
               condition: showNorth
+        # Scalebar
         - !columns
-          absoluteX: 285
-          absoluteY: 186
-          width: 200
+          absoluteX: 24
+          absoluteY: 100
+          width: 180
           items:
-            - !map
-              width: 80
-              height: 80
-              overviewMap: 10
-              condition: showOverview
+            - !scalebar
+              align: left
+              maxSize: 180
+              type: 'bar sub'
+              intervals: 5
+              condition: showScalebar
+
+        # Map comments
         - !columns
-          absoluteX: 442
-          absoluteY: 725
+          absoluteX: 216
+          absoluteY: 52
+          width: 199
+          items:
+            - !text
+              fontSize: 10
+              text: '${mapComments}'
+
+        # Vertical line (using a transparent image)
+        - !columns
+          absoluteX: 427
+          absoluteY: 842
           width: 200
+          config:
+              borderWidthLeft: 1
+          items:
+            - !image
+              maxWidth: 200
+              maxHeight: 595
+              url: 'file://${configDir}/null.svg'
+        # Legend
+        - !columns
+          absoluteX: 433
+          absoluteY: 830
+          width: 150
           items:
             - !legends
               maxIconWidth: 0
               maxIconHeight: 0
               layerSpace: 3
-              layerFontSize: 12
+              layerFontSize: 10
               classIndentation: 0
-              classFontSize: 8
+              classFontSize: 10
               classSpace: 3
+              maxHeight: 714
               condition: showLegend
-      footer: &commonFooter
-        height: 62
-        items:
-          - !columns
-            widths: [65,35]
-            items:
-              - !text
-                align: left
-                text: '${copyright}'
-              - !text
-                align: right
-                text: '${now dd/MM/yyyy}'
-                condition: showDate
+        # Date
+        - !columns
+          absoluteX: 433
+          absoluteY: 110
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${dateLbl}${now dd/MM/yyyy}'
+              condition: showDate
+        # Scale
+        - !columns
+          absoluteX: 433
+          absoluteY: 94
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${scaleLbl}1:${format %,d scale}'
+              condition: showScalebar
+        # Projection
+        - !columns
+          absoluteX: 433
+          absoluteY: 78
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${projection}'
+        # Sources
+        - !columns
+          absoluteX: 433
+          absoluteY: 52
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${copyright}'
 
   #===========================================================================
   A4 landscape:
@@ -339,27 +397,64 @@ layouts:
     mainPage:
       pageSize: A3
       landscape: false
-      backgroundPdf: 'file://${configDir}/gabarit_impression_portrait_A3.pdf'
+      backgroundPdf: 'file://${configDir}/background_A3_portrait.pdf'
       items:
+        # Map Title
         - !columns
           # columns can have an absolute position. In that case, they need a width.
-          absoluteX: 160
-          absoluteY: 1150
-          width: 530
+          absoluteX: 96
+          absoluteY: 1179
+          width: 482
           items:
             - !text
               font: Helvetica
-              fontSize: 30
+              fontSize: 20
               align: center
               text: '${mapTitle}'
-        - !map
-          absoluteX: 29
-          absoluteY: 1040
-          width: 576
-          height: 930
+
+        # Map
         - !columns
-          absoluteX: 43
-          absoluteY: 135
+          absoluteX: 12
+          absoluteY: 1127
+          width: 650
+          config:
+              borderWidth: 1
+              cells:
+                - padding: 1
+          items:
+            - !map
+              width: 648
+              height: 1061
+        # Map overview
+        - !columns
+          absoluteX: 562
+          absoluteY: 136
+          width: 100
+          config:
+              borderWidth: 1
+              cells:
+                - padding: 1
+          items:
+            - !map
+              width: 98
+              height: 70
+              overviewMap: 10
+              condition: showOverview
+        # North arrow
+        - !columns
+          absoluteX: 626
+          absoluteY: 172
+          width: 30
+          items:
+            - !image
+              maxWidth: 30
+              maxHeight: 30
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
+              condition: showNorth
+        # Scalebar
+        - !columns
+          absoluteX: 24
+          absoluteY: 100
           width: 180
           items:
             - !scalebar
@@ -368,54 +463,83 @@ layouts:
               type: 'bar sub'
               intervals: 5
               condition: showScalebar
+
+        # Map comments
         - !columns
-          absoluteX: 626
-          absoluteY: 108
-          width: 200
+          absoluteX: 216
+          absoluteY: 52
+          width: 446
           items:
             - !text
-              text: |
-                Echelle: 1:${format %,d scale}
-              condition: showScalebar
+              fontSize: 10
+              text: '${mapComments}'
+
+        # Vertical line (using a transparent image)
         - !columns
-          absoluteX: 582
-          absoluteY: 220
-          width: 30
+          absoluteX: 674
+          absoluteY: 1191
+          width: 200
+          config:
+              borderWidthLeft: 1
           items:
             - !image
-              maxWidth: 30
-              maxHeight: 30
-              url: 'file://${configDir}/Arrow_North_CFCF.svg'
-              condition: showNorth
+              maxWidth: 200
+              maxHeight: 1191
+              url: 'file://${configDir}/null.svg'
+        # Legend
         - !columns
-          absoluteX: 465
-          absoluteY: 190
-          width: 200
-          items:
-            - !map
-              width: 80
-              height: 80
-              overviewMap: 10
-              condition: showOverview
-        - !columns
-          absoluteX: 630
-          #875
-          absoluteY: 1030
-          #1440
-          width: 200
+          absoluteX: 680
+          absoluteY: 1179
+          width: 150
           items:
             - !legends
               maxIconWidth: 0
               maxIconHeight: 0
-              layerSpace: 5
-              layerFontSize: 16
+              layerSpace: 3
+              layerFontSize: 10
               classIndentation: 0
-              classFontSize: 8
-              classSpace: 5
+              classFontSize: 10
+              classSpace: 3
+              maxHeight: 1063
               condition: showLegend
-
-      footer: *commonFooter
-
+        # Date
+        - !columns
+          absoluteX: 680
+          absoluteY: 110
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${dateLbl}${now dd/MM/yyyy}'
+              condition: showDate
+        # Scale
+        - !columns
+          absoluteX: 680
+          absoluteY: 94
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${scaleLbl}1:${format %,d scale}'
+              condition: showScalebar
+        # Projection
+        - !columns
+          absoluteX: 680
+          absoluteY: 78
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${projection}'
+        # Sources
+        - !columns
+          absoluteX: 680
+          absoluteY: 52
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${copyright}'
 
   #===========================================================================
   A3 landscape:
@@ -710,6 +834,156 @@ layouts:
         # Sources
         - !columns
           absoluteX: 630
+          absoluteY: 52
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${copyright}'
+
+  #===========================================================================
+  Letter portrait:
+  #===========================================================================
+    mainPage:
+      pageSize: Letter
+      landscape: false
+      backgroundPdf: 'file://${configDir}/background_Letter_portrait.pdf'
+      items:
+        # Map Title
+        - !columns
+          # columns can have an absolute position. In that case, they need a width.
+          absoluteX: 96
+          absoluteY: 780
+          width: 252
+          items:
+            - !text
+              font: Helvetica
+              fontSize: 20
+              align: center
+              text: '${mapTitle}'
+
+        # Map
+        - !columns
+          absoluteX: 12
+          absoluteY: 728
+          width: 420
+          config:
+              borderWidth: 1
+              cells:
+                - padding: 1
+          items:
+            - !map
+              width: 418
+              height: 662
+        # Map overview
+        - !columns
+          absoluteX: 332
+          absoluteY: 136
+          width: 100
+          config:
+              borderWidth: 1
+              cells:
+                - padding: 1
+          items:
+            - !map
+              width: 98
+              height: 70
+              overviewMap: 10
+              condition: showOverview
+        # North arrow
+        - !columns
+          absoluteX: 396
+          absoluteY: 172
+          width: 30
+          items:
+            - !image
+              maxWidth: 30
+              maxHeight: 30
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
+              condition: showNorth
+        # Scalebar
+        - !columns
+          absoluteX: 24
+          absoluteY: 100
+          width: 180
+          items:
+            - !scalebar
+              align: left
+              maxSize: 180
+              type: 'bar sub'
+              intervals: 5
+              condition: showScalebar
+
+        # Map comments
+        - !columns
+          absoluteX: 216
+          absoluteY: 52
+          width: 216
+          items:
+            - !text
+              fontSize: 10
+              text: '${mapComments}'
+
+        # Vertical line (using a transparent image)
+        - !columns
+          absoluteX: 444
+          absoluteY: 792
+          width: 200
+          config:
+              borderWidthLeft: 1
+          items:
+            - !image
+              maxWidth: 200
+              maxHeight: 792
+              url: 'file://${configDir}/null.svg'
+        # Legend
+        - !columns
+          absoluteX: 450
+          absoluteY: 780
+          width: 150
+          items:
+            - !legends
+              maxIconWidth: 0
+              maxIconHeight: 0
+              layerSpace: 3
+              layerFontSize: 10
+              classIndentation: 0
+              classFontSize: 10
+              classSpace: 3
+              maxHeight: 664
+              condition: showLegend
+        # Date
+        - !columns
+          absoluteX: 450
+          absoluteY: 110
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${dateLbl}${now dd/MM/yyyy}'
+              condition: showDate
+        # Scale
+        - !columns
+          absoluteX: 450
+          absoluteY: 94
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${scaleLbl}1:${format %,d scale}'
+              condition: showScalebar
+        # Projection
+        - !columns
+          absoluteX: 450
+          absoluteY: 78
+          width: 150
+          items:
+            - !text
+              fontSize: 10
+              text: '${projection}'
+        # Sources
+        - !columns
+          absoluteX: 450
           absoluteY: 52
           width: 150
           items:
