@@ -21,7 +21,7 @@ GEOR.custom = {
     /**
      * Constant: DOWNLOAD_FORM
      * Boolean: should the app display a form requesting user data and data usage ?
-     * Defaults to false (see shared.download_form.activated var in shared.maven.filters file)
+     * Defaults to true (see shared.download_form.activated var in shared.maven.filters file)
      */
     DOWNLOAD_FORM: @shared.download_form.activated@,
     
