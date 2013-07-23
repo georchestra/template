@@ -253,10 +253,6 @@ GEOR.custom = {
      */
     STARTUP_LAYERS: [
         {
-            layername: "voies",
-            owstype: "WFS",
-            owsurl: "http://bmo.openstreetmap.fr/ows"
-        },{
             owstype: "WMS",
             owsurl: "http://geoservices.brgm.fr/risques",
             layername: "BASIAS_LOCALISE"
@@ -276,10 +272,6 @@ GEOR.custom = {
             text: "Gest'eau",
             owstype: "WMS",
             owsurl: "http://gesteau.oieau.fr/service"
-        },{
-            text: "BMO/OSM",
-            owstype: "WFS",
-            owsurl: "http://bmo.openstreetmap.fr/ows"
         }
     ],
 
