@@ -8,7 +8,7 @@ To configure the look of your printed PDFs, have a look at those files in [this 
 Composition of the layouts
 ==========================
 
-The file `config.yaml` manages the composition of the layouts. For detailed documentation on how to configure, see the reference URL: http://www.mapfish.org/doc/print/configuration.html.
+The `config.yaml` file manages the composition of the layouts. For detailed documentation on how to configure, see the reference URL: http://www.mapfish.org/doc/print/configuration.html.
 
 All the elements of the printed PDF are defined in this file, with the only exception of the ornamental images (see  the "Background PDF" section). This includes size and position of the map, map elements (scalebar, arrow, map overview), map title, legend, date, scale, projection, sources, and free text comments.
 
@@ -25,7 +25,7 @@ Two files are provided to help understand the print pattern and fill the `config
 Background PDF
 ==============
 
-The background PDF is intended for only ornamental content, such as logos. Source files in ODG format (open with Libre Office) are available in the `sources/` directory. Use them for generating the PDF files.
+The background PDF is solely intended for ornamental content, such as logos. Source files in ODG format (open with Libre Office) are available in the `sources/` directory. Use them for generating the PDF files.
 
 How to manage the different units
 =================================
