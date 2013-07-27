@@ -1,7 +1,7 @@
 Configure mapfishapp print
 ==========================
 
-To configure the look of the mapfishapp print:
+To configure the look of your printed PDFs, have a look at those files in [this directory](./):
 - config.yaml: composition of all layouts
 - background_*.pdf: background images for each layout
 
