@@ -6,6 +6,13 @@
 # @shared.[parameter.name]@
 
 
+# Instance name
+# This name appears in many places across the SDI, typically page titles.
+# Defaults to geOrchestra but could be GeoBretagne, GeoBolivia, etc
+#
+#shared.instance.name=geOrchestra
+
+
 # --------------------------------------------------
 # PUBLIC URL
 # --------------------------------------------------
