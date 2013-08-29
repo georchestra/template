@@ -39,6 +39,7 @@ scales:
   - 559081146
   #~ TODO: Float support instead of Integer
 
+brokenUrlPlaceholder: default
 
 #===========================================================================
 # printing protected layers
