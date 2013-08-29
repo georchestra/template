@@ -519,7 +519,21 @@ GEOR.custom = {
      * Defaults to false
      */
     //CONFIRM_LAYER_REMOVAL: false,
-    
+
+    /**
+     * Constant: WMTS_SERVERS
+     * {Array} List of externals WMTS to display in the WMTS servers tab.
+     */
+    WMTS_SERVERS: [
+        {"name": "GéoBretagne OSM", "url": "http://osm.geobretagne.fr/gwc01/service/wmts"},
+        {"name": "GéoBretagne rasters", "url": "http://tile.geobretagne.fr/gwc02/service/wmts"}
+        /*
+        To ship the French Geoportail WMTS layers, you have to ask for an API key,
+        and replace __MY_KEY__ here:
+        ,{"name": "GéoPortail IGN", "url": "http://wxs.ign.fr/__MY_KEY__/wmts"}
+        */
+    ],
+
     /**
      * Constant: WMS_SERVERS
      * {Array} List of externals WMS to display in the WMS servers tab.
