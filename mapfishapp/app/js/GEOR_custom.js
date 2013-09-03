@@ -60,6 +60,7 @@ GEOR.custom = {
      *  group - {String} an optional group for mutual exclusion between activated tools - default group is "tools"
      *  options - {Object} an optional config object which overrides the package default_options (in manifest.json)
      *  thumbnail - {String} an optional thumbnail path, relative to app/addons/{addon_name.toLowerCase()}/ (defaults to img/thumbnail.png)
+     *  preloaded - {boolean} if true then the addon is loaded by default on mapfishapp load only if the user has not saved his addon list preferences (checkbox)
      *  
      */
     ADDONS: [{
