@@ -22,7 +22,7 @@
             <label for="password"><spring:message code="screen.welcome.label.password" /></label>
             <spring:message code="screen.welcome.label.password.accesskey" var="passwordAccessKey" />
             <form:password cssClass="required" cssErrorClass="error" id="password" tabindex="2" path="password"  accesskey="${passwordAccessKey}" htmlEscape="true" autocomplete="off" />
-            <div id="forgot"><a href="/ldapadmin/account/lostPassword">(forgot password)</a></div>
+            <div id="forgot"><a href="/ldapadmin/account/lostPassword"><spring:message code="screen.welcome.link.forgot" /></a></div>
           </fieldset>
         </div>
         <div class="row btn-row" style="text-align: center;">
@@ -33,8 +33,8 @@
           </div>
 
 		<div id="link">
-			<div class="mm-or">OR</div>
-			<a href="/ldapadmin/account/new">Create an account</a>
+			<div class="mm-or"><spring:message code="screen.welcome.or" /></div>
+			<a href="/ldapadmin/account/new"><spring:message code="screen.welcome.link.newaccount" /></a>
 		</div>
         </div>
 
