@@ -30,6 +30,8 @@
 
             <input class="btn-submit" name="submit" accesskey="l" value="<spring:message code="screen.welcome.button.login" />" tabindex="4" type="submit" />
           </div>
+
+		<p id="links"><a href="/ldapadmin/account/new">create account</a> - <a href="/ldapadmin/account/lostPassword">lost password ?</a></p>
         </div>
 
         <div id="sidebar">
