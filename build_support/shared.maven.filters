@@ -216,3 +216,13 @@ shared.checkhealth.activated=false
 shared.psql.checkhealth.db=@shared.psql.geonetwork.db@
 shared.checkhealth.max_db_connections=170
 
+
+# --------------------------------------------------
+# LDAPADMIN properties
+# --------------------------------------------------
+
+shared.psql.ldapadmin.db=ldapadmin
+shared.ldapadmin.email.languages=fr,fra
+shared.ldapadmin.moderator.requires.signup=false
+shared.ldapadmin.moderator.email=moderator@mail
+shared.ldapadmin.expired.token.delay.in.days=1
