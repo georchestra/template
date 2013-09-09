@@ -22,6 +22,7 @@
             <label for="password"><spring:message code="screen.welcome.label.password" /></label>
             <spring:message code="screen.welcome.label.password.accesskey" var="passwordAccessKey" />
             <form:password cssClass="required" cssErrorClass="error" id="password" tabindex="2" path="password"  accesskey="${passwordAccessKey}" htmlEscape="true" autocomplete="off" />
+            <div id="forgot"><a href="/ldapadmin/account/lostPassword"><spring:message code="screen.welcome.link.forgot" /></a></div>
           </fieldset>
         </div>
         <div class="row btn-row" style="text-align: center;">
@@ -30,6 +31,11 @@
 
             <input class="btn-submit" name="submit" accesskey="l" value="<spring:message code="screen.welcome.button.login" />" tabindex="4" type="submit" />
           </div>
+
+		<div id="link">
+			<div class="mm-or"><spring:message code="screen.welcome.or" /></div>
+			<a href="/ldapadmin/account/new"><spring:message code="screen.welcome.link.newaccount" /></a>
+		</div>
         </div>
 
         <div id="sidebar">

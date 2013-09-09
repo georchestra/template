@@ -27,6 +27,30 @@ div.box {
   margin-top: 100px;
   background-color: #eee;
 }
+div.box #forgot {
+  text-align: right;
+  font-size: 0.8em;
+}
+div.box #link {
+  border-top: 1px solid #DFDFDF;
+  margin: 20px 0 10px;
+  padding-top: 15px;
+  text-align: center;
+}
+div.box #link .mm-or {
+  margin: -23px auto 8px;
+  background-color: #EEE;
+  color: #666;
+  width: 3em;
+}
+div.box a, div.box a:visited {
+  text-decoration: none;
+  color: #444;
+  font-weight: normal;
+}
+div.box a:hover, div.box a:active, div.box a:focus {
+  text-decoration: underline;
+}
 div#sidebar {
   position: absolute;
   bottom: 0;
