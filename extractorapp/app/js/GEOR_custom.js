@@ -37,21 +37,23 @@ GEOR.custom = {
     /**
      * Constant: SUPPORTED_RASTER_FORMATS
      * List of supported raster formats.
-     * Defaults to GeoTiff
+     * Defaults to GeoTiff & Tiff
      *
     SUPPORTED_RASTER_FORMATS: [
-        ["geotiff", "GeoTiff"]
+        ["geotiff", "GeoTiff"],
+        ["tiff", "Tif + TFW"]
     ],*/
 
     /**
      * Constant: SUPPORTED_VECTOR_FORMATS
      * List of supported vector formats.
-     * Defaults to SHP, MIF/MID, TAB
+     * Defaults to SHP, MIF/MID, TAB, KML
      *
     SUPPORTED_VECTOR_FORMATS: [
         ["shp", "Shapefile"],
         ["mif", "Mif/Mid"],
-        ["tab", "TAB"]
+        ["tab", "TAB"],
+        ["kml", "KML"]
     ],*/
     
     /**
