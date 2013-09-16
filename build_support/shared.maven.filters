@@ -29,7 +29,7 @@ shared.server.name=vm-georchestra
 # sets the public address of your homepage.
 # Defaults to http://@shared.server.name@/
 #
-#shared.homepage.url=http://vm-georchestra/
+shared.homepage.url=http://@shared.server.name@/
 
 # --------------------------------------------------
 # LANGUAGE
@@ -146,7 +146,7 @@ shared.smtp.from=psc\@georchestra.org
 # Defaults to: false (ie. plain text emails)
 # If you change this value to true, you should also modify the emails
 # templates in order to have full HTML emails.
-shared.email.html=true
+shared.email.html=false
 
 # --------------------------------------------------
 # LOGFILES
