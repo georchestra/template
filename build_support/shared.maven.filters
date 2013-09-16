@@ -26,6 +26,11 @@
 #
 shared.server.name=vm-georchestra
 
+# sets the public address of your homepage.
+# Defaults to http://@shared.server.name@/
+#
+#shared.homepage.url=http://vm-georchestra/
+
 # --------------------------------------------------
 # LANGUAGE
 # --------------------------------------------------
