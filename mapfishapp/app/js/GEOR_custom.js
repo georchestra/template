@@ -1,3 +1,4 @@
+
 /**
  * Sample geOrchestra viewer config file
  *
@@ -501,9 +502,9 @@ GEOR.custom = {
     /**
      * Constant: HELP_URL
      * {String} URL of the help ressource.
-     * Defaults to "http://www.geobretagne.fr/web/guest/assistance"
+     * Defaults to "http://cms.geobretagne.fr/assistance"
      */
-    //HELP_URL: "http://www.geobretagne.fr/web/guest/assistance",
+    //HELP_URL: "http://cms.geobretagne.fr/assistance",
 
     /**
      * Constant: DISPLAY_SELECTED_OWS_URL
