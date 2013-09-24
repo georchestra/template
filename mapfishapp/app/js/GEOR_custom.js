@@ -1,4 +1,3 @@
-
 /**
  * Sample geOrchestra viewer config file
  *
@@ -161,6 +160,18 @@ GEOR.custom = {
      * Defaults to 20.
      */
     //MAX_CSW_RECORDS: 20,
+    
+    /**
+     * Constant: CSW_FILTER_PROPERTIES
+     * A list of properties queried on catalog search.
+     * Use ['AnyText'] to allow search on all metadata fields,
+     * or use a subset of ISO queryable properties to limit search
+     * on those properties.
+     * Defaults to ['Title','AlternateTitle','Abstract','Subject','OrganisationName']
+     */
+     //CSW_FILTER_PROPERTIES: getCustomParameter("CSW_FILTER_PROPERTIES", [
+     //'Title', 'AlternateTitle', 'Abstract', 'Subject', 'OrganisationName'
+     //]),
 
     /**
      * Constant: NO_THUMBNAIL_IMAGE_URL
