@@ -50,13 +50,10 @@
         <script type="text/javascript">
         //<![CDATA[
         function init(){
-            var firstForm = document.forms[0];
-            if (firstForm != null) {
-                var firstElement = firstForm.elements[0].elements[0];
-                if (firstElement != null) {
-                    firstElement.focus();
-                    firstElement.select();
-                }
+            var firstElement = document.getElementById('username');
+            if (firstElement != null) {
+                firstElement.focus();
+                firstElement.select();
             }
         }
         //]]>
