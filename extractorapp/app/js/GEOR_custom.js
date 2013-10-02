@@ -60,7 +60,7 @@ GEOR.custom = {
      * Constant: GEOSERVER_WMS_URL
      * The URL to GeoServer WMS.
      */
-    GEOSERVER_WMS_URL: "/geoserver/wms",
+    GEOSERVER_WMS_URL: "http://sdi.georchestra.org/geoserver/gshhs/wms",
 
     /**
      * Constant: GEOSERVER_WFS_URL
@@ -127,7 +127,7 @@ GEOR.custom = {
      * The WMS base layer which will be displayed under each extracted layer.
      * Defaults to "geor:countries"
      */
-    BASE_LAYER_NAME: "base_layers",
+    BASE_LAYER_NAME: "GSHHS_l_L1",
         
     /**
      * Constant: NS_LOC
@@ -256,8 +256,8 @@ GEOR.custom = {
     STARTUP_LAYERS: [
         {
             owstype: "WMS",
-            owsurl: "http://geoservices.brgm.fr/risques",
-            layername: "BASIAS_LOCALISE"
+            owsurl: "http://sdi.georchestra.org/geoserver/wms",
+            layername: "gshhs:GSHHS_l_L2"
         }
     ],
     
@@ -267,13 +267,9 @@ GEOR.custom = {
      */
     STARTUP_SERVICES: [
         {
-            text: "BRGM Risques",
+            text: "Example layers",
             owstype: "WMS",
-            owsurl: "http://geoservices.brgm.fr/risques"
-        },{
-            text: "Gest'eau",
-            owstype: "WMS",
-            owsurl: "http://gesteau.oieau.fr/service"
+            owsurl: "http://sdi.georchestra.org/geoserver/wms"
         }
     ],
 
