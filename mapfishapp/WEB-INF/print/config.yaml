@@ -39,7 +39,8 @@ scales:
   - 559081146
   #~ TODO: Float support instead of Integer
 
-brokenUrlPlaceholder: default
+# see https://github.com/georchestra/georchestra/issues/362
+brokenUrlPlaceholder: http://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif
 
 #===========================================================================
 # printing protected layers
