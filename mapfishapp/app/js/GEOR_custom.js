@@ -1,4 +1,3 @@
-
 /**
  * Sample geOrchestra viewer config file
  *
