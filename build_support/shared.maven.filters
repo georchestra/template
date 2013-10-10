@@ -37,9 +37,9 @@ shared.homepage.url=http://@shared.server.name@/
 
 # sets the language for all modules
 # May be one of the following: fr, es, en
-# Default value: fr
+# Default value: en
 #
-#shared.language=fr
+#shared.language=en
 
 
 # --------------------------------------------------
@@ -54,7 +54,7 @@ shared.homepage.url=http://@shared.server.name@/
 # --------------------------------------------------
 # GEONETWORK
 # --------------------------------------------------
-geonetwork.language=fre
+geonetwork.language=eng
 shared.psql.geonetwork.db=geonetwork
 shared.geonetwork.dir=/var/lib/tomcat6/work/gn_data
 
