@@ -174,8 +174,8 @@ layouts:
           width: 150
           items:
             - !legends
-              maxIconWidth: 0
-              maxIconHeight: 0
+              iconMaxWidth: 0
+              iconMaxHeight: 0
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
@@ -324,8 +324,8 @@ layouts:
           width: 150
           items:
             - !legends
-              maxIconWidth: 0
-              maxIconHeight: 0
+              iconMaxWidth: 0
+              iconMaxHeight: 0
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
@@ -474,8 +474,8 @@ layouts:
           width: 150
           items:
             - !legends
-              maxIconWidth: 0
-              maxIconHeight: 0
+              iconMaxWidth: 0
+              iconMaxHeight: 0
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
@@ -624,8 +624,8 @@ layouts:
           width: 150
           items:
             - !legends
-              maxIconWidth: 0
-              maxIconHeight: 0
+              iconMaxWidth: 0
+              iconMaxHeight: 0
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
@@ -774,8 +774,8 @@ layouts:
           width: 150
           items:
             - !legends
-              maxIconWidth: 0
-              maxIconHeight: 0
+              iconMaxWidth: 0
+              iconMaxHeight: 0
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
@@ -924,8 +924,8 @@ layouts:
           width: 150
           items:
             - !legends
-              maxIconWidth: 0
-              maxIconHeight: 0
+              iconMaxWidth: 0
+              iconMaxHeight: 0
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
