@@ -15,7 +15,7 @@
             };
         </script>
         <div id="go_head">
-            <iframe src="/static/?lang={/root/gui/language}&amp;active=geonetwork" style="width:100%;height:@shared.header.height@px;border:none;overflow:none;" scrolling="no" onload="_headerOnLoad(this)"></iframe>
+            <iframe src="/static/?lang={/root/gui/language}&amp;active=geonetwork" style="width:100%;height:@shared.header.height@px;border:none;overflow:none;" scrolling="no" frameborder="0" onload="_headerOnLoad(this)"></iframe>
         </div>
     </xsl:template>
 
