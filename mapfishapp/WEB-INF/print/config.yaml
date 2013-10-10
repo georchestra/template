@@ -119,6 +119,7 @@ layouts:
             - !map
               width: 98
               height: 70
+              backgroundColor: #FFFFFF
               overviewMap: 10
               condition: showOverview
         # North arrow
@@ -269,6 +270,7 @@ layouts:
             - !map
               width: 98
               height: 70
+              backgroundColor: #FFFFFF
               overviewMap: 10
               condition: showOverview
         # North arrow
@@ -419,6 +421,7 @@ layouts:
             - !map
               width: 98
               height: 70
+              backgroundColor: #FFFFFF
               overviewMap: 10
               condition: showOverview
         # North arrow
@@ -569,6 +572,7 @@ layouts:
             - !map
               width: 98
               height: 70
+              backgroundColor: #FFFFFF
               overviewMap: 10
               condition: showOverview
         # North arrow
@@ -719,6 +723,7 @@ layouts:
             - !map
               width: 98
               height: 70
+              backgroundColor: #FFFFFF
               overviewMap: 10
               condition: showOverview
         # North arrow
@@ -869,6 +874,7 @@ layouts:
             - !map
               width: 98
               height: 70
+              backgroundColor: #FFFFFF
               overviewMap: 10
               condition: showOverview
         # North arrow
