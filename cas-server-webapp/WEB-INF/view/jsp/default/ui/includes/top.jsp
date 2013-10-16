@@ -24,7 +24,7 @@
                 var innerDoc = iframe.contentDocument || iframe.contentWindow.document,
                     base = innerDoc.createElement('base');
                 base.setAttribute('target', '_parent');
-                iframe.contentDocument.getElementsByTagName('head')[0].appendChild(base);
+                innerDoc.getElementsByTagName('head')[0].appendChild(base);
             };
         </script>
         <iframe src="/static/" style="width:100%;height:@shared.header.height@px;border:none;overflow:none;" scrolling="no" frameborder="0" onload="_headerOnLoad(this)"></iframe>
