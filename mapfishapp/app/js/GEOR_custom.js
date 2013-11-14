@@ -505,6 +505,14 @@ GEOR.custom = {
     //ROLES_FOR_PRINTER: [],
 
     /**
+     * Constant: ROLES_FOR_EDIT
+     * {Array} roles required for the edit functions to show up
+     * Empty array means the module is available for everyone
+     * Defaults to ['ROLE_ADMINISTRATOR']
+     */
+    //ROLES_FOR_EDIT: ['ROLE_ADMINISTRATOR'],
+
+    /**
      * Constant: PRINT_LAYOUTS_ACL
      * {Object} roles required for each print layout
      * Empty array means "layout is available for everyone"
