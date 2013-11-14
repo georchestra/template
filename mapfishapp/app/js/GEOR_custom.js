@@ -94,8 +94,7 @@ GEOR.custom = {
     /**
      * Constant: GEOSERVER_WFS_URL
      * The URL to GeoServer WFS.
-     * This is required if and only if the edit application is used
-     * or if the "referentials" module is activated.
+     * This is required if and only if the "referentials" module is activated.
      * Defaults to /geoserver/wfs
      */
     GEOSERVER_WFS_URL: "http://geobretagne.fr/geoserver/wfs",
@@ -275,14 +274,6 @@ GEOR.custom = {
      * Defaults to "geor_loc"
      */
     //NS_LOC: "geor_loc",
-    
-    /**
-     * Constant: NS_EDIT
-     * {String} The editing layers' namespace alias as defined in
-     *    the GeoServer configuration.
-     * Defaults to "geor_edit"
-     */
-    //NS_EDIT: "geor_edit",
 
     /**
      * Constant: CSW_GETDOMAIN_PROPERTY
