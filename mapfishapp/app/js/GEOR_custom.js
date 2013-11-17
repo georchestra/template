@@ -565,6 +565,13 @@ GEOR.custom = {
     //CONFIRM_LAYER_REMOVAL: false,
 
     /**
+     * Constant: EDITABLE_LAYERS
+     * {RegExp} 
+     * PLatform layers only with this config
+     */
+    EDITABLE_LAYERS: /.*@shared.server.name@.*/i,
+
+    /**
      * Constant: WMTS_SERVERS
      * {Array} List of externals WMTS to display in the WMTS servers tab.
      */
