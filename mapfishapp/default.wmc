@@ -36,6 +36,13 @@
                 <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
                 <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
                 <ol:transitionEffect xmlns:ol="http://openlayers.org/context">resize</ol:transitionEffect>
+                <ol:attribution xmlns:ol="http://openlayers.org/context">
+                    <Title>OpenStreetMap</Title>
+                    <OnlineResource xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.openstreetmap.org/" />
+                    <LogoURL width="100" height="100" format="image/png">
+                        <OnlineResource xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Openstreetmap_logo.svg/100px-Openstreetmap_logo.svg.png" />
+                    </LogoURL>
+                </ol:attribution>
             </Extension>
         </Layer>
     </LayerList>
