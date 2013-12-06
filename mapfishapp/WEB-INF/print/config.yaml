@@ -66,11 +66,13 @@ hosts:
 
 layouts:
 
-# 4 layouts:
+# 6 layouts:
 # - A4 portrait
 # - A4 landscape
 # - A3 portrait
 # - A3 landscape
+# - Letter portrait
+# - Letter landscape
 
   #===========================================================================
   A4 portrait:
