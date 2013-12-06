@@ -180,6 +180,9 @@ layouts:
               horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
+              # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
+              # necessary for icons to have the same size in legend and on map
+              defaultScale: 0.7937
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
@@ -333,6 +336,9 @@ layouts:
               horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
+              # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
+              # necessary for icons to have the same size in legend and on map
+              defaultScale: 0.7937
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
@@ -486,6 +492,9 @@ layouts:
               horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
+              # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
+              # necessary for icons to have the same size in legend and on map
+              defaultScale: 0.7937
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
@@ -639,6 +648,9 @@ layouts:
               horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
+              # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
+              # necessary for icons to have the same size in legend and on map
+              defaultScale: 0.7937
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
@@ -792,6 +804,9 @@ layouts:
               horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
+              # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
+              # necessary for icons to have the same size in legend and on map
+              defaultScale: 0.7937
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
@@ -945,6 +960,9 @@ layouts:
               horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
+              # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
+              # necessary for icons to have the same size in legend and on map
+              defaultScale: 0.7937
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
