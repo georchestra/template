@@ -185,6 +185,7 @@ layouts:
               classIndentation: 0
               classFontSize: 10
               classSpace: 3
+              maxWidth: 150
               maxHeight: 714
               condition: showLegend
         # Date
@@ -337,6 +338,7 @@ layouts:
               classIndentation: 0
               classFontSize: 10
               classSpace: 3
+              maxWidth: 150
               maxHeight: 467
               condition: showLegend
         # Date
@@ -489,6 +491,7 @@ layouts:
               classIndentation: 0
               classFontSize: 10
               classSpace: 3
+              maxWidth: 150
               maxHeight: 1063
               condition: showLegend
         # Date
@@ -641,6 +644,7 @@ layouts:
               classIndentation: 0
               classFontSize: 10
               classSpace: 3
+              maxWidth: 150
               maxHeight: 714
               condition: showLegend
         # Date
@@ -793,6 +797,7 @@ layouts:
               classIndentation: 0
               classFontSize: 10
               classSpace: 3
+              maxWidth: 150
               maxHeight: 484
               condition: showLegend
         # Date
@@ -945,6 +950,7 @@ layouts:
               classIndentation: 0
               classFontSize: 10
               classSpace: 3
+              maxWidth: 150
               maxHeight: 664
               condition: showLegend
         # Date
