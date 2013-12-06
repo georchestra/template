@@ -66,11 +66,13 @@ hosts:
 
 layouts:
 
-# 4 layouts:
+# 6 layouts:
 # - A4 portrait
 # - A4 landscape
 # - A3 portrait
 # - A3 landscape
+# - Letter portrait
+# - Letter landscape
 
   #===========================================================================
   A4 portrait:
@@ -175,13 +177,18 @@ layouts:
           width: 150
           items:
             - !legends
+              horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
+              # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
+              # necessary for icons to have the same size in legend and on map
+              defaultScale: 0.7937
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
               classFontSize: 10
               classSpace: 3
+              maxWidth: 150
               maxHeight: 714
               condition: showLegend
         # Date
@@ -326,13 +333,18 @@ layouts:
           width: 150
           items:
             - !legends
+              horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
+              # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
+              # necessary for icons to have the same size in legend and on map
+              defaultScale: 0.7937
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
               classFontSize: 10
               classSpace: 3
+              maxWidth: 150
               maxHeight: 467
               condition: showLegend
         # Date
@@ -477,13 +489,18 @@ layouts:
           width: 150
           items:
             - !legends
+              horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
+              # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
+              # necessary for icons to have the same size in legend and on map
+              defaultScale: 0.7937
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
               classFontSize: 10
               classSpace: 3
+              maxWidth: 150
               maxHeight: 1063
               condition: showLegend
         # Date
@@ -628,13 +645,18 @@ layouts:
           width: 150
           items:
             - !legends
+              horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
+              # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
+              # necessary for icons to have the same size in legend and on map
+              defaultScale: 0.7937
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
               classFontSize: 10
               classSpace: 3
+              maxWidth: 150
               maxHeight: 714
               condition: showLegend
         # Date
@@ -779,13 +801,18 @@ layouts:
           width: 150
           items:
             - !legends
+              horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
+              # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
+              # necessary for icons to have the same size in legend and on map
+              defaultScale: 0.7937
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
               classFontSize: 10
               classSpace: 3
+              maxWidth: 150
               maxHeight: 484
               condition: showLegend
         # Date
@@ -930,13 +957,18 @@ layouts:
           width: 150
           items:
             - !legends
+              horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
+              # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
+              # necessary for icons to have the same size in legend and on map
+              defaultScale: 0.7937
               layerSpace: 3
               layerFontSize: 10
               classIndentation: 0
               classFontSize: 10
               classSpace: 3
+              maxWidth: 150
               maxHeight: 664
               condition: showLegend
         # Date
