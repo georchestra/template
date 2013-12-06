@@ -177,6 +177,7 @@ layouts:
           width: 150
           items:
             - !legends
+              horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
               layerSpace: 3
@@ -328,6 +329,7 @@ layouts:
           width: 150
           items:
             - !legends
+              horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
               layerSpace: 3
@@ -479,6 +481,7 @@ layouts:
           width: 150
           items:
             - !legends
+              horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
               layerSpace: 3
@@ -630,6 +633,7 @@ layouts:
           width: 150
           items:
             - !legends
+              horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
               layerSpace: 3
@@ -781,6 +785,7 @@ layouts:
           width: 150
           items:
             - !legends
+              horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
               layerSpace: 3
@@ -932,6 +937,7 @@ layouts:
           width: 150
           items:
             - !legends
+              horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
               layerSpace: 3
