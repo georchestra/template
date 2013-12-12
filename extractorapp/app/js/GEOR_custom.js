@@ -28,7 +28,7 @@ GEOR.custom = {
     /**
      * Constant: PDF_URL
      * String: the URL to the downloaded data Terms Of Use
-     * Defaults to /static/cgu.pdf (see shared.download_form.pdf_url var in shared.maven.filters file)
+     * Defaults to /header/cgu.pdf (see shared.download_form.pdf_url var in shared.maven.filters file)
      */
     PDF_URL: "@shared.download_form.pdfurl@",
     
