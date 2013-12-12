@@ -203,11 +203,11 @@ shared.psql.pass=www-data
 # + example +
 # shared.download_form.activated=false
 # shared.psql.download_form.db=downloadform
-# shared.download_form.pdfurl=/static/usage.pdf
+# shared.download_form.pdfurl=/header/usage.pdf
 #
 shared.download_form.activated=false
 shared.psql.download_form.db=downloadform
-shared.download_form.pdfurl=/static/usage.pdf
+shared.download_form.pdfurl=/header/usage.pdf
 
 
 # --------------------------------------------------
