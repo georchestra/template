@@ -20,7 +20,7 @@
     
         <!-- see http://stackoverflow.com/questions/1037839/how-to-force-link-from-iframe-to-be-opened-in-the-parent-window -->
         <script type="text/javascript" src="/header/js/header.js"></script>
-        <iframe src="/header/" style="width:100%;height:@shared.header.height@px;border:none;overflow:none;" scrolling="no" frameborder="0" onload="_headerOnLoad(this)"></iframe>
+        <iframe src="/header/" style="width:100%;height:@shared.header.height@px;border:none;overflow:hidden;" scrolling="no" frameborder="0" onload="_headerOnLoad(this)"></iframe>
 
             <div id="content">
 
