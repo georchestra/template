@@ -134,13 +134,14 @@ GEOR.custom = {
     /**
      * Constant: CATALOGS
      * List of catalogs for freetext search
-     *
+     */
     CATALOGS: [
         ['http://geobretagne.fr/geonetwork/srv/fre/csw', 'le catalogue GeoBretagne'],
         ['http://ids.pigma.org/geonetwork/srv/fre/csw', 'le catalogue PIGMA'],
         ['/geonetwork/srv/fre/csw', 'le catalogue local'],
         ['http://sandre.eaufrance.fr/geonetwork_CSW/srv/fre/csw', 'le catalogue du Sandre'],
-        ['http://geocatalog.webservice-energy.org/geonetwork/srv/fre/csw', 'le catalogue de webservice-energy']
+        ['http://geocatalog.webservice-energy.org/geonetwork/srv/fre/csw', 'le catalogue de webservice-energy'],
+        ['http://www.ifremer.fr/geonetwork/srv/fre/csw', "le catalogue de l'Ifremer"]
     ],
 
     /**
@@ -576,6 +577,7 @@ GEOR.custom = {
      * {Array} List of externals WMTS to display in the WMTS servers tab.
      */
     WMTS_SERVERS: [
+        {"name": "geOrchestra demo", "url": "http://sdi.georchestra.org/geoserver/gwc/service/wmts"},
         {"name": "GéoBretagne OSM", "url": "http://osm.geobretagne.fr/gwc01/service/wmts"},
         {"name": "GéoBretagne rasters", "url": "http://tile.geobretagne.fr/gwc02/service/wmts"}
         /*
@@ -590,6 +592,7 @@ GEOR.custom = {
      * {Array} List of externals WMS to display in the WMS servers tab.
      */
     WMS_SERVERS: [
+        {"name": "geOrchestra demo", "url": "http://sdi.georchestra.org/geoserver/wms"},
         {"name": "GeoBretagne", "url": "http://geobretagne.fr/geoserver/wms"},
         {"name": "Sandre/zonages", "url": "http://services.sandre.eaufrance.fr/geo/zonage"},
         {"name": "Sandre/ouvrages", "url": "http://services.sandre.eaufrance.fr/geo/ouvrage"},
@@ -606,7 +609,12 @@ GEOR.custom = {
         {"name": "Corine Land Cover", "url": "http://sd1878-2.sivit.org/geoserver/wms"},
         {"name": "GeoLittoral", "url": "http://geolittoral.application.equipement.gouv.fr/wms/metropole"},
         {"name": "Gest'Eau", "url": "http://gesteau.oieau.fr/service"},
-        {"name": "IFREMER/littoral", "url": "http://www.ifremer.fr/services/wms1"},
+        {"name": "IFREMER/Océanographie physique", "url": "http://www.ifremer.fr/services/wms/oceanographie_physique"},
+        {"name": "IFREMER/Biologie", "url": "http://www.ifremer.fr/services/wms/biologie"},
+        {"name": "IFREMER/GeoSciences", "url": "http://www.ifremer.fr/services/wms/geosciences"},
+        {"name": "IFREMER/Photos anciennes", "url": "http://www.ifremer.fr/services/photos_anciennes"},
+        {"name": "IFREMER/Nouvelle Calédonie", "url": "http://www.ifremer.fr/services/wms/nc"},
+        {"name": "IFREMER/Euroshell (conchyliculture, aquaculture...)", "url": "http://www.ifremer.fr/services/wms/euroshell"},
         {"name": "Cartelie/CETE Ouest", "url": "http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map%3D%2Fopt%2Fdata%2Fcarto%2Fcartelie%2Fprod%2FCETE_Ouest%2Fxdtyr36laj.www.map"}
     ],
     
@@ -615,6 +623,7 @@ GEOR.custom = {
      * {Array} List of externals WFS to display in the WFS servers tab.
      */
     WFS_SERVERS: [
+        {"name": "geOrchestra demo", "url": "http://sdi.georchestra.org/geoserver/wfs"},
         {"name": "GeoBretagne", "url": "http://geobretagne.fr/geoserver/wfs"},
         {"name": "Corine Land Cover", "url": "http://sd1878-2.sivit.org/geoserver/wfs"}
     ]
