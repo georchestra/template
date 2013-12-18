@@ -199,7 +199,7 @@ shared.psql.pass=www-data
 # useds will be asked to fill a form, read and accept an agreement
 # (shared.download_form.pdfurl) prior to any download.
 # The downloadform will log every download request in a database,
-# see downloadform/sample/sample.sql
+# see downloadform/database.sql
 # + example +
 # shared.download_form.activated=false
 # shared.psql.download_form.db=downloadform
@@ -208,7 +208,7 @@ shared.psql.pass=www-data
 # shared.download_form.pdfurl=//url.to/cgu.pdf
 #
 shared.download_form.activated=false
-shared.psql.download_form.db=downloadform
+shared.psql.download_form.db=georchestra
 shared.download_form.pdfurl=
 
 
@@ -218,10 +218,10 @@ shared.download_form.pdfurl=
 
 # If the OGC statistics feature is activated,
 # all queries to the OGC web services will be logged in a db.
-# see ogc-server-statistics/ogc_statistics_table.sql
+# see ogc-server-statistics/database.sql
 
 shared.ogc.statistics.activated=false
-shared.psql.ogc.statistics.db=ogcstatistics
+shared.psql.ogc.statistics.db=georchestra
 
 
 # --------------------------------------------------
