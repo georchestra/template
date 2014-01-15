@@ -113,18 +113,6 @@ shared.privileged.geoserver.pass=gerlsSnFd6SmM
 
 
 # --------------------------------------------------
-# MAPFISHAPP VIEWER
-# --------------------------------------------------
-
-# the mapfishapp viewer expires wmc and sld every x minutes
-# (44640 minutes means "1 month permalink validity")
-shared.mapfishapp.maxDocAgeInMinutes=44640
-# ...and this is the directory where temporary documents are 
-# stored:
-shared.mapfishapp.docTempDir=/tmp/mapfishapp
-
-
-# --------------------------------------------------
 # SMTP / Emails
 # --------------------------------------------------
 
