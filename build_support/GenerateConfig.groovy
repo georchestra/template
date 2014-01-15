@@ -31,7 +31,12 @@ class GenerateConfig {
 
         installGeoServerExtensions()
         updateMapfishappMavenFilters()
+        updateExtractorappMavenFilters()
+        updateSecProxyMavenFilters()
+        updateLDAPadminMavenFilters()
+
     }
+
 
     /**
      * installGeoServerExtensions
@@ -79,6 +84,7 @@ class GenerateConfig {
         ).download()
     }
 
+
     /**
      * updateMapfishappMavenFilters
      */
@@ -93,4 +99,92 @@ class GenerateConfig {
         }
     }
 
+
+    /**
+     * updateExtractorappMavenFilters
+     */
+    def updateExtractorappMavenFilters() {
+        new PropertyUpdate(
+            path: 'maven.filter',
+            from: 'defaults/extractorapp', 
+            to: 'extractorapp'
+        ).update { properties ->
+            properties['maxCoverageExtractionSize'] = 99999999,
+            properties['maxExtractions'] = 5,
+            properties['remoteReproject'] = true,
+            properties['useCommandLineGDAL'] = false,
+            properties['extractionFolderPrefix'] = "extraction-",
+            properties['emailfactory'] = "org.georchestra.extractorapp.ws.EmailFactoryDefault",
+            properties['emailsubject'] = "[geOrchestra] Your extraction request"
+        }
+    }
+
+
+    /**
+     * updateSecProxyMavenFilters
+     */
+    def updateSecProxyMavenFilters() {
+        
+        proxyDefaultTarget = "http://localhost:8080"
+        
+        new PropertyUpdate(
+            path: 'maven.filter',
+            from: 'defaults/security-proxy', 
+            to: 'security-proxy'
+        ).update { properties ->
+            properties['cas.private.host'] = "localhost",
+            properties['public.ssl'] = 443,
+            properties['private.ssl'] = 8443,
+            properties['proxy.defaultTarget'] = proxyDefaultTarget,
+            properties['proxy.mapping'] = """
+<entry key="analytics"     value="proxyDefaultTarget/analytics-private/" />
+<entry key="catalogapp"    value="proxyDefaultTarget/catalogapp-private/" />
+<entry key="downloadform"  value="proxyDefaultTarget/downloadform-private/" />
+<entry key="extractorapp"  value="proxyDefaultTarget/extractorapp-private/" />
+<entry key="geonetwork"    value="proxyDefaultTarget/geonetwork-private/" />
+<entry key="geoserver"     value="proxyDefaultTarget/geoserver/" />
+<entry key="header"        value="proxyDefaultTarget/header-private/" />
+<entry key="ldapadmin"     value="proxyDefaultTarget/ldapadmin-private/" />
+<entry key="mapfishapp"    value="proxyDefaultTarget/mapfishapp-private/" />
+<entry key="static"        value="proxyDefaultTarget/header-private/" />""".replaceAll("\n|\t","").replaceAll("proxyDefaultTarget",proxyDefaultTarget),
+            properties['header.mapping'] = """
+<entry key="sec-email"     value="mail" />
+<entry key="sec-firstname" value="givenName" />
+<entry key="sec-lastname"  value="sn" />
+<entry key="sec-org"       value="o" />
+<entry key="sec-tel"       value="telephoneNumber" />""".replaceAll("\n|\t","")
+        }
+    }
+
+
+    /**
+     * updateLDAPadminMavenFilters
+     */
+    def updateLDAPadminMavenFilters() {
+        new PropertyUpdate(
+            path: 'maven.filter',
+            from: 'defaults/ldapadmin', 
+            to: 'ldapadmin'
+        ).update { properties ->
+            properties['ldapadmin.db'] = "georchestra",
+            // ReCaptcha keys for your own domain: (these ones are for sdi.georchestra.org)
+            properties['privateKey'] = "6LcfjucSAAAAAKcnHp14epYOiWOIUfEculd4PvLV",
+            properties['publicKey'] = "6LcfjucSAAAAAKtNoK5r7IIXxBT-33znNJUgeYg1",
+            // Application path as seen from the external world:
+            properties['publicContextPath'] = "/ldapadmin",
+            // Email subjects:
+            properties['subject.account.created'] = "[geOrchestra] Your account has been created",
+            properties['subject.account.in.process'] = "[geOrchestra] Your new account is waiting for validation",
+            properties['subject.requires.moderation'] = "[geOrchestra] New account waiting for validation",
+            properties['subject.change.password'] = "[geOrchestra] Update your password",
+            // Moderated signup or free account creation ?
+            properties['moderatedSignup'] = true,
+            // Delay in days before the tokens are purged from the db:
+            properties['delayInDays'] = 1,
+            // List of required fields in forms (CSV list) - possible values are:
+            // firstName,surname,phone,facsimile,org,title,description,postalAddress
+            // Note that email, uid, password and confirmPassword are always required
+            properties['requiredFields'] = "firstName,surname"
+        }
+    }
 }
