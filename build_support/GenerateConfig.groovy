@@ -2,7 +2,7 @@
  * This file can optionally generate configuration files.  The classic example
  * is when a project has both a integration and a production server.
  *
- * The configuration my be in a subdirectory of build_support (which is not copied into the configuration by default)
+ * The configuration might be in a subdirectory of build_support (which is not copied into the configuration by default)
  * Depending on serverId, this script can copy the files to the outputDir and copy a shared.maven.filters with the parameters that
  * are needed depending on serverId.  More can be done but that is the classic example
  */
@@ -95,7 +95,9 @@ class GenerateConfig {
             to: 'mapfishapp'
         ).update { properties ->
             // this is the directory where older temporary documents are stored:
-            properties['docTempDir'] = "/tmp/mapfishapp"
+            properties['docTempDir'] = "/tmp/mapfishapp",
+            // the name of the database hosting the schema used by mapfishapp:
+            properties['mapfishapp.db'] = "georchestra"
         }
     }
 
@@ -124,12 +126,12 @@ class GenerateConfig {
      * updateSecProxyMavenFilters
      */
     def updateSecProxyMavenFilters() {
-        
+
         proxyDefaultTarget = "http://localhost:8080"
-        
+
         new PropertyUpdate(
             path: 'maven.filter',
-            from: 'defaults/security-proxy', 
+            from: 'defaults/security-proxy',
             to: 'security-proxy'
         ).update { properties ->
             properties['cas.private.host'] = "localhost",
@@ -152,7 +154,13 @@ class GenerateConfig {
 <entry key="sec-firstname" value="givenName" />
 <entry key="sec-lastname"  value="sn" />
 <entry key="sec-org"       value="o" />
-<entry key="sec-tel"       value="telephoneNumber" />""".replaceAll("\n|\t","")
+<entry key="sec-tel"       value="telephoneNumber" />""".replaceAll("\n|\t",""),
+            properties['ogcstatistics.db'] = "georchestra",
+            // database health check settings:
+            // If the HEALTH CHECK feature is activated, the security proxy monitors db connections.
+            properties['checkHealth'] = false,
+            properties['psql.db'] = "geonetwork",
+            properties['max.database.connections'] = 170
         }
     }
 
