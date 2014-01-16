@@ -436,15 +436,19 @@ GEOR.custom = {
      * by specifying either an adminCode1 or adminCode2 or adminCode3
      * See http://download.geonames.org/export/dump/admin1CodesASCII.txt for adminCode1
      * Aquitaine matches '97' while Bretagne (Brittany) matches 'A2'
-     *
+     */
     GEONAMES_FILTERS: {
+        username: 'georchestra', // please replace this username by yours !
+        // You can create a geonames account here: http://www.geonames.org/login
+        // It is then required to enable your account to query the free web services
+        // by visiting http://www.geonames.org/manageaccount
         country: 'FR',         // France
-        //adminCode1: '97',
+        //adminCode1: '97',    // Region
         style: 'short',        // verbosity of results
         lang: 'fr',
         featureClass: 'P',     // class category: populated places
         maxRows: 20            // maximal number of results
-    },*/
+    },
 
     /**
      * Constant: GEONAMES_ZOOMLEVEL
