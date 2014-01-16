@@ -111,10 +111,10 @@ class GenerateConfig {
             from: 'defaults/extractorapp', 
             to: 'extractorapp'
         ).update { properties ->
-            properties['maxCoverageExtractionSize'] = 99999999
-            properties['maxExtractions'] = 5
-            properties['remoteReproject'] = true
-            properties['useCommandLineGDAL'] = false
+            properties['maxCoverageExtractionSize'] = "99999999"
+            properties['maxExtractions'] = "5"
+            properties['remoteReproject'] = "true"
+            properties['useCommandLineGDAL'] = "false"
             properties['extractionFolderPrefix'] = "extraction-"
             properties['emailfactory'] = "org.georchestra.extractorapp.ws.EmailFactoryDefault"
             properties['emailsubject'] = "[geOrchestra] Your extraction request"
@@ -127,7 +127,7 @@ class GenerateConfig {
      */
     def updateSecProxyMavenFilters() {
 
-        proxyDefaultTarget = "http://localhost:8080"
+        def proxyDefaultTarget = "http://localhost:8080"
 
         new PropertyUpdate(
             path: 'maven.filter',
@@ -135,8 +135,8 @@ class GenerateConfig {
             to: 'security-proxy'
         ).update { properties ->
             properties['cas.private.host'] = "localhost"
-            properties['public.ssl'] = 443
-            properties['private.ssl'] = 8443
+            properties['public.ssl'] = "443"
+            properties['private.ssl'] = "8443"
             properties['proxy.defaultTarget'] = proxyDefaultTarget
             properties['proxy.mapping'] = """
 <entry key="analytics"     value="proxyDefaultTarget/analytics-private/" />
@@ -158,9 +158,9 @@ class GenerateConfig {
             properties['ogcstatistics.db'] = "georchestra"
             // database health check settings:
             // If the HEALTH CHECK feature is activated, the security proxy monitors db connections.
-            properties['checkHealth'] = false
+            properties['checkHealth'] = "false"
             properties['psql.db'] = "geonetwork"
-            properties['max.database.connections'] = 170
+            properties['max.database.connections'] = "170"
         }
     }
 
@@ -186,9 +186,9 @@ class GenerateConfig {
             properties['subject.requires.moderation'] = "[geOrchestra] New account waiting for validation"
             properties['subject.change.password'] = "[geOrchestra] Update your password"
             // Moderated signup or free account creation ?
-            properties['moderatedSignup'] = true
+            properties['moderatedSignup'] = "true"
             // Delay in days before the tokens are purged from the db:
-            properties['delayInDays'] = 1
+            properties['delayInDays'] = "1"
             // List of required fields in forms (CSV list) - possible values are:
             // firstName,surname,phone,facsimile,org,title,description,postalAddress
             // Note that email, uid, password and confirmPassword are always required
