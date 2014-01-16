@@ -155,7 +155,6 @@ class GenerateConfig {
 <entry key="sec-lastname"  value="sn" />
 <entry key="sec-org"       value="o" />
 <entry key="sec-tel"       value="telephoneNumber" />""".replaceAll("\n|\t","")
-            properties['ogcstatistics.db'] = "georchestra"
             // database health check settings:
             // If the HEALTH CHECK feature is activated, the security proxy monitors db connections.
             properties['checkHealth'] = "false"

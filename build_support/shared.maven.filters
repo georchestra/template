@@ -189,6 +189,7 @@ shared.download_form.pdfurl=
 # see ogc-server-statistics/database.sql
 
 shared.ogc.statistics.activated=false
+shared.ogc.statistics.db=georchestra
 
 
 
