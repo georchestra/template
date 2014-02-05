@@ -22,7 +22,7 @@
             <label for="password"><spring:message code="screen.welcome.label.password" /></label>
             <spring:message code="screen.welcome.label.password.accesskey" var="passwordAccessKey" />
             <form:password cssClass="required" cssErrorClass="error" id="password" tabindex="2" path="password"  accesskey="${passwordAccessKey}" htmlEscape="true" autocomplete="off" />
-            <div id="forgot"><a href="/ldapadmin/account/lostPassword"><spring:message code="screen.welcome.link.forgot" /></a></div>
+            <div id="forgot"><a href="/ldapadmin/account/passwordRecovery"><spring:message code="screen.welcome.link.forgot" /></a></div>
           </fieldset>
         </div>
         <div class="row btn-row" style="text-align: center;">
