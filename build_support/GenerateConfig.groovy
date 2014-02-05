@@ -96,8 +96,6 @@ class GenerateConfig {
         ).update { properties ->
             // this is the directory where older temporary documents are stored:
             properties['docTempDir'] = "/tmp/mapfishapp"
-            // the name of the database hosting the schema used by mapfishapp:
-            properties['mapfishapp.db'] = "georchestra"
         }
     }
 
@@ -174,7 +172,6 @@ class GenerateConfig {
             from: 'defaults/ldapadmin', 
             to: 'ldapadmin'
         ).update { properties ->
-            properties['ldapadmin.db'] = "georchestra"
             // ReCaptcha keys for your own domain: (these ones are for sdi.georchestra.org)
             properties['privateKey'] = "6LcfjucSAAAAAKcnHp14epYOiWOIUfEculd4PvLV"
             properties['publicKey'] = "6LcfjucSAAAAAKtNoK5r7IIXxBT-33znNJUgeYg1"

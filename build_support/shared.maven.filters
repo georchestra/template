@@ -9,9 +9,9 @@
 # Instance name
 # This name appears in many places across the SDI, typically page titles.
 # Defaults to geOrchestra but could be GeoBretagne, GeoBolivia, etc
+# Caution: no accentuated chars are supported in this string (see https://github.com/georchestra/georchestra/issues/479)
 
 shared.instance.name=geOrchestra
-
 
 # --------------------------------------------------
 # PUBLIC URL
@@ -149,8 +149,8 @@ shared.log.dir=/tmp
 # DATABASES
 # --------------------------------------------------
 
-# geOrchestra stores some informations in several postgresql database.
-# We assume that all databases are hosted on the same pg cluster
+# geOrchestra stores some informations in several postgresql databases.
+# We assume that all databases are hosted on the same pg cluster,
 # but you may override this setting in the secondary configuration files.
 # Make sure that the pg_hba.conf allows connections from the server
 # hosting georchestra with the appropriate credentials
@@ -176,7 +176,6 @@ shared.psql.pass=www-data
 # shared.download_form.pdfurl=//url.to/cgu.pdf
 
 shared.download_form.activated=false
-shared.download_form.db=georchestra
 shared.download_form.pdfurl=
 
 
@@ -189,7 +188,5 @@ shared.download_form.pdfurl=
 # see ogc-server-statistics/database.sql
 
 shared.ogc.statistics.activated=false
-shared.ogc.statistics.db=georchestra
-
 
 
