@@ -69,9 +69,9 @@ shared.geonetwork.dir=/var/lib/tomcat6/work/gn_data
 shared.ldap.host=localhost
 shared.ldap.port=389
 
-# shared.ldapUrl is automatically computed with the above
-# shared.ldap parameters but you may override this setting
-
+# shared.ldapUrl is automatically computed with the above parameters.
+# note: if you choose port = 636, you should also change 
+# the protocol to ldaps below:
 shared.ldapUrl=ldap://@shared.ldap.host@:@shared.ldap.port@
 
 
@@ -119,13 +119,14 @@ shared.email.from=psc\@georchestra.org
 
 # the following email receives new account requests if ldapadmin
 # is configured with moderatedSignup = true (which is the default)
+# (have a look at your own GenerateConfig.groovy)
 
 shared.administrator.email=psc\@georchestra.org
 
 # send notification mails in HTML ?
 # Defaults to: false (ie. plain text emails)
-# If you change this value to true, you should also modify the emails
-# templates in order to have full HTML emails.
+# If you change this value to true, you should also modify 
+# the email templates in order to have full HTML emails.
 
 shared.email.html=false
 
@@ -153,7 +154,7 @@ shared.log.dir=/tmp
 # We assume that all databases are hosted on the same pg cluster,
 # but you may override this setting in the secondary configuration files.
 # Make sure that the pg_hba.conf allows connections from the server
-# hosting georchestra with the appropriate credentials
+# hosting georchestra with the appropriate credentials.
 
 shared.psql.host=localhost
 shared.psql.port=5432
