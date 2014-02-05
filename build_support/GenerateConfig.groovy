@@ -144,7 +144,8 @@ class GenerateConfig {
 <entry key="downloadform"  value="proxyDefaultTarget/downloadform-private/" />
 <entry key="extractorapp"  value="proxyDefaultTarget/extractorapp-private/" />
 <entry key="geonetwork"    value="proxyDefaultTarget/geonetwork-private/" />
-<entry key="geoserver"     value="proxyDefaultTarget/geoserver/" />
+<entry key="geoserver"     value="proxyDefaultTarget/geoserver-private/" />
+<entry key="geofence"      value="proxyDefaultTarget/geofence-private/" />
 <entry key="header"        value="proxyDefaultTarget/header-private/" />
 <entry key="ldapadmin"     value="proxyDefaultTarget/ldapadmin-private/" />
 <entry key="mapfishapp"    value="proxyDefaultTarget/mapfishapp-private/" />
