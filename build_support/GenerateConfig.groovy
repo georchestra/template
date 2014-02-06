@@ -30,6 +30,7 @@ class GenerateConfig {
       def buildSupportDir, def outputDir) {
 
         installGeoServerExtensions()
+        updateGeoServerProperties()
         updateMapfishappMavenFilters()
         updateExtractorappMavenFilters()
         updateSecProxyMavenFilters()
@@ -96,6 +97,21 @@ class GenerateConfig {
         ).update { properties ->
             // this is the directory where older temporary documents are stored:
             properties['docTempDir'] = "/tmp/mapfishapp"
+        }
+    }
+
+
+    /**
+     * updateGeoServerProperties
+     */
+    def updateGeoServerProperties() {
+        new PropertyUpdate(
+            path: 'geofence-geoserver.properties',
+            from: 'defaults/geoserver-webapp/WEB-INF/classes',
+            to: 'geoserver-webapp/WEB-INF/classes'
+        ).update { properties ->
+            // if you're running GeoFence, update the following URL to match your setup:
+            properties['servicesUrl'] = "http://localhost:8080/geofence-private/remoting/RuleReader"
         }
     }
 
