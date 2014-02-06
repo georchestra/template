@@ -3,10 +3,14 @@
  * is when a project has both a integration and a production server.
  *
  * The configuration might be in a subdirectory of build_support (which is not copied into the configuration by default)
- * Depending on serverId, this script can copy the files to the outputDir and copy a shared.maven.filters with the parameters that
- * are needed depending on serverId.  More can be done but that is the classic example
+ * This script can copy the files to the outputDir and copy a shared.maven.filters with the parameters that
+ * are needed depending on target and subTarget.  More can be done but that is the classic example
  */
 class GenerateConfig {
+
+    // Feel free to customize your instance name,
+    // It will prefix every outgoing email.
+    def instanceName = "geOrchestra"
 
     /**
      * @param project The maven project.  you can get all information about
@@ -131,7 +135,7 @@ class GenerateConfig {
             properties['useCommandLineGDAL'] = "false"
             properties['extractionFolderPrefix'] = "extraction-"
             properties['emailfactory'] = "org.georchestra.extractorapp.ws.EmailFactoryDefault"
-            properties['emailsubject'] = "[geOrchestra] Your extraction request"
+            properties['emailsubject'] = "["+instanceName+"] Your extraction request"
         }
     }
 
@@ -188,16 +192,17 @@ class GenerateConfig {
             from: 'defaults/ldapadmin', 
             to: 'ldapadmin'
         ).update { properties ->
-            // ReCaptcha keys for your own domain: (these ones are for sdi.georchestra.org)
+            // ReCaptcha keys for your own domain: 
+            // (these are the ones for sdi.georchestra.org, they won't work for you !!!)
             properties['privateKey'] = "6LcfjucSAAAAAKcnHp14epYOiWOIUfEculd4PvLV"
             properties['publicKey'] = "6LcfjucSAAAAAKtNoK5r7IIXxBT-33znNJUgeYg1"
             // Application path as seen from the external world:
             properties['publicContextPath'] = "/ldapadmin"
             // Email subjects:
-            properties['subject.account.created'] = "[geOrchestra] Your account has been created"
-            properties['subject.account.in.process'] = "[geOrchestra] Your new account is waiting for validation"
-            properties['subject.requires.moderation'] = "[geOrchestra] New account waiting for validation"
-            properties['subject.change.password'] = "[geOrchestra] Update your password"
+            properties['subject.account.created'] = "["+instanceName+"] Your account has been created"
+            properties['subject.account.in.process'] = "["+instanceName+"] Your new account is waiting for validation"
+            properties['subject.requires.moderation'] = "["+instanceName+"] New account waiting for validation"
+            properties['subject.change.password'] = "["+instanceName+"] Update your password"
             // Moderated signup or free account creation ?
             properties['moderatedSignup'] = "true"
             // Delay in days before the tokens are purged from the db:
