@@ -9,9 +9,9 @@
 # Instance name
 # This name appears in many places across the SDI, typically page titles.
 # Defaults to geOrchestra but could be GeoBretagne, GeoBolivia, etc
-#
-#shared.instance.name=geOrchestra
+# Caution: no accentuated chars are supported in this string (see https://github.com/georchestra/georchestra/issues/479)
 
+shared.instance.name=geOrchestra
 
 # --------------------------------------------------
 # PUBLIC URL
@@ -23,12 +23,12 @@
 # If your server is http://localhost:8080/ :
 # shared.server.name=localhost
 # shared.server.port=8080
-#
+
 shared.server.name=vm-georchestra
 
 # sets the public address of your homepage.
 # Defaults to http://@shared.server.name@/
-#
+
 shared.homepage.url=http://@shared.server.name@/
 
 # --------------------------------------------------
@@ -38,8 +38,8 @@ shared.homepage.url=http://@shared.server.name@/
 # sets the language for all modules
 # May be one of the following: fr, es, en
 # Default value: en
-#
-#shared.language=en
+
+shared.language=en
 
 
 # --------------------------------------------------
@@ -48,12 +48,13 @@ shared.homepage.url=http://@shared.server.name@/
 
 # Sets the header height (in pixels) across all geOrchestra webapps
 # Defaults to 90
-#shared.header.height=90
 
+shared.header.height=90
 
 # --------------------------------------------------
 # GEONETWORK
 # --------------------------------------------------
+
 geonetwork.language=eng
 shared.psql.geonetwork.db=geonetwork
 shared.geonetwork.dir=/var/lib/tomcat6/work/gn_data
@@ -64,16 +65,13 @@ shared.geonetwork.dir=/var/lib/tomcat6/work/gn_data
 # --------------------------------------------------
 
 # how geOrchestra should connect to the ldap directory
-# + example +
-# shared.ldap.host=localhost
-# shared.ldap.port=389
-#
+
 shared.ldap.host=localhost
 shared.ldap.port=389
 
-# shared.ldapUrl is automatically computed with the above
-# shared.ldap parameters but you may override this setting
-#
+# shared.ldapUrl is automatically computed with the above parameters.
+# note: if you choose port = 636, you should also change 
+# the protocol to ldaps below:
 shared.ldapUrl=ldap://@shared.ldap.host@:@shared.ldap.port@
 
 
@@ -83,13 +81,7 @@ shared.ldapUrl=ldap://@shared.ldap.host@:@shared.ldap.port@
 # shared.ldap.groupSearchBaseDN is the query filter for groups
 # shared.ldap.admin.dn is the query filter for the ldap admin user
 # shared.ldap.admin.password is the ldap admin user password
-# + example +
-# shared.ldap.baseDn=dc=georchestra,dc=org
-# shared.ldap.userSearchBaseDN=ou=users
-# shared.ldap.groupSearchBaseDN=ou=groups
-# shared.ldap.admin.dn=cn=admin,@shared.ldap.baseDn@
-# shared.ldap.admin.password=secret
-#
+
 shared.ldap.baseDn=dc=georchestra,dc=org
 shared.ldap.userSearchBaseDN=ou=users
 shared.ldap.groupSearchBaseDN=ou=groups
@@ -104,54 +96,38 @@ shared.ldap.admin.password=secret
 # geOrchestra uses a privileged account to query geoserver
 # with full admin privileges.This user MUST exist in the ldap
 # directory and MUST belong to the ADMINISTRATOR group.
-# + example +
-# shared.privileged.geoserver.user=extractorapp_privileged_admin
-# shared.privileged.geoserver.pass=gerlsSnFd6SmM
-#
+
 shared.privileged.geoserver.user=extractorapp_privileged_admin
 shared.privileged.geoserver.pass=gerlsSnFd6SmM
-
-
-# --------------------------------------------------
-# MAPFISHAPP VIEWER
-# --------------------------------------------------
-
-# the mapfishapp viewer expires wmc and sld every x minutes
-# (44640 minutes means "1 month permalink validity")
-shared.mapfishapp.maxDocAgeInMinutes=44640
-# ...and this is the directory where temporary documents are 
-# stored:
-shared.mapfishapp.docTempDir=/tmp/mapfishapp
 
 
 # --------------------------------------------------
 # SMTP / Emails
 # --------------------------------------------------
 
-# geOrchestra send notification mails about pending
+# geOrchestra sends notification emails about pending
 # and completed extraction requests. Use the following parameters
 # according to your platform smtp gateway
-# + example +
-# shared.smtp.host=localhost
-# shared.smtp.port=25
-# shared.email.replyTo=psc\@georchestra.org
-# shared.email.from=psc\@georchestra.org
-#
+
 shared.smtp.host=localhost
 shared.smtp.port=25
 
 # for emails sent by extractorapp:
+
 shared.email.replyTo=psc\@georchestra.org
 shared.email.from=psc\@georchestra.org
 
 # the following email receives new account requests if ldapadmin
 # is configured with moderatedSignup = true (which is the default)
+# (have a look at your own GenerateConfig.groovy)
+
 shared.administrator.email=psc\@georchestra.org
 
 # send notification mails in HTML ?
 # Defaults to: false (ie. plain text emails)
-# If you change this value to true, you should also modify the emails
-# templates in order to have full HTML emails.
+# If you change this value to true, you should also modify 
+# the email templates in order to have full HTML emails.
+
 shared.email.html=false
 
 
@@ -166,7 +142,7 @@ shared.email.html=false
 #
 # Here we use /tmp because we want to prevent this kind of error 
 # http://applis-bretagne.fr/redmine/issues/4311 when Tomcat is not installed
-#
+
 shared.log.dir=/tmp
 
 
@@ -174,17 +150,12 @@ shared.log.dir=/tmp
 # DATABASES
 # --------------------------------------------------
 
-# geOrchestra stores some informations in several postgresql database.
-# We assume that all databases are hosted on the same pg cluster
+# geOrchestra stores some informations in several postgresql databases.
+# We assume that all databases are hosted on the same pg cluster,
 # but you may override this setting in the secondary configuration files.
 # Make sure that the pg_hba.conf allows connections from the server
-# hosting georchestra with the appropriate credentials
-# + example +
-# shared.psql.host=localhost
-# shared.psql.port=5432
-# shared.psql.user=www-data
-# shared.psql.pass=www-data
-#
+# hosting georchestra with the appropriate credentials.
+
 shared.psql.host=localhost
 shared.psql.port=5432
 shared.psql.user=www-data
@@ -196,19 +167,16 @@ shared.psql.pass=www-data
 # --------------------------------------------------
 
 # If the downloadform feature is activated,
-# useds will be asked to fill a form, read and accept an agreement
+# users will be asked to fill a form, read and accept an agreement
 # (shared.download_form.pdfurl) prior to any download.
 # The downloadform will log every download request in a database,
 # see downloadform/database.sql
 # + example +
-# shared.download_form.activated=false
-# shared.psql.download_form.db=downloadform
 # shared.download_form.pdfurl=/_static/usage.pdf
 # or
 # shared.download_form.pdfurl=//url.to/cgu.pdf
-#
+
 shared.download_form.activated=false
-shared.psql.download_form.db=georchestra
 shared.download_form.pdfurl=
 
 
@@ -221,23 +189,5 @@ shared.download_form.pdfurl=
 # see ogc-server-statistics/database.sql
 
 shared.ogc.statistics.activated=false
-shared.psql.ogc.statistics.db=georchestra
 
 
-# --------------------------------------------------
-# LDAPadmin
-# --------------------------------------------------
-
-shared.ldapadmin.db=georchestra
-
-
-# --------------------------------------------------
-# HEALTH CHECK properties
-# --------------------------------------------------
-
-# If the HEALTH CHECK feature is activated, the security proxy 
-# monitors db connections and reports when a limit is reached.
-
-shared.checkhealth.activated=false
-shared.psql.checkhealth.db=@shared.psql.geonetwork.db@
-shared.checkhealth.max_db_connections=170
