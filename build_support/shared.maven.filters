@@ -55,7 +55,7 @@ shared.header.height=90
 # GEONETWORK
 # --------------------------------------------------
 
-geonetwork.language=eng
+shared.geonetwork.language=eng
 shared.psql.geonetwork.db=geonetwork
 shared.geonetwork.dir=/var/lib/tomcat6/work/gn_data
 
