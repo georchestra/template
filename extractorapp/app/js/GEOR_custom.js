@@ -153,12 +153,8 @@ GEOR.custom = {
      * List of projections that extractor supports for reprojection
      */
     /*SUPPORTED_REPROJECTIONS: [
-        ["EPSG:27562", "EPSG:27562 - Lambert II carto"], 
-        ["EPSG:27572", "EPSG:27572 - Lambert II étendu"],
-        ["EPSG:2154", "EPSG:2154 - Lambert 93"],
-        ["EPSG:3948", "EPSG:3948 - Lambert-93 CC48"],
-        ["EPSG:4171", "EPSG:4171 - RGF93"],
-        ["EPSG:4326", "EPSG:4326 - WGS84"]
+        ["EPSG:4326", "EPSG:4326 - WGS84"],
+        ["EPSG:3857", "Spherical Mercator"]
     ],*/
 
     /**
@@ -167,28 +163,28 @@ GEOR.custom = {
      * Defaults to null, which means scales will be automatically computed
      *
     METRIC_MAP_SCALES: [
-        266.590664750604,
-        533.181329502208,
-        1066.362659004416,
-        2132.725318008832,
-        4265.450636017664,
-        8530.90127203433,
-        17061.80254406866,
-        34123.60508813732,
-        68247.21017627465,
-        136494.4203525493,
-        272988.8407050995,
-        545977.681410199,
-        1091955.3628203971,
-        2183910.7256407943,
-        4367821.451281589,
-        8735642.902563179,
-        17471285.805126358,
-        34942571.610252716,
-        69885143.22050543,
-        139770286.44101086,
-        279540572.8820217,
-        559081145.7640435
+        266.5911979812228585,
+        533.1823959624461134,
+        1066.3647919248918304,
+        2132.7295838497840572,
+        4265.4591676995681144,
+        8530.9183353991362289,
+        17061.8366707982724577,
+        34123.6733415965449154,
+        68247.3466831930771477,
+        136494.6933663861796617,
+        272989.3867327723085907,
+        545978.7734655447186469,
+        1091957.5469310886252288,
+        2183915.0938621788745877,
+        4367830.1877243577491754,
+        8735660.3754487154983508,
+        17471320.7508974309967016,
+        34942641.5017948619934032,
+        69885283.0035897239868063,
+        139770566.0071793960087234,
+        279541132.0143588959472254,
+        559082264.0287178958533332
     ],*/
 
     /**
@@ -201,9 +197,9 @@ GEOR.custom = {
     /**
      * Constant: MAP_POS_SRS1
      * {String} The cursor position will be displayed using this SRS.
-     * Defaults to "EPSG:2154"
+     * Defaults to "EPSG:4326"
      */
-    //MAP_POS_SRS1: "EPSG:2154",
+    //MAP_POS_SRS1: "EPSG:4326",
     
     /**
      * Constant: MAP_POS_SRS2
@@ -300,9 +296,9 @@ GEOR.custom = {
     /**
      * Constant: HELP_URL
      * {String} URL of the help ressource.
-     * Defaults to "/doc/html/documentation.html#extractor"
+     * Defaults to "http://cms.geobretagne.fr/assistance"
      */
-    //HELP_URL: "/doc/html/documentation.html#extractor"
+    //HELP_URL: "http://cms.geobretagne.fr/assistance"
     
     // No trailing comma for the last line (or IE will complain)
 };

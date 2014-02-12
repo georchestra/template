@@ -351,18 +351,18 @@ GEOR.custom = {
     /**
      * Constant: POINTER_POSITION_SRS_LIST
      * {Array} The cursor position will be displayed using these SRS.
-     * Defaults to [["EPSG:4326", "WGS 84"],["EPSG:2154", "Lambert 93"]]
+     * Defaults to [["EPSG:4326", "WGS 84"],["EPSG:3857", "Spherical Mercator"]]
      * Note: be sure to have all these projections defined in PROJ4JS_STRINGS
      *
     POINTER_POSITION_SRS_LIST: [
         ["EPSG:4326", "WGS 84"],
-        ["EPSG:2154", "Lambert 93"]
+        ["EPSG:3857", "Spherical Mercator"]
     ],*/
 
     /**
      * Constant: PROJ4JS_STRINGS
      * {Object} The list of supported SRS with their definitions.
-     * Defaults to "EPSG:4326", "EPSG:2154" & "EPSG:900913" being defined
+     * Defaults to "EPSG:4326", "EPSG:3857" & "EPSG:900913" being defined
      * Note that "EPSG:900913" is required if OSM_AS_OVMAP is set to true
      *
     PROJ4JS_STRINGS: {
