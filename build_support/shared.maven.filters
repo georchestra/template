@@ -56,7 +56,6 @@ shared.homepage.url=http://@shared.server.name@/
 # --------------------------------------------------
 shared.geonetwork.language=eng
 shared.psql.geonetwork.db=geonetwork
-shared.geonetwork.dir=/var/lib/tomcat6/work/gn_data
 
 
 # --------------------------------------------------
