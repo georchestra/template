@@ -39,9 +39,7 @@ class GenerateConfig {
         updateExtractorappMavenFilters()
         updateSecProxyMavenFilters()
         updateLDAPadminMavenFilters()
-
     }
-
 
     /**
      * installGeoServerExtensions
@@ -213,4 +211,5 @@ class GenerateConfig {
             properties['requiredFields'] = "firstName,surname"
         }
     }
+
 }
