@@ -35,6 +35,7 @@ class GenerateConfig {
 
         installGeoServerExtensions()
         updateGeoServerProperties()
+        updateGeoFenceProperties()
         updateMapfishappMavenFilters()
         updateExtractorappMavenFilters()
         updateSecProxyMavenFilters()
@@ -117,6 +118,26 @@ class GenerateConfig {
         }
     }
 
+
+    /**
+     * updateGeoServerProperties
+     */
+    def updateGeoFenceProperties() {
+        new PropertyUpdate(
+            path: 'geofence-datasource-ovr.properties',
+            from: 'defaults/geofence-webapp/WEB-INF/classes',
+            to: 'geofence-webapp/WEB-INF/classes'
+        ).update { properties ->
+            properties['geofenceGlobalConfiguration.baseLayerURL'] = "http://demo1.geo-solutions.it/geoserver-enterprise/wms"
+            properties['geofenceGlobalConfiguration.baseLayerName'] = "GeoSolutions:ne_shaded"
+            properties['geofenceGlobalConfiguration.baseLayerTitle'] = "GeoSolutions Natural Earth"
+            properties['geofenceGlobalConfiguration.baseLayerFormat'] = "image/jpeg"
+            properties['geofenceGlobalConfiguration.baseLayerStyle'] = ""
+            properties['geofenceGlobalConfiguration.mapCenterLon'] = "0.10626"
+            properties['geofenceGlobalConfiguration.mapCenterLat'] = "44.35909"
+            properties['geofenceGlobalConfiguration.mapZoom'] = "6"
+        }
+    }
 
     /**
      * updateExtractorappMavenFilters
