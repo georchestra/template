@@ -13,7 +13,7 @@
 
           <c:if test="${empty sessionScope.openIdLocalId}">
           <spring:message code="screen.welcome.label.netid.accesskey" var="userNameAccessKey" />
-          <form:input cssClass="required" cssErrorClass="error" id="username" tabindex="1" accesskey="${userNameAccessKey}" path="username" autocomplete="false" htmlEscape="true" />
+          <form:input cssClass="required" cssErrorClass="error" id="username" tabindex="1" accesskey="${userNameAccessKey}" path="username" autocomplete="on" htmlEscape="true" />
           </c:if>
         </fieldset>
         </div>
