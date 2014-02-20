@@ -77,3 +77,12 @@ input.btn-submit {
 div.box input {
   width: 200px;
 }
+
+div#msg.success {
+  background-color: rgb(180, 255, 180);
+  border: 1px #88ff88 solid;
+  margin: auto;
+  width: 400px;
+  margin-top: 150px;
+  padding: 20px;
+}
