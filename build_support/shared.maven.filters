@@ -55,7 +55,6 @@ shared.header.height=90
 # GEONETWORK
 # --------------------------------------------------
 
-shared.geonetwork.db=geonetwork
 shared.geonetwork.language=eng
 
 # --------------------------------------------------
