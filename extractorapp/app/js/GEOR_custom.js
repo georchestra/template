@@ -279,7 +279,7 @@ GEOR.custom = {
         "invitons à respecter les conseils suivants : ",
         "<br/><br/>",
         "Pour les données <b>image</b> : ",
-        "La taille maximale pour une extraction de l'orthophotographie est d'environ 9 Km². ",
+        "La taille maximale pour une extraction de l'orthophotographie à 50cm est d'environ 9 Km². ",
         "Au-delà, l'extraction risque de ne pas aboutir. ",
         "<br/>",
         "Le format ECW est limité à des fichiers de 500 Mo maximum. ",
