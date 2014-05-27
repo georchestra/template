@@ -69,12 +69,14 @@ GEOR.custom = {
         "title": {
             "en": "Aerial imagery magnifier",
             "es": "Lupa ortofoto",
-            "fr": "Loupe orthophoto"
+            "fr": "Loupe orthophoto",
+            "de": "Ortofoto Lupe"
         },
         "description": {
             "en": "A tool which allows to zoom in an aerial image on a map portion",
             "es": "Una herramienta que permite hacer un zoom sobre una parte del mapa ortofoto",
-            "fr": "Un outil qui permet de zoomer dans une orthophoto sur une portion de la carte"
+            "fr": "Un outil qui permet de zoomer dans une orthophoto sur une portion de la carte",
+            "de": "Utensil erlaubt Zoom mittels orthofoto auf Kartenbereich"
         }
     }, {
         "id": "annotation_0", // unique & stable string identifier for this addon instance
@@ -82,12 +84,14 @@ GEOR.custom = {
         "title": {
             "en": "Drawing tools",
             "es": "Herramientas de dibujo",
-            "fr": "Outils de dessin"
+            "fr": "Outils de dessin",
+            "de": "Malutensilien"
         },
         "description": {
             "en": "A bunch of tools to annotate the map by drawing different kind of shapes.",
             "es": "Una serie de herramientas para anotar el mapa dibujando diferentes formas.",
-            "fr": "Une série d'outils pour annoter la carte en dessinant différentes formes."
+            "fr": "Une série d'outils pour annoter la carte en dessinant différentes formes.",
+            "de": "Utensilienauswahl zur Kartenmarkierung mittels unterschiedlicher Formen"
         }
     }],
     
