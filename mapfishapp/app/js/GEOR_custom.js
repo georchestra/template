@@ -197,17 +197,17 @@ GEOR.custom = {
     /**
      * Constant: MAX_FEATURES
      * The maximum number of vector features displayed.
-     * Defaults to a value estimated by an empirical formula
+     * Defaults to 1000
      */
-    MAX_FEATURES: 500,
-    
+    //MAX_FEATURES: 1000,
+
     /**
      * Constant: MAX_LENGTH
-     * The maximum number of chars in a XML response 
+     * The maximum number of chars in a XML response
      * before triggering an alert.
-     * Defaults to a value estimated by an empirical formula
+     * Defaults to 2 millions
      */
-    MAX_LENGTH: 500000,
+    //MAX_LENGTH: 2048*1024,
 
     /**
      * Constant: OSM_AS_OVMAP
