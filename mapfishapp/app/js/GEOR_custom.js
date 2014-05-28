@@ -112,11 +112,12 @@ GEOR.custom = {
     //GEOSERVER_WMS_URL: "/geoserver/wms",
 
     /**
-     * Constant: GEONETWORK_URL
-     * The URL to the GeoNetwork server.
-     * Defaults to "/geonetwork/srv/fre"
+     * Constant: GEONETWORK_BASE_URL
+     * The base URL to the local GeoNetwork server.
+     * Required for CSW Browser module.
+     * Defaults to "/geonetwork"
      */
-    GEONETWORK_URL: "http://geobretagne.fr/geonetwork/srv/fre",
+    GEONETWORK_BASE_URL: "http://geobretagne.fr/geonetwork",
 
     /**
      * Constant: CSW_GETDOMAIN_SORTING
