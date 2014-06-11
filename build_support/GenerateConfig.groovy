@@ -230,6 +230,10 @@ class GenerateConfig {
             // firstName,surname,phone,facsimile,org,title,description,postalAddress
             // Note that email, uid, password and confirmPassword are always required
             properties['requiredFields'] = "firstName,surname"
+            // Enable auto generation of uid field for new users
+            properties['generateUid'] = "true"
+            // RegExp for uid field validation (by default: one letter, followed by letters, numbers or point)
+            properties['uidRegExp'] = "[A-Za-z]+[A-Za-z0-9\.]*"
         }
     }
 
