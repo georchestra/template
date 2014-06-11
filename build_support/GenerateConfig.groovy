@@ -233,7 +233,7 @@ class GenerateConfig {
             // Enable auto generation of uid field for new users
             properties['generateUid'] = "true"
             // RegExp for uid field validation (by default: one letter, followed by letters, numbers or point)
-            properties['uidRegExp'] = "[A-Za-z]+[A-Za-z0-9\.]*"
+            properties['uidRegExp'] = "[A-Za-z]+[A-Za-z0-9.]*"
         }
     }
 
