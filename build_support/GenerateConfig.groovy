@@ -40,6 +40,7 @@ class GenerateConfig {
         updateExtractorappMavenFilters()
         updateSecProxyMavenFilters()
         updateLDAPadminMavenFilters()
+        updateHeaderMavenFilters()
     }
 
     /**
@@ -230,6 +231,20 @@ class GenerateConfig {
             // firstName,surname,phone,facsimile,org,title,description,postalAddress
             // Note that email, uid, password and confirmPassword are always required
             properties['requiredFields'] = "firstName,surname"
+        }
+    }
+
+    /**
+     * updateHeaderMavenFilters
+     */
+    def updateHeaderMavenFilters() {
+        new PropertyUpdate(
+            path: 'maven.filter',
+            from: 'defaults/header',
+            to: 'header'
+        ).update { properties ->
+            // Ldapadmin application path as seen from the external world:
+            properties['ldapadminPublicContextPath'] = "/ldapadmin"
         }
     }
 
