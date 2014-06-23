@@ -141,6 +141,7 @@ GEOR.custom = {
      * List of catalogs for freetext search
      */
     CATALOGS: [
+        ['http://sdi.georchestra.org/geonetwork/srv/fre/csw', 'le catalogue geOrchestra démo'],
         ['http://geobretagne.fr/geonetwork/srv/fre/csw', 'le catalogue GeoBretagne'],
         ['http://ids.pigma.org/geonetwork/srv/fre/csw', 'le catalogue PIGMA'],
         ['/geonetwork/srv/fre/csw', 'le catalogue local'],
@@ -154,7 +155,7 @@ GEOR.custom = {
      * CSW URL which should be used by default for freetext search
      * Note: must be one of the URLs in the above CATALOGS config option
      */
-    //DEFAULT_CSW_URL: 'http://geobretagne.fr/geonetwork/srv/fre/csw',
+    DEFAULT_CSW_URL: 'http://sdi.georchestra.org/geonetwork/srv/fre/csw',
 
     /**
      * Constant: MAX_CSW_RECORDS
