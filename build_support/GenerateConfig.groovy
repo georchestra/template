@@ -8,9 +8,7 @@
  */
 class GenerateConfig {
 
-    // Feel free to customize your instance name,
-    // It will prefix every outgoing email.
-    def instanceName = "geOrchestra"
+    def instanceName = "@shared.instance.name@"
 
     /**
      * @param project The maven project.  you can get all information about
