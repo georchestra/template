@@ -52,18 +52,19 @@
       <spring:message code="screen.welcome.label.password.accesskey" var="passwordAccessKey" />
       <form:password cssClass="required" cssErrorClass="error" id="password" size="25" tabindex="2" path="password"  accesskey="${passwordAccessKey}" htmlEscape="true" autocomplete="off" />
     </section>
-    
-    <section class="row check">
-      <input id="warn" name="warn" value="true" tabindex="3" accesskey="<spring:message code="screen.welcome.label.warn.accesskey" />" type="checkbox" />
-      <label for="warn"><spring:message code="screen.welcome.label.warn" /></label>
-    </section>
-    
+
     <section class="row btn-row">
       <input type="hidden" name="lt" value="${loginTicket}" />
       <input type="hidden" name="execution" value="${flowExecutionKey}" />
       <input type="hidden" name="_eventId" value="submit" />
 
       <input class="btn-submit" name="submit" accesskey="l" value="<spring:message code="screen.welcome.button.login" />" tabindex="4" type="submit" />
+    </section>
+
+    <section class="row">
+      <a href="/ldapadmin/account/new"><spring:message code="screen.welcome.link.newaccount" /></a> - <a href="/ldapadmin/account/passwordRecovery"><spring:message code="screen.welcome.link.forgot" /></a>
+    </section>
+
     </section>
   </form:form>
 </div>
