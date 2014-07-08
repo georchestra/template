@@ -31,20 +31,21 @@
 <head>
   <meta charset="UTF-8" />
   
-  <title>CAS &#8211; Central Authentication Service</title>
+  <title>CAS - @shared.instance.name@</title>
   
   <spring:theme code="standard.custom.css.file" var="customCssFile" />
   <link rel="stylesheet" href="<c:url value="${customCssFile}" />" />
-  <link rel="icon" href="<c:url value="/favicon.ico" />" type="image/x-icon" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
   <![endif]-->
 </head>
 <body id="cas">
+
+<!-- see http://stackoverflow.com/questions/1037839/how-to-force-link-from-iframe-to-be-opened-in-the-parent-window -->
+<script type="text/javascript" src="/header/js/header.js"></script>
+<iframe src="/header/" style="width:100%;height:@shared.header.height@px;border:none;overflow:hidden;" scrolling="no" frameborder="0" onload="_headerOnLoad(this)"></iframe>
+
   <div id="container">
-      <header>
-        <a id="logo" href="http://www.jasig.org" title="<spring:message code="logo.title" />">Jasig</a>
-        <h1>Central Authentication Service (CAS)</h1>
-      </header>
       <div id="content">
