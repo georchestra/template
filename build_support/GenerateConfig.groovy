@@ -38,7 +38,6 @@ class GenerateConfig {
         updateExtractorappMavenFilters()
         updateSecProxyMavenFilters()
         updateLDAPadminMavenFilters()
-        updateHeaderMavenFilters()
     }
 
     /**
@@ -216,8 +215,6 @@ class GenerateConfig {
             // (these are the ones for sdi.georchestra.org, they won't work for you !!!)
             properties['privateKey'] = "6LcfjucSAAAAAKcnHp14epYOiWOIUfEculd4PvLV"
             properties['publicKey'] = "6LcfjucSAAAAAKtNoK5r7IIXxBT-33znNJUgeYg1"
-            // Application path as seen from the external world:
-            properties['publicContextPath'] = "/ldapadmin"
             // Email subjects:
             properties['subject.account.created'] = "["+instanceName+"] Your account has been created"
             properties['subject.account.in.process'] = "["+instanceName+"] Your new account is waiting for validation"
@@ -234,18 +231,5 @@ class GenerateConfig {
         }
     }
 
-    /**
-     * updateHeaderMavenFilters
-     */
-    def updateHeaderMavenFilters() {
-        new PropertyUpdate(
-            path: 'maven.filter',
-            from: 'defaults/header',
-            to: 'header'
-        ).update { properties ->
-            // Ldapadmin application path as seen from the external world:
-            properties['ldapadminPublicContextPath'] = "/ldapadmin"
-        }
-    }
 
 }
