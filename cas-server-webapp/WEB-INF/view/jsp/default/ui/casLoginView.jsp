@@ -53,7 +53,7 @@
       <form:password cssClass="required" cssErrorClass="error" id="password" size="25" tabindex="2" path="password"  accesskey="${passwordAccessKey}" htmlEscape="true" autocomplete="off" />
     </section>
 
-    <section class="row btn-row">
+    <section class="row btn-row check">
       <input type="hidden" name="lt" value="${loginTicket}" />
       <input type="hidden" name="execution" value="${flowExecutionKey}" />
       <input type="hidden" name="_eventId" value="submit" />
