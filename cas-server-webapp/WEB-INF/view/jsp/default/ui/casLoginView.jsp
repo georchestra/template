@@ -20,13 +20,6 @@
 --%>
 <jsp:directive.include file="includes/top.jsp" />
 
-<c:if test="${not pageContext.request.secure}">
-  <div id="msg" class="errors">
-    <h2>Non-secure Connection</h2>
-    <p>You are currently accessing CAS over a non-secure connection.  Single Sign On WILL NOT WORK.  In order to have single sign on work, you MUST log in over HTTPS.</p>
-  </div>
-</c:if>
-
 <div class="box" id="login">
   <form:form method="post" id="fm1" commandName="${commandName}" htmlEscape="true">
 
