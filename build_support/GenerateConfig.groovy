@@ -182,6 +182,7 @@ class GenerateConfig {
 <entry key="extractorapp"  value="proxyDefaultTarget/extractorapp/" />
 <entry key="geonetwork"    value="proxyDefaultTarget/geonetwork/" />
 <entry key="geoserver"     value="proxyDefaultTarget/geoserver/" />
+<entry key="geowebcache"   value="proxyDefaultTarget/geowebcache/" />
 <entry key="geofence"      value="proxyDefaultTarget/geofence/" />
 <entry key="header"        value="proxyDefaultTarget/header/" />
 <entry key="ldapadmin"     value="proxyDefaultTarget/ldapadmin/" />
