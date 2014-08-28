@@ -128,7 +128,7 @@ class GenerateConfig {
             from: 'defaults/geofence-webapp/WEB-INF/classes',
             to: 'geofence-webapp/WEB-INF/classes'
         ).update { properties ->
-            properties['geofenceGlobalConfiguration.baseLayerURL'] = "http://demo1.geo-solutions.it/geoserver-enterprise/wms"
+            properties['geofenceGlobalConfiguration.baseLayerURL'] = "@shared.url.scheme@://demo1.geo-solutions.it/geoserver-enterprise/wms"
             properties['geofenceGlobalConfiguration.baseLayerName'] = "GeoSolutions:ne_shaded"
             properties['geofenceGlobalConfiguration.baseLayerTitle'] = "GeoSolutions Natural Earth"
             properties['geofenceGlobalConfiguration.baseLayerFormat'] = "image/jpeg"
