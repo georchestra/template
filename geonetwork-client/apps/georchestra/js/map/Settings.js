@@ -35,7 +35,7 @@ GeoNetwork.map.EXTENT = new OpenLayers.Bounds(-20037508.34, -20037508.34, 200375
 GeoNetwork.map.BACKGROUND_LAYERS = [
     new OpenLayers.Layer.XYZ(
         'OSM', 
-        '@shared.url.scheme@://tile.openstreetmap.org/${z}/${x}/${y}.png', 
+        '@shared.url.scheme@://a.tile.openstreetmap.org/${z}/${x}/${y}.png', 
         {
             attribution: "Data CC-By-SA by <a href='http://openstreetmap.org/'>OpenStreetMap</a>",
             sphericalMercator: true,
