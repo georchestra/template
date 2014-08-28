@@ -23,13 +23,15 @@ shared.instance.name=geOrchestra
 # If your server is http://localhost:8080/ :
 # shared.server.name=localhost
 # shared.server.port=8080
+# set shared.url.scheme to https if your SDI is configured accordingly
 
 shared.server.name=vm-georchestra
+shared.url.scheme=http
 
 # sets the public address of your homepage.
-# Defaults to http://@shared.server.name@/
+# Defaults to @shared.url.scheme@://@shared.server.name@/
 
-shared.homepage.url=http://@shared.server.name@/
+shared.homepage.url=@shared.url.scheme@://@shared.server.name@/
 
 # --------------------------------------------------
 # LANGUAGE
