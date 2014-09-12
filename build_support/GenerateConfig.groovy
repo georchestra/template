@@ -164,8 +164,14 @@ class GenerateConfig {
      */
     def updateSecProxyMavenFilters() {
 
+        // We assume that georchestra webapps, except geoserver, proxy and cas
+        // are served by an http connector on localhost, port 8080:
         def proxyDefaultTarget = "http://localhost:8080"
-
+        
+        // We also assume that geoserver is by default served
+        // by an http connector on localhost, port 8180.
+        
+        // Change the proxy.mapping value below to match your setup !
         new PropertyUpdate(
             path: 'maven.filter',
             from: 'defaults/security-proxy',
@@ -181,7 +187,7 @@ class GenerateConfig {
 <entry key="downloadform"  value="proxyDefaultTarget/downloadform/" />
 <entry key="extractorapp"  value="proxyDefaultTarget/extractorapp/" />
 <entry key="geonetwork"    value="proxyDefaultTarget/geonetwork/" />
-<entry key="geoserver"     value="proxyDefaultTarget/geoserver/" />
+<entry key="geoserver"     value="http://localhost:8180/geoserver/" />
 <entry key="geowebcache"   value="proxyDefaultTarget/geowebcache/" />
 <entry key="geofence"      value="proxyDefaultTarget/geofence/" />
 <entry key="header"        value="proxyDefaultTarget/header/" />
