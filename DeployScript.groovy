@@ -94,9 +94,9 @@ proxycasDeployer.deploy(artifacts.findAll{it.name.contains("ROOT") || it.name.co
 def geoserverArtifact = artifacts.find{it.name.startsWith("geoserver")}
 if (geoserverArtifact != null) {
   def geoserverDeployer = server1Deployer.copy(
-    webappDir: "/srv/tomcat/geoserver/webapps",
-    startServerCommand: "sudo /etc/init.d/tomcat-geoserver start",
-    stopServerCommand: "sudo /etc/init.d/tomcat-geoserver stop"
+    webappDir: "/srv/tomcat/geoserver0/webapps",
+    startServerCommand: "sudo /etc/init.d/tomcat-geoserver0 start",
+    stopServerCommand: "sudo /etc/init.d/tomcat-geoserver0 stop"
   )
   geoserverDeployer.deploy(geoserverArtifact)
 }
