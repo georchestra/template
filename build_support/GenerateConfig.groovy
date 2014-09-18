@@ -30,44 +30,5 @@ class GenerateConfig {
       def buildSupportDir, def outputDir) {
     def gsVersion = System.getProperty('geoserver.version', '2.3.2')
     def gtVersion = System.getProperty("geotools.version", '9.2')
-
-    new MavenDownloader(
-      to: 'geoserver-webapp/WEB-INF/lib',
-      artifacts: [
-
-        /*
-         * The INSPIRE extension allows GeoServer to be compliant with the View Service specification 
-         * put forth by the Infrastructure for Spatial Information in the European Community (INSPIRE) directive.
-         * Please refer to http://docs.geoserver.org/stable/en/user/extensions/inspire/index.html
-         * Activated by default for geOrchestra.
-         */
-        ['org.geoserver.extension','inspire', gsVersion]
-
-        /*
-         * The control-flow module allows the administrator to control the amount of concurrent requests 
-         * actually executing inside the server.
-         * Please refer to http://docs.geoserver.org/stable/en/user/extensions/controlflow/index.html
-         * Activated by default for geOrchestra.
-         */
-        ,['org.geoserver.extension','control-flow', gsVersion]
-
-        /*
-         * GeoServer can leverage the ImageI/O-Ext GDAL libraries to read selected coverage formats.
-         * Please refer to http://docs.geoserver.org/stable/en/user/data/raster/gdal.html
-         * Not activated by default since it requires the GDAL native libraries
-         *
-        ,['org.geoserver.extension','gdal', gsVersion]
-        */
-
-        /*
-         * SpatiaLite is the spatial extension of the popular SQLite embedded relational database.
-         * Please refer to http://docs.geoserver.org/stable/en/user/community/spatialite/index.html
-         * Not activated by default since it requires native libraries
-         *
-        ,['org.geotools.jdbc','gt-jdbc-spatialite', gtVersion]
-        ,['org.xerial', 'sqlite-jdbc-spatialite', '3.7.2-2.4']
-        */
-
-      ]).download()
   }
 }
