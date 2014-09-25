@@ -71,6 +71,13 @@ GEOR.custom = {
     ],*/
 
     /**
+     * Constant: DEFAULT_RESOLUTION
+     * Defaults to 10 meters
+     * Please read https://github.com/georchestra/georchestra/issues/726
+     *
+    DEFAULT_RESOLUTION: 10,*/
+
+    /**
      * Constant: GEOSERVER_WMS_URL
      * The URL to GeoServer WMS.
      */
