@@ -41,7 +41,7 @@ shared.homepage.url=@shared.url.scheme@://@shared.server.name@/
 # --------------------------------------------------
 
 # sets the language for all modules
-# May be one of the following: fr, es, en
+# May be one of the following: fr, es, en, de
 # Default value: en
 
 shared.language=en
