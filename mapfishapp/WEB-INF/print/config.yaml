@@ -139,6 +139,7 @@ layouts:
               maxHeight: 30
               url: 'file://${configDir}/Arrow_North_CFCF.svg'
               condition: showNorth
+              rotation: '${rotation}'
         # Scalebar
         - !columns
           absoluteX: 24
@@ -296,6 +297,7 @@ layouts:
               maxHeight: 30
               url: 'file://${configDir}/Arrow_North_CFCF.svg'
               condition: showNorth
+              rotation: '${rotation}'
         # Scalebar
         - !columns
           absoluteX: 24
@@ -453,6 +455,7 @@ layouts:
               maxHeight: 30
               url: 'file://${configDir}/Arrow_North_CFCF.svg'
               condition: showNorth
+              rotation: '${rotation}'
         # Scalebar
         - !columns
           absoluteX: 24
@@ -610,6 +613,7 @@ layouts:
               maxHeight: 30
               url: 'file://${configDir}/Arrow_North_CFCF.svg'
               condition: showNorth
+              rotation: '${rotation}'
         # Scalebar
         - !columns
           absoluteX: 24
@@ -711,6 +715,7 @@ layouts:
     mainPage:
       pageSize: Letter
       landscape: true
+      rotation: true
       backgroundPdf: 'file://${configDir}/background_Letter_landscape.pdf'
       items:
         # Map Title
@@ -766,6 +771,7 @@ layouts:
               maxHeight: 30
               url: 'file://${configDir}/Arrow_North_CFCF.svg'
               condition: showNorth
+              rotation: '${rotation}'
         # Scalebar
         - !columns
           absoluteX: 24
@@ -867,6 +873,7 @@ layouts:
     mainPage:
       pageSize: Letter
       landscape: false
+      rotation: true
       backgroundPdf: 'file://${configDir}/background_Letter_portrait.pdf'
       items:
         # Map Title
@@ -922,6 +929,7 @@ layouts:
               maxHeight: 30
               url: 'file://${configDir}/Arrow_North_CFCF.svg'
               condition: showNorth
+              rotation: '${rotation}'
         # Scalebar
         - !columns
           absoluteX: 24
