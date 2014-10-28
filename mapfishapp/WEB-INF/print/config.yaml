@@ -83,6 +83,7 @@ layouts:
     mainPage:
       pageSize: A4
       landscape: false
+      rotation: true
       backgroundPdf: 'file://${configDir}/background_A4_portrait.pdf'
       items:
         # Map Title
@@ -239,6 +240,7 @@ layouts:
     mainPage:
       pageSize: A4
       landscape: true
+      rotation: true
       backgroundPdf: 'file://${configDir}/background_A4_landscape.pdf'
       items:
         # Map Title
@@ -395,6 +397,7 @@ layouts:
     mainPage:
       pageSize: A3
       landscape: false
+      rotation: true
       backgroundPdf: 'file://${configDir}/background_A3_portrait.pdf'
       items:
         # Map Title
@@ -551,6 +554,7 @@ layouts:
     mainPage:
       pageSize: A3
       landscape: true
+      rotation: true
       backgroundPdf: 'file://${configDir}/background_A3_landscape.pdf'
       items:
         # Map Title
