@@ -80,14 +80,17 @@ class GenerateConfig {
             from: 'defaults/geofence-webapp/WEB-INF/classes',
             to: 'geofence-webapp/WEB-INF/classes'
         ).update { properties ->
-            properties['geofenceGlobalConfiguration.baseLayerURL'] = "@shared.url.scheme@://demo1.geo-solutions.it/geoserver-enterprise/wms"
-            properties['geofenceGlobalConfiguration.baseLayerName'] = "GeoSolutions:ne_shaded"
-            properties['geofenceGlobalConfiguration.baseLayerTitle'] = "GeoSolutions Natural Earth"
+            properties['geofenceGlobalConfiguration.baseLayerURL'] = "@shared.url.scheme@://sdi.georchestra.org/geoserver/wms"
+            properties['geofenceGlobalConfiguration.baseLayerName'] = "unearthedoutdoors:truemarble"
+            properties['geofenceGlobalConfiguration.baseLayerTitle'] = "True Marble"
             properties['geofenceGlobalConfiguration.baseLayerFormat'] = "image/jpeg"
             properties['geofenceGlobalConfiguration.baseLayerStyle'] = ""
-            properties['geofenceGlobalConfiguration.mapCenterLon'] = "0.10626"
-            properties['geofenceGlobalConfiguration.mapCenterLat'] = "44.35909"
-            properties['geofenceGlobalConfiguration.mapZoom'] = "6"
+            properties['geofenceGlobalConfiguration.mapCenterLon'] = "273950.30933606"
+            properties['geofenceGlobalConfiguration.mapCenterLat'] = "5901246.3506556"
+            properties['geofenceGlobalConfiguration.mapZoom'] = "4"
+            properties['geofenceGlobalConfiguration.mapMaxResolution'] = "156543.03390625"
+            properties['geofenceGlobalConfiguration.mapMaxExtent'] = "-20037508.34,-20037508.34,20037508.34,20037508.34"
+            properties['geofenceGlobalConfiguration.mapProjection'] = "EPSG:3857"
         }
     }
 
