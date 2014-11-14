@@ -643,59 +643,21 @@ GEOR.custom = {
     }],*/
 
     /**
-     * Constant: WMTS_SERVERS
-     * {Array} List of externals WMTS to display in the WMTS servers tab.
-     */
-    WMTS_SERVERS: [
-        {"name": "geOrchestra demo", "url": "http://sdi.georchestra.org/geoserver/gwc/service/wmts"},
-        {"name": "GéoBretagne OSM", "url": "http://osm.geobretagne.fr/gwc01/service/wmts"},
-        {"name": "GéoBretagne rasters", "url": "http://tile.geobretagne.fr/gwc02/service/wmts"}
-        /*
-        To ship the French Geoportail WMTS layers, you have to ask for an API key,
-        and replace __MY_KEY__ here:
-        ,{"name": "GéoPortail IGN", "url": "http://wxs.ign.fr/__MY_KEY__/wmts"}
-        */
-    ],
+     * Constant: OGC_SERVERS_URL
+     * {Object} associates OGC interface names with resource file URLs
+     *          (relative to viewer or complete) where the servers are enlisted
+     *
+    OGC_SERVERS_URL: {
+        "WMS": "wms.servers.json",
+        "WFS": "wfs.servers.json",
+        "WMTS": "wmts.servers.json"
+    },*/
 
     /**
-     * Constant: WMS_SERVERS
-     * {Array} List of externals WMS to display in the WMS servers tab.
-     */
-    WMS_SERVERS: [
-        {"name": "geOrchestra demo", "url": "http://sdi.georchestra.org/geoserver/wms"},
-        {"name": "GeoBretagne", "url": "http://geobretagne.fr/geoserver/wms"},
-        {"name": "Sandre/zonages", "url": "http://services.sandre.eaufrance.fr/geo/zonage"},
-        {"name": "Sandre/ouvrages", "url": "http://services.sandre.eaufrance.fr/geo/ouvrage"},
-        {"name": "Sandre/stations", "url": "http://services.sandre.eaufrance.fr/geo/stations"},
-        {"name": "BRGM/géologie", "url": "http://geoservices.brgm.fr/geologie"},
-        {"name": "BRGM/risques", "url": "http://geoservices.brgm.fr/risques"},
-        {"name": "Cartorisque33, risques naturels", "url": "http://cartorisque.prim.net/wms/33"},
-        {"name": "Cartorisque24, risques naturels", "url": "http://cartorisque.prim.net/wms/24"},
-        {"name": "Cartorisque47, risques naturels", "url": "http://cartorisque.prim.net/wms/47"},
-        {"name": "Cartorisque40, risques naturels", "url": "http://cartorisque.prim.net/wms/40"},
-        {"name": "Cartorisque64, risques naturels", "url": "http://cartorisque.prim.net/wms/64"},
-        {"name": "Carmen", "url": "http://ws.carmen.application.developpement-durable.gouv.fr/WFS/10/Nature_Paysage"},
-        {"name": "GeoSignal", "url": "http://www.geosignal.org/cgi-bin/wmsmap"},
-        {"name": "Corine Land Cover", "url": "http://sd1878-2.sivit.org/geoserver/wms"},
-        {"name": "GeoLittoral", "url": "http://geolittoral.application.equipement.gouv.fr/wms/metropole"},
-        {"name": "Gest'Eau", "url": "http://gesteau.oieau.fr/service"},
-        {"name": "IFREMER/Océanographie physique", "url": "http://www.ifremer.fr/services/wms/oceanographie_physique"},
-        {"name": "IFREMER/Biologie", "url": "http://www.ifremer.fr/services/wms/biologie"},
-        {"name": "IFREMER/GeoSciences", "url": "http://www.ifremer.fr/services/wms/geosciences"},
-        {"name": "IFREMER/Photos anciennes", "url": "http://www.ifremer.fr/services/photos_anciennes"},
-        {"name": "IFREMER/Nouvelle Calédonie", "url": "http://www.ifremer.fr/services/wms/nc"},
-        {"name": "IFREMER/Euroshell (conchyliculture, aquaculture...)", "url": "http://www.ifremer.fr/services/wms/euroshell"},
-        {"name": "Cartelie/CETE Ouest", "url": "http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map%3D%2Fopt%2Fdata%2Fcarto%2Fcartelie%2Fprod%2FCETE_Ouest%2Fxdtyr36laj.www.map"}
-    ],
-    
-    /**
-     * Constant: WFS_SERVERS
-     * {Array} List of externals WFS to display in the WFS servers tab.
-     */
-    WFS_SERVERS: [
-        {"name": "geOrchestra demo", "url": "http://sdi.georchestra.org/geoserver/wfs"},
-        {"name": "GeoBretagne", "url": "http://geobretagne.fr/geoserver/wfs"},
-        {"name": "Corine Land Cover", "url": "http://sd1878-2.sivit.org/geoserver/wfs"}
-    ]
+     * Constant: DEFAULT_SERVICE_TYPE
+     * {String} The default service type for the "Add layer" window OGC tab.
+     * Defaults to "WMS"
+     **/
+    //DEFAULT_SERVICE_TYPE: "WMS"
     // No trailing comma for the last line (or IE will complain)
 }
