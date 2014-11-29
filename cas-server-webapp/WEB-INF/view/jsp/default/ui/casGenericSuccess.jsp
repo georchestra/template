@@ -29,6 +29,6 @@
     <p><spring:message code="screen.success.success" /></p>
     <p><spring:message code="screen.success.security" /></p>
   </div>
-  <iframe id="iframe" src="/testPage?login" style="display:none" width="0" height="0"/>
+  <iframe id="iframe" src="/testPage?login" style="display:none" width="0" height="0"></iframe>
+  <div><spring:message code="screen.welcome.redirecting" /></div>
 <jsp:directive.include file="includes/bottom.jsp" />
-
