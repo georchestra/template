@@ -67,13 +67,12 @@ formats:
 
 layouts:
 
-# 6 layouts:
+# 4 layouts:
 # - A4 portrait
 # - A4 landscape
 # - A3 portrait
 # - A3 landscape
-# - Letter portrait
-# - Letter landscape
+
 
   #===========================================================================
   A4 portrait:
@@ -255,6 +254,8 @@ layouts:
     lastPage:
       backgroundPdf: 'file://${configDir}/background_A4_portrait.pdf'
       condition: showLegend
+      pageSize: A4
+      landscape: false
       items: 
          # Map Title Border
          - !columns
@@ -279,7 +280,9 @@ layouts:
           items:
             - !legends
               inline: false
-              defaultScale: 0.5
+              # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
+              # necessary for icons to have the same size in legend and on map
+              defaultScale: 0.7937
               maxHeight: 400
               maxWidth: 250
               iconMaxHeight: 0
@@ -496,7 +499,9 @@ layouts:
           items:
             - !legends
               inline: false
-              defaultScale: 0.5
+              # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
+              # necessary for icons to have the same size in legend and on map
+              defaultScale: 0.7937
               maxHeight: 400
               maxWidth: 250
               iconMaxHeight: 0
@@ -506,628 +511,443 @@ layouts:
               classIndentation: 3
               classSpace: 5
               backgroundColor: white
-              layerFontSize: 9                 
-
-  #===========================================================================
-  A3 portrait:
-  #===========================================================================
-    mainPage:
-      pageSize: A3
-      landscape: false
-      backgroundPdf: 'file://${configDir}/background_A3_portrait.pdf'
-      items:
-        # Map Title
-        - !columns
-          # columns can have an absolute position. In that case, they need a width.
-          absoluteX: 96
-          absoluteY: 1179
-          width: 482
-          items:
-            - !text
-              font: Helvetica
-              fontSize: 20
-              align: center
-              text: '${mapTitle}'
-
-        # Map
-        - !columns
-          absoluteX: 12
-          absoluteY: 1127
-          width: 650
-          config:
-              borderWidth: 1
-              cells:
-                - padding: 1
-          items:
-            - !map
-              width: 648
-              height: 1061
-        # Map overview
-        - !columns
-          absoluteX: 562
-          absoluteY: 136
-          width: 100
-          config:
-              borderWidth: 1
-              cells:
-                - padding: 1
-          items:
-            - !map
-              width: 98
-              height: 70
-              backgroundColor: #FFFFFF
-              overviewMap: 10
-              condition: showOverview
-        # North arrow
-        - !columns
-          absoluteX: 626
-          absoluteY: 172
-          width: 30
-          items:
-            - !image
-              maxWidth: 30
-              maxHeight: 30
-              url: 'file://${configDir}/Arrow_North_CFCF.svg'
-              condition: showNorth
-        # Scalebar
-        - !columns
-          absoluteX: 24
-          absoluteY: 100
-          width: 180
-          items:
-            - !scalebar
-              align: left
-              maxSize: 180
-              type: 'bar sub'
-              intervals: 5
-              condition: showScalebar
-
-        # Map comments
-        - !columns
-          absoluteX: 216
-          absoluteY: 52
-          width: 446
-          items:
-            - !text
-              fontSize: 10
-              text: '${mapComments}'
-
-        # Vertical line (using a transparent image)
-        - !columns
-          absoluteX: 674
-          absoluteY: 1191
-          width: 200
-          config:
-              borderWidthLeft: 1
-          items:
-            - !image
-              maxWidth: 200
-              maxHeight: 1191
-              url: 'file://${configDir}/null.svg'
-        # Legend
-        - !columns
-          absoluteX: 680
-          absoluteY: 1179
-          width: 150
-          items:
-            - !legends
-              horizontalAlignment: left
-              iconMaxWidth: 0
-              iconMaxHeight: 0
-              # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
-              # necessary for icons to have the same size in legend and on map
-              defaultScale: 0.7937
-              layerSpace: 3
-              layerFontSize: 10
-              classIndentation: 0
-              classFontSize: 10
-              classSpace: 3
-              maxWidth: 150
-              maxHeight: 1063
-              condition: showLegend
-        # Date
-        - !columns
-          absoluteX: 680
-          absoluteY: 110
-          width: 150
-          items:
-            - !text
-              fontSize: 10
-              text: '${dateLbl}${now dd/MM/yyyy}'
-              condition: showDate
-        # Scale
-        - !columns
-          absoluteX: 680
-          absoluteY: 94
-          width: 150
-          items:
-            - !text
-              fontSize: 10
-              text: '${scaleLbl}1:${format %,d scale}'
-              condition: showScalebar
-        # Projection
-        - !columns
-          absoluteX: 680
-          absoluteY: 78
-          width: 150
-          items:
-            - !text
-              fontSize: 10
-              text: '${projection}'
-        # Sources
-        - !columns
-          absoluteX: 680
-          absoluteY: 52
-          width: 150
-          items:
-            - !text
-              fontSize: 10
-              text: '${copyright}'
-
+              layerFontSize: 9    
+              
   #===========================================================================
   A3 landscape:
   #===========================================================================
     mainPage:
       pageSize: A3
       landscape: true
+      rotation: true
       backgroundPdf: 'file://${configDir}/background_A3_landscape.pdf'
       items:
         # Map Title
         - !columns
           # columns can have an absolute position. In that case, they need a width.
-          absoluteX: 96
-          absoluteY: 830
-          width: 831
+          absoluteX: 300
+          absoluteY: 825
+          width: 842
           items:
             - !text
-              font: Helvetica
-              fontSize: 20
-              align: center
+              font: Arial
+              fontSize: 21
+              fontColor: #56006B
+              align: left
               text: '${mapTitle}'
-
+        # Map Title Border
+        - !columns
+          # columns can have an absolute position. In that case, they need a width.
+          absoluteX: 300
+          absoluteY: 771
+          width: 842
+          config:
+              borderWidthTop: 1
+              borderColor: #56006B
+          items:
+            - !text
+              font: Arial
+              fontSize: 21
+              fontColor: #56006B
+              align: left
+              text: ''
+        # Comments
+        - !columns
+          # columns can have an absolute position. In that case, they need a width.
+          absoluteX: 300
+          absoluteY: 754
+          width: 842
+          items:
+            - !text
+              font: Arial
+              fontSize: 9
+              fontColor: #626161
+              text: '${mapComments}'
         # Map
         - !columns
-          absoluteX: 12
-          absoluteY: 778
-          width: 999
+          absoluteX: 50
+          absoluteY: 703
+          width: 1090
           config:
               borderWidth: 1
+              borderColor: #D1D3d4
               cells:
                 - padding: 1
           items:
             - !map
-              width: 997
-              height: 712
-        # Map overview
-        - !columns
-          absoluteX: 911
-          absoluteY: 136
-          width: 100
-          config:
-              borderWidth: 1
-              cells:
-                - padding: 1
-          items:
-            - !map
-              width: 98
-              height: 70
-              backgroundColor: #FFFFFF
-              overviewMap: 10
-              condition: showOverview
-        # North arrow
-        - !columns
-          absoluteX: 975
-          absoluteY: 172
-          width: 30
-          items:
-            - !image
-              maxWidth: 30
-              maxHeight: 30
-              url: 'file://${configDir}/Arrow_North_CFCF.svg'
-              condition: showNorth
+              width: 1088
+              height: 601
         # Scalebar
         - !columns
-          absoluteX: 24
-          absoluteY: 100
-          width: 180
+          absoluteX: 50
+          absoluteY: 72
+          width: 170
           items:
             - !scalebar
               align: left
-              maxSize: 180
-              type: 'bar sub'
+              maxSize: 156
+              type: 'bar'
+              fontColor: #5b524d
               intervals: 5
               condition: showScalebar
-
-        # Map comments
-        - !columns
-          absoluteX: 216
-          absoluteY: 52
-          width: 795
-          items:
-            - !text
-              fontSize: 10
-              text: '${mapComments}'
-
-        # Vertical line (using a transparent image)
-        - !columns
-          absoluteX: 1023
-          absoluteY: 842
-          width: 200
-          config:
-              borderWidthLeft: 1
-          items:
-            - !image
-              maxWidth: 200
-              maxHeight: 842
-              url: 'file://${configDir}/null.svg'
-        # Legend
-        - !columns
-          absoluteX: 1029
-          absoluteY: 830
-          width: 150
-          items:
-            - !legends
-              horizontalAlignment: left
-              iconMaxWidth: 0
-              iconMaxHeight: 0
-              # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
-              # necessary for icons to have the same size in legend and on map
-              defaultScale: 0.7937
-              layerSpace: 3
-              layerFontSize: 10
-              classIndentation: 0
-              classFontSize: 10
-              classSpace: 3
-              maxWidth: 150
-              maxHeight: 714
-              condition: showLegend
-        # Date
-        - !columns
-          absoluteX: 1029
-          absoluteY: 110
-          width: 150
-          items:
-            - !text
-              fontSize: 10
-              text: '${dateLbl}${now dd/MM/yyyy}'
-              condition: showDate
         # Scale
         - !columns
-          absoluteX: 1029
-          absoluteY: 94
-          width: 150
+          absoluteX: 230
+          absoluteY: 75
+          width: 122
           items:
             - !text
-              fontSize: 10
+              font: Arial
+              fontSize: 8
+              fontColor: #626161
               text: '${scaleLbl}1:${format %,d scale}'
               condition: showScalebar
+        # North arrow
+        - !columns
+          absoluteX: 322
+          absoluteY: 93
+          width: 35
+          items:
+            - !image
+              maxWidth: 35
+              maxHeight: 44
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
+              condition: showNorth
+       # Sources
+        - !columns
+          absoluteX: 788
+          absoluteY: 79
+          width: 350
+          items:
+            - !text
+              font: Arial
+              fontSize: 8
+              fontColor: #626161
+              text: '${copyright}'
+        # Sources Border
+        - !columns
+          # columns can have an absolute position. In that case, they need a width.
+          absoluteX: 788
+          absoluteY: 65
+          width: 350
+          config:
+              borderWidthTop: 1
+              borderColor: #d2d3d5
+          items:
+            - !text
+              font: Arial
+              align: left
+              text: ''
         # Projection
         - !columns
-          absoluteX: 1029
-          absoluteY: 78
-          width: 150
+          absoluteX: 788
+          absoluteY: 59
+          width: 350
           items:
             - !text
-              fontSize: 10
+              font: Arial
+              fontSize: 8
+              fontColor: #626161
               text: '${projection}'
-        # Sources
+        # Projection Border
         - !columns
-          absoluteX: 1029
-          absoluteY: 52
-          width: 150
+          # columns can have an absolute position. In that case, they need a width.
+          absoluteX: 788
+          absoluteY: 45
+          width: 350
+          config:
+              borderWidthTop: 1
+              borderColor: #d2d3d5
           items:
             - !text
-              fontSize: 10
-              text: '${copyright}'
-
-  #===========================================================================
-  Letter landscape:
-  #===========================================================================
-    mainPage:
-      pageSize: Letter
+              font: Arial
+              align: left
+              text: ''
+        # Date
+        - !columns
+          absoluteX: 788
+          absoluteY: 40
+          width: 350
+          items:
+            - !text
+              font: Arial
+              fontSize: 8
+              fontColor: #626161
+              text: '${dateLbl}${now dd/MM/yyyy}'
+              condition: showDate
+        # Date Border
+        - !columns
+          # columns can have an absolute position. In that case, they need a width.
+          absoluteX: 788
+          absoluteY: 25
+          width: 350
+          config:
+              borderWidthTop: 1
+              borderColor: #d2d3d5
+          items:
+            - !text
+              font: Arial
+              align: left
+              text: ''
+    lastPage:
+      pageSize: A3
       landscape: true
-      backgroundPdf: 'file://${configDir}/background_Letter_landscape.pdf'
-      items:
-        # Map Title
-        - !columns
+      condition: showLegend
+      backgroundPdf: 'file://${configDir}/background_A3_landscape.pdf'
+      items: 
+         # Map Title Border
+         - !columns
           # columns can have an absolute position. In that case, they need a width.
-          absoluteX: 96
-          absoluteY: 600
-          width: 432
+          absoluteX: 300
+          absoluteY: 771
+          width: 771
+          config:
+              borderWidthTop: 1
+              borderColor: #56006B
           items:
             - !text
-              font: Helvetica
-              fontSize: 20
-              align: center
-              text: '${mapTitle}'
-
-        # Map
-        - !columns
-          absoluteX: 12
-          absoluteY: 548
-          width: 600
-          config:
-              borderWidth: 1
-              cells:
-                - padding: 1
-          items:
-            - !map
-              width: 598
-              height: 482
-        # Map overview
-        - !columns
-          absoluteX: 512
-          absoluteY: 136
-          width: 100
-          config:
-              borderWidth: 1
-              cells:
-                - padding: 1
-          items:
-            - !map
-              width: 98
-              height: 70
-              backgroundColor: #FFFFFF
-              overviewMap: 10
-              condition: showOverview
-        # North arrow
-        - !columns
-          absoluteX: 576
-          absoluteY: 172
-          width: 30
-          items:
-            - !image
-              maxWidth: 30
-              maxHeight: 30
-              url: 'file://${configDir}/Arrow_North_CFCF.svg'
-              condition: showNorth
-        # Scalebar
-        - !columns
-          absoluteX: 24
-          absoluteY: 100
-          width: 180
-          items:
-            - !scalebar
+              font: Arial
+              fontSize: 21
+              fontColor: #56006B
               align: left
-              maxSize: 180
-              type: 'bar sub'
-              intervals: 5
-              condition: showScalebar
-
-        # Map comments
-        - !columns
-          absoluteX: 216
-          absoluteY: 52
-          width: 396
-          items:
-            - !text
-              fontSize: 10
-              text: '${mapComments}'
-
-        # Vertical line (using a transparent image)
-        - !columns
-          absoluteX: 624
-          absoluteY: 612
-          width: 200
-          config:
-              borderWidthLeft: 1
-          items:
-            - !image
-              maxWidth: 200
-              maxHeight: 612
-              url: 'file://${configDir}/null.svg'
-        # Legend
-        - !columns
-          absoluteX: 630
-          absoluteY: 600
-          width: 150
+              text: ''
+         - !columns
+          absoluteX: 300
+          absoluteY: 735
+          width: 842
           items:
             - !legends
-              horizontalAlignment: left
-              iconMaxWidth: 0
-              iconMaxHeight: 0
+              inline: false
               # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
               # necessary for icons to have the same size in legend and on map
               defaultScale: 0.7937
-              layerSpace: 3
-              layerFontSize: 10
-              classIndentation: 0
-              classFontSize: 10
-              classSpace: 3
-              maxWidth: 150
-              maxHeight: 484
-              condition: showLegend
-        # Date
-        - !columns
-          absoluteX: 630
-          absoluteY: 110
-          width: 150
-          items:
-            - !text
-              fontSize: 10
-              text: '${dateLbl}${now dd/MM/yyyy}'
-              condition: showDate
-        # Scale
-        - !columns
-          absoluteX: 630
-          absoluteY: 94
-          width: 150
-          items:
-            - !text
-              fontSize: 10
-              text: '${scaleLbl}1:${format %,d scale}'
-              condition: showScalebar
-        # Projection
-        - !columns
-          absoluteX: 630
-          absoluteY: 78
-          width: 150
-          items:
-            - !text
-              fontSize: 10
-              text: '${projection}'
-        # Sources
-        - !columns
-          absoluteX: 630
-          absoluteY: 52
-          width: 150
-          items:
-            - !text
-              fontSize: 10
-              text: '${copyright}'
+              maxHeight: 566
+              maxWidth: 354
+              iconMaxHeight: 0
+              iconMaxWidth: 0
+              horizontalAlignment: left
+              columnMargin: 10
+              classIndentation: 3
+              classSpace: 5
+              backgroundColor: white
+              layerFontSize: 9
 
   #===========================================================================
-  Letter portrait:
+  A3 portrait:
   #===========================================================================
     mainPage:
-      pageSize: Letter
+      pageSize: A3
+      rotation: true
       landscape: false
-      backgroundPdf: 'file://${configDir}/background_Letter_portrait.pdf'
+      backgroundPdf: 'file://${configDir}/background_A3_portrait.pdf'
       items:
         # Map Title
         - !columns
           # columns can have an absolute position. In that case, they need a width.
-          absoluteX: 96
-          absoluteY: 780
-          width: 252
+          absoluteX: 50
+          absoluteY: 1099
+          width: 742
           items:
             - !text
-              font: Helvetica
-              fontSize: 20
-              align: center
+              font: Arial
+              fontSize: 21
+              fontColor: #56006B
+              align: left
               text: '${mapTitle}'
-
+        # Map Title Border
+        - !columns
+          # columns can have an absolute position. In that case, they need a width.
+          absoluteX: 50
+          absoluteY: 1059
+          width: 742
+          config:
+              borderWidthTop: 1
+              borderColor: #56006B
+          items:
+            - !text
+              font: Arial
+              fontSize: 21
+              fontColor: #56006B
+              align: left
+              text: ''
+        # Comments
+        - !columns
+          # columns can have an absolute position. In that case, they need a width.
+          absoluteX: 50
+          absoluteY: 1041
+          width: 742
+          items:
+            - !text
+              font: Arial
+              fontSize: 9
+              fontColor: #626161
+              text: '${mapComments}'
         # Map
         - !columns
-          absoluteX: 12
-          absoluteY: 728
-          width: 420
+          absoluteX: 50
+          absoluteY: 994
+          width: 742
           config:
               borderWidth: 1
+              borderColor: #D1D3d4
               cells:
                 - padding: 1
           items:
             - !map
-              width: 418
-              height: 662
-        # Map overview
-        - !columns
-          absoluteX: 332
-          absoluteY: 136
-          width: 100
-          config:
-              borderWidth: 1
-              cells:
-                - padding: 1
-          items:
-            - !map
-              width: 98
-              height: 70
-              backgroundColor: #FFFFFF
-              overviewMap: 10
-              condition: showOverview
-        # North arrow
-        - !columns
-          absoluteX: 396
-          absoluteY: 172
-          width: 30
-          items:
-            - !image
-              maxWidth: 30
-              maxHeight: 30
-              url: 'file://${configDir}/Arrow_North_CFCF.svg'
-              condition: showNorth
+              width: 740
+              height: 827
         # Scalebar
         - !columns
-          absoluteX: 24
-          absoluteY: 100
-          width: 180
+          absoluteX: 50
+          absoluteY: 144
+          width: 156
           items:
             - !scalebar
               align: left
-              maxSize: 180
-              type: 'bar sub'
+              maxSize: 156
+              type: 'bar'
+              fontColor: #5b524d
               intervals: 5
               condition: showScalebar
-
-        # Map comments
+        # Scale
         - !columns
-          absoluteX: 216
-          absoluteY: 52
-          width: 216
+          absoluteX: 206
+          absoluteY: 146
+          width: 212
           items:
             - !text
-              fontSize: 10
-              text: '${mapComments}'
-
-        # Vertical line (using a transparent image)
+              font: Arial
+              fontSize: 8
+              fontColor: #626161
+              text: '${scaleLbl}1:${format %,d scale}'
+              condition: showScalebar
+        # North arrow
         - !columns
-          absoluteX: 444
-          absoluteY: 792
-          width: 200
-          config:
-              borderWidthLeft: 1
+          absoluteX: 757
+          absoluteY: 158
+          width: 35
           items:
             - !image
-              maxWidth: 200
-              maxHeight: 792
-              url: 'file://${configDir}/null.svg'
-        # Legend
+              maxWidth: 35
+              maxHeight: 44
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
+              condition: showNorth
+        
+        # Sources
         - !columns
-          absoluteX: 450
-          absoluteY: 780
-          width: 150
+          absoluteX: 50
+          absoluteY: 89
+          width: 474
+          items:
+            - !text
+              font: Arial
+              fontSize: 8
+              fontColor: #626161
+              text: '${copyright}'
+        # Sources Border
+        - !columns
+          # columns can have an absolute position. In that case, they need a width.
+          absoluteX: 50
+          absoluteY: 75
+          width: 474
+          config:
+              borderWidthTop: 1
+              borderColor: #d2d3d5
+          items:
+            - !text
+              font: Arial
+              align: left
+              text: ''
+        # Projection
+        - !columns
+          absoluteX: 50
+          absoluteY: 68
+          width: 474
+          items:
+            - !text
+              font: Arial
+              fontSize: 8
+              fontColor: #626161
+              text: '${projection}'
+        # Projection Border
+        - !columns
+          # columns can have an absolute position. In that case, they need a width.
+          absoluteX: 50
+          absoluteY: 54
+          width: 474
+          config:
+              borderWidthTop: 1
+              borderColor: #d2d3d5
+          items:
+            - !text
+              font: Arial
+              align: left
+              text: ''
+        # Date
+        - !columns
+          absoluteX: 50
+          absoluteY: 47
+          width: 474
+          items:
+            - !text
+              font: Arial
+              fontSize: 8
+              fontColor: #626161
+              text: '${dateLbl}${now dd/MM/yyyy}'
+              condition: showDate
+        # Date Border
+        - !columns
+          # columns can have an absolute position. In that case, they need a width.
+          absoluteX: 50
+          absoluteY: 33
+          width: 474
+          config:
+              borderWidthTop: 1
+              borderColor: #d2d3d5
+          items:
+            - !text
+              font: Arial
+              align: left
+              text: ''
+    lastPage:
+      backgroundPdf: 'file://${configDir}/background_A3_portrait.pdf'
+      pageSize: A3
+      landscape: false
+      condition: showLegend
+      items: 
+         # Map Title Border
+         - !columns
+          # columns can have an absolute position. In that case, they need a width.
+          absoluteX: 50
+          absoluteY: 1059
+          width: 742
+          config:
+              borderWidthTop: 1
+              borderColor: #56006B
+          items:
+            - !text
+              font: Arial
+              fontSize: 21
+              fontColor: #56006B
+              align: left
+              text: ''
+         - !columns
+          absoluteX: 50
+          absoluteY: 1027
+          width: 742
           items:
             - !legends
-              horizontalAlignment: left
-              iconMaxWidth: 0
-              iconMaxHeight: 0
+              inline: false
               # From GeoServer bitmap space (~91 dpi) to PDF paper space (72 dpi)
               # necessary for icons to have the same size in legend and on map
               defaultScale: 0.7937
-              layerSpace: 3
-              layerFontSize: 10
-              classIndentation: 0
-              classFontSize: 10
-              classSpace: 3
-              maxWidth: 150
-              maxHeight: 664
-              condition: showLegend
-        # Date
-        - !columns
-          absoluteX: 450
-          absoluteY: 110
-          width: 150
-          items:
-            - !text
-              fontSize: 10
-              text: '${dateLbl}${now dd/MM/yyyy}'
-              condition: showDate
-        # Scale
-        - !columns
-          absoluteX: 450
-          absoluteY: 94
-          width: 150
-          items:
-            - !text
-              fontSize: 10
-              text: '${scaleLbl}1:${format %,d scale}'
-              condition: showScalebar
-        # Projection
-        - !columns
-          absoluteX: 450
-          absoluteY: 78
-          width: 150
-          items:
-            - !text
-              fontSize: 10
-              text: '${projection}'
-        # Sources
-        - !columns
-          absoluteX: 450
-          absoluteY: 52
-          width: 150
-          items:
-            - !text
-              fontSize: 10
-              text: '${copyright}'
+              maxHeight: 566
+              maxWidth: 354
+              iconMaxHeight: 0
+              iconMaxWidth: 0
+              horizontalAlignment: left
+              columnMargin: 10
+              classIndentation: 3
+              classSpace: 5
+              backgroundColor: white
+              layerFontSize: 9  
