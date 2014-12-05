@@ -136,6 +136,10 @@ class GenerateConfig {
             properties['public.ssl'] = "443"
             properties['private.ssl'] = "8443"
             properties['proxy.defaultTarget'] = proxyDefaultTarget
+            // remove.xforwarded.headers holds a list of servers for which x-forwarded-* headers should be removed:
+            // see https://github.com/georchestra/georchestra/issues/782
+            properties['remove.xforwarded.headers'] = "<value>.*wms\.geo\.admin\.ch.*</value>"
+            // proxy.mapping 
             properties['proxy.mapping'] = """
 <entry key="analytics"     value="proxyDefaultTarget/analytics/" />
 <entry key="catalogapp"    value="proxyDefaultTarget/catalogapp/" />
