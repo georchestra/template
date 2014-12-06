@@ -75,7 +75,7 @@ def server1Deployer = new SSHWarDeployer(
     log: log,
     ssh: ssh,
     projectProperties: project.properties,
-    webappDir: "/srv/tomcat/georchestra/webapps",
+    webappDir: "/var/lib/tomcat-georchestra/webapps",
     startServerCommand: "sudo /etc/init.d/tomcat-georchestra start",
     stopServerCommand: "sudo /etc/init.d/tomcat-georchestra stop"
 )
@@ -84,7 +84,7 @@ server1Deployer.deploy(artifacts.findAll{ it.name.contains("analytics") || it.na
 
 // Deploy proxy and cas to their own tomcat instance:
 def proxycasDeployer = server1Deployer.copy(
-    webappDir: "/srv/tomcat/proxycas/webapps",
+    webappDir: "/var/lib/tomcat-proxycas/webapps",
     startServerCommand: "sudo /etc/init.d/tomcat-proxycas start",
     stopServerCommand: "sudo /etc/init.d/tomcat-proxycas stop"
 )
@@ -94,7 +94,7 @@ proxycasDeployer.deploy(artifacts.findAll{it.name.contains("ROOT") || it.name.co
 def geoserverArtifact = artifacts.find{it.name.startsWith("geoserver")}
 if (geoserverArtifact != null) {
   def geoserverDeployer = server1Deployer.copy(
-    webappDir: "/srv/tomcat/geoserver0/webapps",
+    webappDir: "/var/lib/tomcat-geoserver0/webapps",
     startServerCommand: "sudo /etc/init.d/tomcat-geoserver0 start",
     stopServerCommand: "sudo /etc/init.d/tomcat-geoserver0 stop"
   )

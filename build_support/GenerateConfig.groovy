@@ -64,9 +64,7 @@ class GenerateConfig {
             to: 'geoserver-webapp/WEB-INF/classes'
         ).update { properties ->
             // if you're running GeoFence, update the following URL to match your setup:
-            properties['servicesUrl'] = "http://localhost:8080/geofence/remoting/RuleReader"
-            // in case you have a unique tomcat instance, might be:
-            //properties['servicesUrl'] = "http://localhost:8080/geofence-private/remoting/RuleReader"
+            properties['servicesUrl'] = "http://localhost:8181/geofence/remoting/RuleReader"
         }
     }
 
@@ -120,11 +118,12 @@ class GenerateConfig {
     def updateSecProxyMavenFilters() {
 
         // We assume that georchestra webapps, except geoserver, proxy and cas
-        // are served by an http connector on localhost, port 8080:
-        def proxyDefaultTarget = "http://localhost:8080"
-        
+        // are served by an http connector on localhost, port 8181:
+        def proxyDefaultTarget = "http://localhost:8181"
+
         // We also assume that geoserver is by default served
-        // by an http connector on localhost, port 8180.
+        // by an http connector on localhost, port 8190.
+        def geoserverTarget = "http://localhost:8190"
         
         // Change the proxy.mapping value below to match your setup !
         new PropertyUpdate(
@@ -146,13 +145,13 @@ class GenerateConfig {
 <entry key="downloadform"  value="proxyDefaultTarget/downloadform/" />
 <entry key="extractorapp"  value="proxyDefaultTarget/extractorapp/" />
 <entry key="geonetwork"    value="proxyDefaultTarget/geonetwork/" />
-<entry key="geoserver"     value="http://localhost:8180/geoserver/" />
+<entry key="geoserver"     value="geoserverTarget/geoserver/" />
 <entry key="geowebcache"   value="proxyDefaultTarget/geowebcache/" />
 <entry key="geofence"      value="proxyDefaultTarget/geofence/" />
 <entry key="header"        value="proxyDefaultTarget/header/" />
 <entry key="ldapadmin"     value="proxyDefaultTarget/ldapadmin/" />
 <entry key="mapfishapp"    value="proxyDefaultTarget/mapfishapp/" />
-<entry key="static"        value="proxyDefaultTarget/header/" />""".replaceAll("\n|\t","").replaceAll("proxyDefaultTarget",proxyDefaultTarget)
+<entry key="static"        value="proxyDefaultTarget/header/" />""".replaceAll("\n|\t","").replaceAll("proxyDefaultTarget",proxyDefaultTarget).replaceAll("geoserverTarget",geoserverTarget)
             properties['header.mapping'] = """
 <entry key="sec-email"     value="mail" />
 <entry key="sec-firstname" value="givenName" />
