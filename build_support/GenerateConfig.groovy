@@ -161,7 +161,7 @@ class GenerateConfig {
             // database health check settings:
             // If the HEALTH CHECK feature is activated, the security proxy monitors db connections.
             properties['checkHealth'] = "false"
-            properties['psql.db'] = "geonetwork"
+            properties['psql.db'] = "georchestra"
             properties['max.database.connections'] = "170"
         }
     }
