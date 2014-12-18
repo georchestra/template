@@ -64,7 +64,7 @@ class GenerateConfig {
             to: 'geoserver-webapp/WEB-INF/classes'
         ).update { properties ->
             // if you're running GeoFence, update the following URL to match your setup:
-            properties['servicesUrl'] = "http://localhost:8181/geofence/remoting/RuleReader"
+            properties['servicesUrl'] = "http://localhost:8280/geofence/remoting/RuleReader"
         }
     }
 
@@ -118,12 +118,12 @@ class GenerateConfig {
     def updateSecProxyMavenFilters() {
 
         // We assume that georchestra webapps, except geoserver, proxy and cas
-        // are served by an http connector on localhost, port 8181:
-        def proxyDefaultTarget = "http://localhost:8181"
+        // are served by an http connector on localhost, port 8280:
+        def proxyDefaultTarget = "http://localhost:8280"
 
         // We also assume that geoserver is by default served
-        // by an http connector on localhost, port 8190.
-        def geoserverTarget = "http://localhost:8190"
+        // by an http connector on localhost, port 8380.
+        def geoserverTarget = "http://localhost:8380"
         
         // Change the proxy.mapping value below to match your setup !
         new PropertyUpdate(
