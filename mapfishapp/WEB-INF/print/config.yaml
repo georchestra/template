@@ -138,6 +138,23 @@ layouts:
             - !map
               width: 523
               height: 585
+        # Map overview
+        - !columns
+          absoluteX: 460
+          absoluteY: 188
+          width: 100
+          config:
+              borderWidth: 1
+              borderColor: #D1D3d4
+              cells:
+                - padding: 1
+          items:
+            - !map
+              width: 98
+              height: 70
+              backgroundColor: #FFFFFF
+              overviewMap: 10
+              condition: showOverview
         # Scalebar
         - !columns
           absoluteX: 35
@@ -359,6 +376,23 @@ layouts:
             - !map
               width: 769
               height: 425
+         # Map overview
+        - !columns
+          absoluteX: 706
+          absoluteY: 142
+          width: 100
+          config:
+              borderWidth: 1
+              borderColor: #D1D3d4
+              cells:
+                - padding: 1
+          items:
+            - !map
+              width: 98
+              height: 70
+              backgroundColor: #FFFFFF
+              overviewMap: 10
+              condition: showOverview
         # Scalebar
         - !columns
           absoluteX: 35
@@ -580,6 +614,23 @@ layouts:
             - !map
               width: 1088
               height: 601
+        # Map overview
+        - !columns
+          absoluteX: 1040
+          absoluteY: 172
+          width: 100
+          config:
+              borderWidth: 1
+              borderColor: #D1D3d4
+              cells:
+                - padding: 1
+          items:
+            - !map
+              width: 98
+              height: 70
+              backgroundColor: #FFFFFF
+              overviewMap: 10
+              condition: showOverview
         # Scalebar
         - !columns
           absoluteX: 50
@@ -617,7 +668,6 @@ layouts:
               url: 'file://${configDir}/Arrow_North_CFCF.svg'
               condition: showNorth
               rotation: '${rotation}'
-              
        # Sources
         - !columns
           absoluteX: 788
@@ -801,6 +851,23 @@ layouts:
             - !map
               width: 740
               height: 827
+        # Map overview
+        - !columns
+          absoluteX: 692
+          absoluteY: 237 
+          width: 100
+          config:
+              borderWidth: 1
+              borderColor: #D1D3d4
+              cells:
+                - padding: 1
+          items:
+            - !map
+              width: 98
+              height: 70
+              backgroundColor: #FFFFFF
+              overviewMap: 10
+              condition: showOverview
         # Scalebar
         - !columns
           absoluteX: 50
