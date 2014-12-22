@@ -1,7 +1,7 @@
-Template configuration for geOrchestra (fork me !)
-==================================================
+Template configuration for geOrchestra
+======================================
 
-This configuration folder should be considered as a starting point in order to configure your own geOrchestra instance.
+This configuration folder should be considered as a starting point in order to configure your own geOrchestra instance. Fork me !
 
 
 **As such, it makes the following main hypotheses**:
