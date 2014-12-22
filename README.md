@@ -3,6 +3,16 @@ template
 
 Template configuration for geOrchestra: fork me !
 
+This configuration folder should be considered as a starting point in order to configure your own geOrchestra instance.
+
+As such, it makes the following main hypotheses:
+ * a single machine, "3 tomcats"-based setup, as described by the [official documentation](https://github.com/georchestra/georchestra/blob/master/doc/setup.md),
+ * tomcat connectors configured to bind to ports 8180 (proxy/cas), 8280 (all other webapps), 8380 (geoserver) on localhost,
+ * HTTP scheme is the main one (no https except for CAS pages),
+ * english language is the default one,
+ * minimal (production) logging level.
+
+
 This configuration folder contains:
  * a ```build_support``` directory hosting:
    * a ```shared.maven.filters``` file, which lists most of the shared maven filters you want to customize for your own setup,
