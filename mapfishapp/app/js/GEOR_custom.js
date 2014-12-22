@@ -589,6 +589,14 @@ GEOR.custom = {
     //HELP_URL: "http://cms.geobretagne.fr/assistance",
 
     /**
+     * Constant: CONTEXT_LOADED_INDICATOR_DURATION
+     * {Integer} - If set to 0, do not display the popup
+     * displaying context information (title + abstract)
+     * Defaults to 5 seconds.
+     */
+    //CONTEXT_LOADED_INDICATOR_DURATION: 5,
+
+    /**
      * Constant: DISPLAY_SELECTED_OWS_URL
      * {Boolean} - If set to false, do not display the selected WMS/WFS server URL
      * in the second field from the "Add layers" popup window.
