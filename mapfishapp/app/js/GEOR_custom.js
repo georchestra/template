@@ -21,27 +21,24 @@ GEOR.custom = {
 
     /**
      * Constant: CONTEXTS
-     * {Array} the array of arrays describing the available contexts
+     * {Array} the array describing the available contexts
      *
-     * Each "context array" consists of 4 mandatory fields:
-     *   * the first field is the label which appears in the UI
-     *   * the second one is the path to the thumbnail
-     *   * the third one is the path to the context (WMC) file
-     *   * the last one is a comment which will be shown on thumbnail hovering
+     * Each "context object" consists of 5 mandatory fields:
+     *   * the label which appears in the UI
+     *   * the path to the thumbnail
+     *   * the path to the context (WMC) file
+     *   * the comment which will be shown on thumbnail hovering
+     *   * the keywords used to filter the view
      *
-     * Example config : 
-     *   [
-     *      ["OpenStreetMap", "app/img/contexts/osm.png", "default.wmc", "A unique OSM layer"],
-     *      ["Orthophoto", "app/img/contexts/ortho.png", "contexts/ortho.wmc", "Orthophoto 2009"],
-     *      ["Forêts", "app/img/contexts/forets.png", "contexts/forets.wmc", "Les 3 couches forêts sur fond OSM"]
-     *   ]
-     *
-     * Defaults to ["OpenStreetMap", "app/img/contexts/osm.png", "default.wmc", "A unique OSM layer"]
      * Should *not* be empty !
      *
-    CONTEXTS: [
-        ["OpenStreetMap", "app/img/contexts/osm.png", "default.wmc", "A unique OSM layer"]
-    ],*/
+    CONTEXTS: [{
+        label: "OpenStreetMap",
+        thumbnail: "app/img/contexts/osm.png",
+        wmc: "default.wmc",
+        tip: "A unique OSM layer",
+        keywords: ["OpenStreetMap", "Basemap"]
+    }],*/
 
     /**
      * Constant: ADDONS
