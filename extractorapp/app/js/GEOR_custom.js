@@ -268,14 +268,14 @@ GEOR.custom = {
             owstype: "WMS",
             owsurl: "http://sdi.georchestra.org/geoserver/wms"
         }
-    ],
+    ]
 
     /**
      * Constant: SPLASH_SCREEN
      * {String} The message to display on extractorapp startup
      * Defaults to null, which means no message will be displayed
      *
-    SPLASH_SCREEN: [
+    ,SPLASH_SCREEN: [
         "Afin d'utiliser au mieux la fonctionnalité d'extraction en ligne, nous vous ",
         "invitons à respecter les conseils suivants : ",
         "<br/><br/>",
@@ -298,8 +298,9 @@ GEOR.custom = {
      * Constant: HELP_URL
      * {String} URL of the help ressource.
      * Defaults to "http://cms.geobretagne.fr/assistance"
-     */
-    //HELP_URL: "http://cms.geobretagne.fr/assistance"
-    
+     *
+    ,HELP_URL: "http://cms.geobretagne.fr/assistance"
+    */
+
     // No trailing comma for the last line (or IE will complain)
 };
