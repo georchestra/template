@@ -28,7 +28,7 @@ shared.instance.name=geOrchestra
 # and shared.server.port to 443
 # if your SDI is configured accordingly
 
-shared.server.name=vm-georchestra
+shared.server.name=georchestra.mydomain.org
 shared.url.scheme=http
 
 # sets the public address of your homepage.
