@@ -31,13 +31,17 @@ GEOR.custom = {
      *   * the keywords used to filter the view
      *
      * Should *not* be empty !
+     * 
+     * And an optional field : 
+     *   * the roles which can view the context, if empty every users can see the context (no filter)
      *
     CONTEXTS: [{
         label: "OpenStreetMap",
         thumbnail: "app/img/contexts/osm.png",
         wmc: "default.wmc",
         tip: "A unique OSM layer",
-        keywords: ["OpenStreetMap", "Basemap"]
+        keywords: ["OpenStreetMap", "Basemap"],
+        roles: ["ROLE_SV_USER"]
     }],*/
 
     /**
