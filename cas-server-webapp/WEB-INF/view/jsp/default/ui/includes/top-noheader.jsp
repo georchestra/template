@@ -20,6 +20,7 @@
 --%>
 <!DOCTYPE html>
 
+<%@ page language="java" %>
 <%@ page pageEncoding="UTF-8" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -27,16 +28,35 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+<%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
+<%@ page import="org.springframework.context.ApplicationContext" %>
+<%@ page import="org.springframework.web.servlet.support.RequestContextUtils" %>
+<%@ page import="org.georchestra.commons.configuration.GeorchestraConfiguration" %>
+
+<%
+
+
+String sharedInstanceName = "@shared.instance.name@";
+String sharedHomepageUrl = "@shared.homepage.url@";
+try {
+  ApplicationContext ctx = RequestContextUtils.getWebApplicationContext(request);
+  sharedInstanceName = ctx.getBean(GeorchestraConfiguration.class).getProperty("instance.name");
+  sharedHomepageUrl = ctx.getBean(GeorchestraConfiguration.class).getProperty("homepage.url");
+} catch (Exception e) {
+}
+
+%>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  
-  <title>CAS - @shared.instance.name@</title>
-  
+
+  <title>CAS - <%= sharedInstanceName  %></title>
+
   <spring:theme code="standard.custom.css.file" var="customCssFile" />
   <link rel="stylesheet" href="<c:url value="${customCssFile}" />" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  
+
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
   <![endif]-->

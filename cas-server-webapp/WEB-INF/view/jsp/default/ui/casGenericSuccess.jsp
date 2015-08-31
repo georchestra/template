@@ -21,7 +21,7 @@
 <jsp:directive.include file="includes/top-noheader.jsp" />
   <script type="text/javascript">
     window.setTimeout(function() {
-        window.location = "@shared.homepage.url@";
+          window.location = "<%= sharedHomepageUrl %>";
     }, 1000);
   </script>
   <div id="msg" class="success">
