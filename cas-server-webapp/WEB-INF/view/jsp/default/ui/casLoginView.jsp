@@ -65,7 +65,6 @@
       <a href="@shared.ldapadmin.contextpath@/account/new"><spring:message code="screen.welcome.link.newaccount" /></a> - <a href="@shared.ldapadmin.contextpath@/account/passwordRecovery"><spring:message code="screen.welcome.link.forgot" /></a>
     </section>
 
-    </section>
   </form:form>
 </div>
 
