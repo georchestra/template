@@ -24,9 +24,9 @@
   <form:form method="post" id="fm1" commandName="${commandName}" htmlEscape="true">
 
     <form:errors path="*" id="msg" cssClass="errors" element="div" htmlEscape="false" />
-
+  
     <h2><spring:message code="screen.welcome.instructions" /></h2>
-
+  
     <section class="row">
       <label for="username"><spring:message code="screen.welcome.label.netid" /></label>
       <c:choose>
@@ -40,7 +40,7 @@
         </c:otherwise>
       </c:choose>
     </section>
-
+    
     <section class="row">
       <label for="password"><spring:message code="screen.welcome.label.password" /></label>
       <%--
@@ -62,7 +62,7 @@
     </section>
 
     <section class="row">
-      <a href="<%= sharedLdapadminContextpath %>/account/new"><spring:message code="screen.welcome.link.newaccount" /></a> - <a href="<%= sharedLdapadminContextpath %>/account/passwordRecovery"><spring:message code="screen.welcome.link.forgot" /></a>
+      <a href="@shared.ldapadmin.contextpath@/account/new"><spring:message code="screen.welcome.link.newaccount" /></a> - <a href="@shared.ldapadmin.contextpath@/account/passwordRecovery"><spring:message code="screen.welcome.link.forgot" /></a>
     </section>
 
   </form:form>

@@ -20,7 +20,6 @@
 --%>
 <!DOCTYPE html>
 
-<%@ page language="java" %>
 <%@ page pageEncoding="UTF-8" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -28,39 +27,16 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
-<%@ page import="org.springframework.context.ApplicationContext" %>
-<%@ page import="org.springframework.web.servlet.support.RequestContextUtils" %>
-<%@ page import="org.georchestra.commons.configuration.GeorchestraConfiguration" %>
-
-<%
-
-String sharedInstanceName = "@shared.instance.name@";
-String sharedHomepageUrl = "@shared.homepage.url@";
-String sharedHeaderHeight = "@shared.header.height@";
-String sharedLdapadminContextpath = "@shared.ldapadmin.contextpath@";
-
-try {
-  ApplicationContext ctx = RequestContextUtils.getWebApplicationContext(request);
-  sharedInstanceName = ctx.getBean(GeorchestraConfiguration.class).getProperty("instance.name");
-  sharedHomepageUrl = ctx.getBean(GeorchestraConfiguration.class).getProperty("homepage.url");
-  sharedHeaderHeight = ctx.getBean(GeorchestraConfiguration.class).getProperty("header.height");
-  sharedLdapadminContextpath = ctx.getBean(GeorchestraConfiguration.class).getProperty("ldapadmin.contextpath");
-  } catch (Exception e) {
-}
-
-%>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-
-  <title>CAS - <%= sharedInstanceName %></title>
-
+  
+  <title>CAS - @shared.instance.name@</title>
+  
   <spring:theme code="standard.custom.css.file" var="customCssFile" />
   <link rel="stylesheet" href="<c:url value="${customCssFile}" />" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-
+  
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
   <![endif]-->
@@ -69,7 +45,7 @@ try {
 
 <!-- see http://stackoverflow.com/questions/1037839/how-to-force-link-from-iframe-to-be-opened-in-the-parent-window -->
 <script type="text/javascript" src="/header/js/header.js"></script>
-<iframe src="/header/" style="width:100%;height: <%= sharedHeaderHeight %>px;border:none;overflow:hidden;" scrolling="no" frameborder="0" onload="_headerOnLoad(this)"></iframe>
+<iframe src="/header/" style="width:100%;height:@shared.header.height@px;border:none;overflow:hidden;" scrolling="no" frameborder="0" onload="_headerOnLoad(this)"></iframe>
 
   <div id="container">
       <div id="content">
