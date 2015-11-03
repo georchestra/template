@@ -185,6 +185,7 @@ class GenerateConfig {
             properties['subject.account.in.process'] = "["+instanceName+"] Your new account is waiting for validation"
             properties['subject.requires.moderation'] = "["+instanceName+"] New account waiting for validation"
             properties['subject.change.password'] = "["+instanceName+"] Update your password"
+            properties['subject.account.uid.renamed'] = "["+instanceName+"] New login for your account"
             // Moderated signup or free account creation ?
             properties['moderatedSignup'] = "true"
             // Delay in days before the tokens are purged from the db:
