@@ -29,7 +29,7 @@ shared.instance.name=geOrchestra
 # if your SDI is configured accordingly
 
 shared.server.name=georchestra.mydomain.org
-shared.url.scheme=http
+shared.url.scheme=https
 
 # sets the public address of your homepage.
 # Defaults to @shared.url.scheme@://@shared.server.name@/
