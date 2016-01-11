@@ -81,7 +81,7 @@ GEOR.custom = {
      * Constant: GEOSERVER_WMS_URL
      * The URL to GeoServer WMS.
      */
-    GEOSERVER_WMS_URL: "http://sdi.georchestra.org/geoserver/gshhs/wms",
+    GEOSERVER_WMS_URL: "https://sdi.georchestra.org/geoserver/gshhs/wms",
 
     /**
      * Constant: GEOSERVER_WFS_URL
@@ -274,7 +274,7 @@ GEOR.custom = {
     STARTUP_LAYERS: [
         {
             owstype: "WMS",
-            owsurl: "http://sdi.georchestra.org/geoserver/wms",
+            owsurl: "https://sdi.georchestra.org/geoserver/wms",
             layername: "gshhs:GSHHS_l_L2"
         }
     ],
@@ -287,7 +287,7 @@ GEOR.custom = {
         {
             text: "Example layers",
             owstype: "WMS",
-            owsurl: "http://sdi.georchestra.org/geoserver/wms"
+            owsurl: "https://sdi.georchestra.org/geoserver/wms"
         }
     ]
 
