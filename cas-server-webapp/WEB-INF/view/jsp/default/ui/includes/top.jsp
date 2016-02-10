@@ -42,11 +42,15 @@ String sharedLdapadminContextpath = "@shared.ldapadmin.contextpath@";
 
 try {
   ApplicationContext ctx = RequestContextUtils.getWebApplicationContext(request);
-  sharedInstanceName = ctx.getBean(GeorchestraConfiguration.class).getProperty("instance.name");
-  sharedHomepageUrl = ctx.getBean(GeorchestraConfiguration.class).getProperty("homepage.url");
-  sharedHeaderHeight = ctx.getBean(GeorchestraConfiguration.class).getProperty("header.height");
-  sharedLdapadminContextpath = ctx.getBean(GeorchestraConfiguration.class).getProperty("ldapadmin.contextpath");
-  } catch (Exception e) {
+  GeorchestraConfiguration georConfig = (GeorchestraConfiguration) ctx.getBean(GeorchestraConfiguration.class);
+  if (georConfig.activated()) {
+    sharedInstanceName = georConfig.getProperty("instance.name");
+    sharedHomepageUrl = georConfig.getProperty("homepage.url");
+    sharedHeaderHeight = georConfig.getProperty("header.height");
+    sharedLdapadminContextpath = georConfig.getProperty("ldapadmin.contextpath");
+  }
+} catch (Exception e) {
+  // Ignoring and keeping the default configuration
 }
 
 %>
