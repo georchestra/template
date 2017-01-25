@@ -1,5 +1,0 @@
-{"servers": [
-    {"name": "geOrchestra demo", "url": "https://sdi.georchestra.org/geoserver/wfs"},
-    {"name": "GéoBretagne", "url": "http://geobretagne.fr/geoserver/wfs"},
-    {"name": "Corine Land Cover", "url": "http://sd1878-2.sivit.org/geoserver/wfs"}
-]}
