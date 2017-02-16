@@ -1,10 +1,11 @@
 Template configuration for geOrchestra
 ======================================
 
-This configuration folder should be considered as a starting point in order to configure your own geOrchestra instance. Fork me !
+This repository contains files which were previously used to configure your own geOrchestra instance, at compilation time.
+From 16.12 on, building geOrchestra with this template configuration is no longer required, since everything happens at runtime through the [geOrchestra datadir](https://github.com/georchestra/datadir/) !
 
 
-**As such, it makes the following main hypotheses**:
+**This configuration profile makes the following main hypotheses**:
  * a single machine, "3 tomcats"-based setup, as described by the [official documentation](https://github.com/georchestra/georchestra/blob/master/doc/setup.md),
  * tomcat connectors configured to bind to ports 8180 (proxy/cas), 8280 (all other webapps), 8380 (geoserver) on localhost,
  * HTTPS scheme is assumed on the front web server,
