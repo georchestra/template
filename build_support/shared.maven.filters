@@ -167,24 +167,6 @@ shared.psql.pass=www-data
 
 
 # --------------------------------------------------
-# DOWNLOAD FORM
-# --------------------------------------------------
-
-# If the downloadform feature is activated,
-# users will be asked to fill a form, read and accept an agreement
-# (shared.download_form.pdfurl) prior to any download.
-# The downloadform will log every download request in a database,
-# see downloadform/database.sql
-# + example +
-# shared.download_form.pdfurl=/_static/usage.pdf
-# or
-# shared.download_form.pdfurl=//url.to/cgu.pdf
-
-shared.download_form.activated=false
-shared.download_form.pdfurl=
-
-
-# --------------------------------------------------
 # OGC statistics
 # --------------------------------------------------
 
