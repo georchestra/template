@@ -24,7 +24,7 @@ shared.instance.name=geOrchestra
 # shared.server.name=localhost
 # shared.server.port=8080
 
-# set shared.url.scheme to https 
+# set shared.url.scheme to https
 # and shared.server.port to 443
 # if your SDI is configured accordingly
 
@@ -72,7 +72,7 @@ shared.ldap.host=localhost
 shared.ldap.port=389
 
 # shared.ldapUrl is automatically computed with the above parameters.
-# note: if you choose port = 636, you should also change 
+# note: if you choose port = 636, you should also change
 # the protocol to ldaps below:
 shared.ldapUrl=ldap://@shared.ldap.host@:@shared.ldap.port@
 
@@ -121,7 +121,7 @@ shared.smtp.port=25
 shared.email.replyTo=psc\@georchestra.org
 shared.email.from=psc\@georchestra.org
 
-# the following email receives new account requests if ldapadmin
+# the following email receives new account requests if the console
 # is configured with moderatedSignup = true (which is the default)
 # (have a look at your own GenerateConfig.groovy)
 
@@ -129,7 +129,7 @@ shared.administrator.email=psc\@georchestra.org
 
 # send notification mails in HTML ?
 # Defaults to: false (ie. plain text emails)
-# If you change this value to true, you should also modify 
+# If you change this value to true, you should also modify
 # the email templates in order to have full HTML emails.
 
 shared.email.html=false
@@ -144,7 +144,7 @@ shared.email.html=false
 # + example +
 # shared.log.dir=/var/log/tomcat8
 #
-# Here we use /tmp because we want to prevent this kind of error 
+# Here we use /tmp because we want to prevent this kind of error
 # http://applis-bretagne.fr/redmine/issues/4311 when Tomcat is not installed
 
 shared.log.dir=/tmp
@@ -175,5 +175,3 @@ shared.psql.pass=www-data
 # see ogc-server-statistics/database.sql
 
 shared.ogc.statistics.activated=false
-
-
