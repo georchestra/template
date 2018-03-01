@@ -36,7 +36,7 @@ class GenerateConfig {
         updateMapfishappMavenFilters()
         updateExtractorappMavenFilters()
         updateSecProxyMavenFilters()
-        updateLDAPadminMavenFilters()
+        updateConsoleMavenFilters()
     }
 
     /**
@@ -45,7 +45,7 @@ class GenerateConfig {
     def updateMapfishappMavenFilters() {
         new PropertyUpdate(
             path: 'maven.filter',
-            from: 'defaults/mapfishapp', 
+            from: 'defaults/mapfishapp',
             to: 'mapfishapp'
         ).update { properties ->
             // this is the directory where older temporary documents are stored:
@@ -98,7 +98,7 @@ class GenerateConfig {
     def updateExtractorappMavenFilters() {
         new PropertyUpdate(
             path: 'maven.filter',
-            from: 'defaults/extractorapp', 
+            from: 'defaults/extractorapp',
             to: 'extractorapp'
         ).update { properties ->
             properties['maxCoverageExtractionSize'] = "99999999"
@@ -124,7 +124,7 @@ class GenerateConfig {
         // We also assume that geoserver is by default served
         // by an http connector on localhost, port 8380.
         def geoserverTarget = "http://localhost:8380"
-        
+
         // Change the proxy.mapping value below to match your setup !
         new PropertyUpdate(
             path: 'maven.filter',
@@ -137,7 +137,7 @@ class GenerateConfig {
             // remove.xforwarded.headers holds a list of servers for which x-forwarded-* headers should be removed:
             // see https://github.com/georchestra/georchestra/issues/782
             properties['remove.xforwarded.headers'] = "<value>.*geo.admin.ch.*</value>"
-            // proxy.mapping 
+            // proxy.mapping
             properties['proxy.mapping'] = """
 <entry key="analytics"     value="proxyDefaultTarget/analytics/" />
 <entry key="catalogapp"    value="proxyDefaultTarget/catalogapp/" />
@@ -147,7 +147,7 @@ class GenerateConfig {
 <entry key="geowebcache"   value="proxyDefaultTarget/geowebcache/" />
 <entry key="geofence"      value="proxyDefaultTarget/geofence/" />
 <entry key="header"        value="proxyDefaultTarget/header/" />
-<entry key="ldapadmin"     value="proxyDefaultTarget/ldapadmin/" />
+<entry key="console"     value="proxyDefaultTarget/console/" />
 <entry key="mapfishapp"    value="proxyDefaultTarget/mapfishapp/" />
 <entry key="static"        value="proxyDefaultTarget/header/" />""".replaceAll("\n|\t","").replaceAll("proxyDefaultTarget",proxyDefaultTarget).replaceAll("geoserverTarget",geoserverTarget)
             properties['header.mapping'] = """
@@ -161,15 +161,15 @@ class GenerateConfig {
 
 
     /**
-     * updateLDAPadminMavenFilters
+     * updateConsoleMavenFilters
      */
-    def updateLDAPadminMavenFilters() {
+    def updateConsoleMavenFilters() {
         new PropertyUpdate(
             path: 'maven.filter',
-            from: 'defaults/ldapadmin', 
-            to: 'ldapadmin'
+            from: 'defaults/console',
+            to: 'console'
         ).update { properties ->
-            // ReCaptcha keys for your own domain: 
+            // ReCaptcha keys for your own domain:
             // (these are the ones for sdi.georchestra.org, they won't work for you !!!)
             properties['privateKey'] = "6LcfjucSAAAAAKcnHp14epYOiWOIUfEculd4PvLV"
             properties['publicKey'] = "6LcfjucSAAAAAKtNoK5r7IIXxBT-33znNJUgeYg1"
