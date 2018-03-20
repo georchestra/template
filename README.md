@@ -1,4 +1,4 @@
-# Template profile for geOrchestra
+# Deprecated Template profile for geOrchestra
 
 This repository contains **files which were previously used to configure a geOrchestra instance, at compilation time**.
 
